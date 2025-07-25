@@ -146,10 +146,6 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Anexos []*RequestResponseBodyAnexo `json:"Anexos,omitempty"`
-}
-
-type RequestResponseBodyAnexo struct {
 	CodAnexo      int                    `json:"CodAnexo,omitempty"`      // Código do anexo.
 	TipoAnexo     tipo_anexo.TipoAnexo   `json:"TipoAnexo,omitempty"`     // Código do cadastro de anexo que indica o tipo dos arquivos.
 	TipoOrigem    tipo_origem.TipoOrigem `json:"TipoOrigem,omitempty"`    // Código do cadastro de origem vinculado ao anexo.
@@ -159,7 +155,7 @@ type RequestResponseBodyAnexo struct {
 	DataAlteracao string                 `json:"DataAlteracao,omitempty"` // Data da última alteração do anexo.
 	EnviaSite     string                 `json:"EnviaSite,omitempty"`     // Habilitado para enviar para o site.
 	DataEnviaSite string                 `json:"DataEnviaSite,omitempty"` // Data prevista para enviar para o site.
-	TotalArquivos string                 `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
+	TotalArquivos int                    `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
 	Arquivos      []*arquivo.Arquivo     `json:"Arquivos,omitempty"`      // Array no qual cada elemento é um objeto ("Arquivo" no XML) que possui os campos do objeto "arquivo"
 }
 
