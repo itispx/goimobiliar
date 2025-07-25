@@ -1,0 +1,34 @@
+package uf
+
+type UF string
+
+var (
+	AC UF = "AC" // ACRE
+	AL UF = "AL" // ALAGOAS
+	AP UF = "AP" // AMAPA
+	AM UF = "AM" // AMAZONAS
+	BA UF = "BA" // BAHIA
+	CE UF = "CE" // CEARA
+	DF UF = "DF" // DISTRITO FEDERAL
+	ES UF = "ES" // ESPIRITO SANTO
+	EX UF = "EX" // EXTERIOR
+	GO UF = "GO" // GOIAS
+	MA UF = "MA" // MARANHAO
+	MT UF = "MT" // MATO GROSSO
+	MS UF = "MS" // MATO GROSSO DO SUL
+	MG UF = "MG" // MINAS GERAIS
+	PA UF = "PA" // PARA
+	PB UF = "PB" // PARAIBA
+	PR UF = "PR" // PARANA
+	PE UF = "PE" // PERNAMBUCO
+	PI UF = "PI" // PIAUI
+	RJ UF = "RJ" // RIO DE JANEIRO
+	RN UF = "RN" // RIO GRANDE DO NORTE
+	RS UF = "RS" // RIO GRANDE DO SUL
+	RO UF = "RO" // RONDONIA
+	RR UF = "RR" // RORAIMA
+	SC UF = "SC" // SANTA CATARINA
+	SP UF = "SP" // SAO PAULO
+	SE UF = "SE" // SERGIPE
+	TO UF = "TO" // TOCANTINS
+)
