@@ -176,7 +176,7 @@ type RequestResponseBodyBloco struct {
 	TipoLograd    string                              `json:"TipoLograd,omitempty"`    // Tipo de logradouro do endereço.
 	Descricao     string                              `json:"Descricao,omitempty"`     // Descrição do bloco/conta.
 	Fundo         string                              `json:"Fundo,omitempty"`         // Indica o tipo de fundo/conta.
-	CEP           string                              `json:"CEP,omitempty"`           // CEP do condomínio.
+	CEP           int                                 `json:"CEP,omitempty"`           // CEP do condomínio.
 	Endereco      string                              `json:"Endereco,omitempty"`      // Endereço do condomínio.
 	Bairro        string                              `json:"Bairro,omitempty"`        // Bairro do endereço.
 	QtdeEconomias int                                 `json:"QtdeEconomias,omitempty"` // Total de economias do bloco.
