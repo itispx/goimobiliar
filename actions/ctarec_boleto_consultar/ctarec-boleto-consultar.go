@@ -190,7 +190,7 @@ type RequestResponseBody struct {
 	DataTiraInadimplencia   string   `json:"DataTiraInadimplencia,omitempty"`   //	Date	Data da retirada do boleto da inadimplencia.
 	Instrucoes              []string `json:"Instrucoes,omitempty"`              //
 	Detalhes                []string `json:"Detalhes,omitempty"`                //
-	Informativos            []string `json:"Informativos,omitempty"`            //
+	Informativos            []any    `json:"Informativos,omitempty"`            //
 	Cabecalhos              []string `json:"Cabecalhos,omitempty"`              //
 }
 
