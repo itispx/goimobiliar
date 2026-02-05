@@ -209,10 +209,10 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodImovel      int    `json:"CodImovel,omitempty"`      // Código do imóvel.
-	CodContratoLoc int    `json:"CodContratoLoc,omitempty"` // Código do contrato de locação deste imóvel.
-	CodPessoaLocat int    `json:"CodPessoaLocat,omitempty"` // Código de pessoa do locatário principal.
-	Observacao     string `json:"Observacao,omitempty"`     // Observação sobre a execução da ação.
+	CodImovel      *int    `json:"CodImovel,omitempty"`      // Código do imóvel.
+	CodContratoLoc *int    `json:"CodContratoLoc,omitempty"` // Código do contrato de locação deste imóvel.
+	CodPessoaLocat *int    `json:"CodPessoaLocat,omitempty"` // Código de pessoa do locatário principal.
+	Observacao     *string `json:"Observacao,omitempty"`     // Observação sobre a execução da ação.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

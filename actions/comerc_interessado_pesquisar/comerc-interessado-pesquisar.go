@@ -147,13 +147,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Interessados []*RequestResponseBodyInteressado `json:"Interessados,omitempty"` //
+	Interessados *[]RequestResponseBodyInteressado `json:"Interessados,omitempty"` //
 }
 
 type RequestResponseBodyInteressado struct {
-	CodInteressado int    `json:"CodInteressado,omitempty"` // Código do Interessado.
-	Nome           string `json:"Nome,omitempty"`           // Nome do Interessado.
-	Telefone       string `json:"Telefone,omitempty"`       // Informações de contato do Interessado.
+	CodInteressado *int    `json:"CodInteressado,omitempty"` // Código do Interessado.
+	Nome           *string `json:"Nome,omitempty"`           // Nome do Interessado.
+	Telefone       *string `json:"Telefone,omitempty"`       // Informações de contato do Interessado.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

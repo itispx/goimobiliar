@@ -178,7 +178,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	IdEconomia int `json:"IdEconomia,omitempty"` // Chave principal da economia/unidade.
+	IdEconomia *int `json:"IdEconomia,omitempty"` // Chave principal da economia/unidade.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

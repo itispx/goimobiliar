@@ -171,25 +171,25 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Boletos []*RequestResponseBodyBoleto `json:"Boletos,omitempty"` //
+	Boletos *[]RequestResponseBodyBoleto `json:"Boletos,omitempty"` //
 }
 
 type RequestResponseBodyBoleto struct {
-	IdAcordo         int     `json:"IdAcordo,omitempty"`         // Código de identificação do acordo.
-	DocCapaId        int     `json:"DocCapaId,omitempty"`        // Código do boleto no sistema.
-	Competencia      string  `json:"Competencia,omitempty"`      // Competência do documento no formato 'YYYYMM'.
-	DataVenc         string  `json:"DataVenc,omitempty"`         // Data de vencimento do boleto.
-	TipoDOC          string  `json:"TipoDOC,omitempty"`          // Tipo de boleto/DOC.
-	Complemento      string  `json:"Complemento,omitempty"`      // Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
-	Valor            float64 `json:"Valor,omitempty"`            // Valor de cada parcela.
-	VlrHonorarios    float64 `json:"VlrHonorarios,omitempty"`    //
-	VlrCustas        float64 `json:"VlrCustas,omitempty"`        //
-	VlrMulta         float64 `json:"VlrMulta,omitempty"`         //
-	VlrMultaProp     float64 `json:"VlrMultaProp,omitempty"`     //
-	VlrTaxaPorte     float64 `json:"VlrTaxaPorte,omitempty"`     // Valor da taxa porte.
-	VlrTarifaDoc     float64 `json:"VlrTarifaDoc,omitempty"`     // Valor da tarifa de DOC.
-	VlrSegCont       float64 `json:"VlrSegCont,omitempty"`       // Valor do seguro conteúdo.
-	NossoNumeroExtra string  `json:"NossoNumeroExtra,omitempty"` // Número de identificação bancário extra.
+	IdAcordo         *int     `json:"IdAcordo,omitempty"`         // Código de identificação do acordo.
+	DocCapaId        *int     `json:"DocCapaId,omitempty"`        // Código do boleto no sistema.
+	Competencia      *string  `json:"Competencia,omitempty"`      // Competência do documento no formato 'YYYYMM'.
+	DataVenc         *string  `json:"DataVenc,omitempty"`         // Data de vencimento do boleto.
+	TipoDOC          *string  `json:"TipoDOC,omitempty"`          // Tipo de boleto/DOC.
+	Complemento      *string  `json:"Complemento,omitempty"`      // Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
+	Valor            *float64 `json:"Valor,omitempty"`            // Valor de cada parcela.
+	VlrHonorarios    *float64 `json:"VlrHonorarios,omitempty"`    //
+	VlrCustas        *float64 `json:"VlrCustas,omitempty"`        //
+	VlrMulta         *float64 `json:"VlrMulta,omitempty"`         //
+	VlrMultaProp     *float64 `json:"VlrMultaProp,omitempty"`     //
+	VlrTaxaPorte     *float64 `json:"VlrTaxaPorte,omitempty"`     // Valor da taxa porte.
+	VlrTarifaDoc     *float64 `json:"VlrTarifaDoc,omitempty"`     // Valor da tarifa de DOC.
+	VlrSegCont       *float64 `json:"VlrSegCont,omitempty"`       // Valor do seguro conteúdo.
+	NossoNumeroExtra *string  `json:"NossoNumeroExtra,omitempty"` // Número de identificação bancário extra.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

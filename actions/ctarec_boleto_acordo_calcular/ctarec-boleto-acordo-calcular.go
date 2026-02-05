@@ -169,18 +169,18 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Boletos []*RequestResponseBodyBoleto `json:"Boletos,omitempty"` //
+	Boletos *[]RequestResponseBodyBoleto `json:"Boletos,omitempty"` //
 }
 
 type RequestResponseBodyBoleto struct {
-	DataVenc      string  `json:"DataVenc,omitempty"`      // Data de vencimento do boleto.
-	TipoDOC       string  `json:"TipoDOC,omitempty"`       // Tipo de boleto/DOC.
-	Complemento   string  `json:"Complemento,omitempty"`   // Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
-	Valor         float64 `json:"Valor,omitempty"`         // Valor de cada parcela.
-	VlrHonorarios float64 `json:"VlrHonorarios,omitempty"` //
-	VlrCustas     float64 `json:"VlrCustas,omitempty"`     //
-	VlrMulta      float64 `json:"VlrMulta,omitempty"`      //
-	VlrMultaProp  float64 `json:"VlrMultaProp,omitempty"`  //
+	DataVenc      *string  `json:"DataVenc,omitempty"`      // Data de vencimento do boleto.
+	TipoDOC       *string  `json:"TipoDOC,omitempty"`       // Tipo de boleto/DOC.
+	Complemento   *string  `json:"Complemento,omitempty"`   // Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
+	Valor         *float64 `json:"Valor,omitempty"`         // Valor de cada parcela.
+	VlrHonorarios *float64 `json:"VlrHonorarios,omitempty"` //
+	VlrCustas     *float64 `json:"VlrCustas,omitempty"`     //
+	VlrMulta      *float64 `json:"VlrMulta,omitempty"`      //
+	VlrMultaProp  *float64 `json:"VlrMultaProp,omitempty"`  //
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

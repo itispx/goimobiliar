@@ -149,7 +149,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	DocCapaId int `json:"DocCapaId,omitempty"` // Código do boleto no sistema.
+	DocCapaId *int `json:"DocCapaId,omitempty"` // Código do boleto no sistema.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -151,13 +151,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Fornecedores []*RequestResponseBodyFornecedor `json:"Fornecedores,omitempty"` //
+	Fornecedores *[]RequestResponseBodyFornecedor `json:"Fornecedores,omitempty"` //
 }
 
 type RequestResponseBodyFornecedor struct {
-	CodFornecedor int    `json:"CodFornecedor,omitempty"` // Código do fornecedor.
-	Nome          string `json:"Nome,omitempty"`          // Nome/Razão Social do fornecedor.
-	NomeFantasia  string `json:"NomeFantasia,omitempty"`  // Nome de fantasia do fornecedor.
+	CodFornecedor *int    `json:"CodFornecedor,omitempty"` // Código do fornecedor.
+	Nome          *string `json:"Nome,omitempty"`          // Nome/Razão Social do fornecedor.
+	NomeFantasia  *string `json:"NomeFantasia,omitempty"`  // Nome de fantasia do fornecedor.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -144,24 +144,24 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodAnexo      int                           `json:"CodAnexo,omitempty"`      // Código do anexo.
-	TipoAnexo     int                           `json:"TipoAnexo,omitempty"`     // Código do cadastro de anexo que indica o tipo dos arquivos.
-	TipoOrigem    string                        `json:"TipoOrigem,omitempty"`    // Código do cadastro de origem vinculado ao anexo.
-	CodOrigem     int                           `json:"CodOrigem,omitempty"`     // Código do cadastro de origem vinculado ao anexo.
-	SubCodOrigem  string                        `json:"SubCodOrigem,omitempty"`  // Subcódigo do cadastro de origem vinculado ao anexo.
-	Descricao     string                        `json:"Descricao,omitempty"`     // Descrição do Anexo.
-	DataAlteracao string                        `json:"DataAlteracao,omitempty"` // Data da última alteração do anexo.
-	EnviaSite     string                        `json:"EnviaSite,omitempty"`     // Habilitado para enviar para o site.
-	DataEnviaSite string                        `json:"DataEnviaSite,omitempty"` // Data prevista para enviar para o site.
-	TotalArquivos int                           `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
-	Arquivos      []*RequestResponseBodyArquivo `json:"Arquivos,omitempty"`      //
+	CodAnexo      *int                          `json:"CodAnexo,omitempty"`      // Código do anexo.
+	TipoAnexo     *int                          `json:"TipoAnexo,omitempty"`     // Código do cadastro de anexo que indica o tipo dos arquivos.
+	TipoOrigem    *string                       `json:"TipoOrigem,omitempty"`    // Código do cadastro de origem vinculado ao anexo.
+	CodOrigem     *int                          `json:"CodOrigem,omitempty"`     // Código do cadastro de origem vinculado ao anexo.
+	SubCodOrigem  *string                       `json:"SubCodOrigem,omitempty"`  // Subcódigo do cadastro de origem vinculado ao anexo.
+	Descricao     *string                       `json:"Descricao,omitempty"`     // Descrição do Anexo.
+	DataAlteracao *string                       `json:"DataAlteracao,omitempty"` // Data da última alteração do anexo.
+	EnviaSite     *string                       `json:"EnviaSite,omitempty"`     // Habilitado para enviar para o site.
+	DataEnviaSite *string                       `json:"DataEnviaSite,omitempty"` // Data prevista para enviar para o site.
+	TotalArquivos *int                          `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
+	Arquivos      *[]RequestResponseBodyArquivo `json:"Arquivos,omitempty"`      //
 }
 
 type RequestResponseBodyArquivo struct {
-	ArquivoNome     string `json:"ArquivoNome,omitempty"`     // Nome do arquivo.
-	ArquivoTamanho  string `json:"ArquivoTamanho,omitempty"`  // Tamanho do arquivo em bytes.
-	ArquivoDataHora string `json:"ArquivoDataHora,omitempty"` // Data e hora da última modificação do arquivo no formato: AAAA-MM-DD-hh-mm-ss.
-	URL             string `json:"URL,omitempty"`             // URL para download do arquivo.
+	ArquivoNome     *string `json:"ArquivoNome,omitempty"`     // Nome do arquivo.
+	ArquivoTamanho  *string `json:"ArquivoTamanho,omitempty"`  // Tamanho do arquivo em bytes.
+	ArquivoDataHora *string `json:"ArquivoDataHora,omitempty"` // Data e hora da última modificação do arquivo no formato: AAAA-MM-DD-hh-mm-ss.
+	URL             *string `json:"URL,omitempty"`             // URL para download do arquivo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

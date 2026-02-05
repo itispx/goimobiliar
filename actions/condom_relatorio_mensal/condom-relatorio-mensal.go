@@ -148,97 +148,97 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Competencia  string                            `json:"Competencia,omitempty"`  // Competência do relatório mensal a gerar.
+	Competencia  *string                           `json:"Competencia,omitempty"`  // Competência do relatório mensal a gerar.
 	InfosGerais  *RequestResponseBodyInfosGerais   `json:"InfosGerais,omitempty"`  //
 	InfosExtras  *RequestResponseBodyInfosExtras   `json:"InfosExtras,omitempty"`  // Indica para gerar informações extras.
-	TiposBoletos []*RequestResponseBodyTipoBoletos `json:"TiposBoletos,omitempty"` //
+	TiposBoletos *[]RequestResponseBodyTipoBoletos `json:"TiposBoletos,omitempty"` //
 }
 
 type RequestResponseBodyInfosGerais struct {
-	QtdCondomAtivos        int     `json:"QtdCondomAtivos,omitempty"`        // Quantidade de condomínios Ativos.
-	QtdCondomInativos      int     `json:"QtdCondomInativos,omitempty"`      // Quantidade de condomínios inativos:
-	QtdEconomAtivas        int     `json:"QtdEconomAtivas,omitempty"`        // Quantidade de economias ativas.
-	QtdEconomInativas      int     `json:"QtdEconomInativas,omitempty"`      // Quantidade de economias inativas.
-	EconomCaptadas         int     `json:"EconomCaptadas,omitempty"`         // Quantidade de economias captadas.
-	EconomRetiradas        int     `json:"EconomRetiradas,omitempty"`        // Quantidade de economias retiradas.
-	QtdBoletosEmitidos     int     `json:"QtdBoletosEmitidos,omitempty"`     // Quantidade de boletos emitidos.
-	VlrBoletosEmitidos     float64 `json:"VlrBoletosEmitidos,omitempty"`     // Valor total dos boletos.
-	VlrTarifas             float64 `json:"VlrTarifas,omitempty"`             // Valor total da tarifa boleto.
-	VlrTaxaCondom          float64 `json:"VlrTaxaCondom,omitempty"`          // Valor total da taxa de condomínio.
-	VlrSegConteudoEmitido  float64 `json:"VlrSegConteudoEmitido,omitempty"`  // Valor total de seguro conteúdo emitido.
-	VlrSegConteudoPago     float64 `json:"VlrSegConteudoPago,omitempty"`     // Valor total de seguro conteúdo pago.
-	VlrSegConteudoRecebido float64 `json:"VlrSegConteudoRecebido,omitempty"` // Valor recebido de seguro conteúdo no mês.
-	QtdBoletosNaoPagos     int     `json:"QtdBoletosNaoPagos,omitempty"`     // Quantidade de boletos não pagos.
-	VlrBoletosNaoPagos     float64 `json:"VlrBoletosNaoPagos,omitempty"`     // Valor total de boletos não pagos.
+	QtdCondomAtivos        *int     `json:"QtdCondomAtivos,omitempty"`        // Quantidade de condomínios Ativos.
+	QtdCondomInativos      *int     `json:"QtdCondomInativos,omitempty"`      // Quantidade de condomínios inativos:
+	QtdEconomAtivas        *int     `json:"QtdEconomAtivas,omitempty"`        // Quantidade de economias ativas.
+	QtdEconomInativas      *int     `json:"QtdEconomInativas,omitempty"`      // Quantidade de economias inativas.
+	EconomCaptadas         *int     `json:"EconomCaptadas,omitempty"`         // Quantidade de economias captadas.
+	EconomRetiradas        *int     `json:"EconomRetiradas,omitempty"`        // Quantidade de economias retiradas.
+	QtdBoletosEmitidos     *int     `json:"QtdBoletosEmitidos,omitempty"`     // Quantidade de boletos emitidos.
+	VlrBoletosEmitidos     *float64 `json:"VlrBoletosEmitidos,omitempty"`     // Valor total dos boletos.
+	VlrTarifas             *float64 `json:"VlrTarifas,omitempty"`             // Valor total da tarifa boleto.
+	VlrTaxaCondom          *float64 `json:"VlrTaxaCondom,omitempty"`          // Valor total da taxa de condomínio.
+	VlrSegConteudoEmitido  *float64 `json:"VlrSegConteudoEmitido,omitempty"`  // Valor total de seguro conteúdo emitido.
+	VlrSegConteudoPago     *float64 `json:"VlrSegConteudoPago,omitempty"`     // Valor total de seguro conteúdo pago.
+	VlrSegConteudoRecebido *float64 `json:"VlrSegConteudoRecebido,omitempty"` // Valor recebido de seguro conteúdo no mês.
+	QtdBoletosNaoPagos     *int     `json:"QtdBoletosNaoPagos,omitempty"`     // Quantidade de boletos não pagos.
+	VlrBoletosNaoPagos     *float64 `json:"VlrBoletosNaoPagos,omitempty"`     // Valor total de boletos não pagos.
 }
 
 type RequestResponseBodyInfosExtras struct {
-	VlrTaxaAReceberTotal          float64 `json:"VlrTaxaAReceberTotal,omitempty"`          // Valor total a receber de taxa de todas as economias ativas.
-	QtdEconomAdimplentes          int     `json:"QtdEconomAdimplentes,omitempty"`          // Quantidade total de economias adimplentes.
-	VlrTaxaAReceberAdimplentes    float64 `json:"VlrTaxaAReceberAdimplentes,omitempty"`    // Valor total a receber em taxas de todas as economias adimplentes.
-	QtdEconomInadimplentes        int     `json:"QtdEconomInadimplentes,omitempty"`        // Quantidade de economias inadimplentes no momento.
-	VlrEconomInadimplentes        float64 `json:"VlrEconomInadimplentes,omitempty"`        // Valor total a receber de economias inadimplentes.
-	QtdEconomInadimpExtraJudicial int     `json:"QtdEconomInadimpExtraJudicial,omitempty"` // Quantidade total de economias inadimplentes ? Ação Extra Judicial.
-	VlrEconomInadimpExtraJudicial float64 `json:"VlrEconomInadimpExtraJudicial,omitempty"` // Valor total a receber das economias inadimplentes ? Ação Extra Judicial.
-	QtdEconomInadimpJudicial      int     `json:"QtdEconomInadimpJudicial,omitempty"`      // Quantidade de economias inadimplentes - Ação Judicial.
-	VlrEconomInadimpJudicial      float64 `json:"VlrEconomInadimpJudicial,omitempty"`      // Valor total a receber das economias inadimplentes ? Ação Judicial.
+	VlrTaxaAReceberTotal          *float64 `json:"VlrTaxaAReceberTotal,omitempty"`          // Valor total a receber de taxa de todas as economias ativas.
+	QtdEconomAdimplentes          *int     `json:"QtdEconomAdimplentes,omitempty"`          // Quantidade total de economias adimplentes.
+	VlrTaxaAReceberAdimplentes    *float64 `json:"VlrTaxaAReceberAdimplentes,omitempty"`    // Valor total a receber em taxas de todas as economias adimplentes.
+	QtdEconomInadimplentes        *int     `json:"QtdEconomInadimplentes,omitempty"`        // Quantidade de economias inadimplentes no momento.
+	VlrEconomInadimplentes        *float64 `json:"VlrEconomInadimplentes,omitempty"`        // Valor total a receber de economias inadimplentes.
+	QtdEconomInadimpExtraJudicial *int     `json:"QtdEconomInadimpExtraJudicial,omitempty"` // Quantidade total de economias inadimplentes ? Ação Extra Judicial.
+	VlrEconomInadimpExtraJudicial *float64 `json:"VlrEconomInadimpExtraJudicial,omitempty"` // Valor total a receber das economias inadimplentes ? Ação Extra Judicial.
+	QtdEconomInadimpJudicial      *int     `json:"QtdEconomInadimpJudicial,omitempty"`      // Quantidade de economias inadimplentes - Ação Judicial.
+	VlrEconomInadimpJudicial      *float64 `json:"VlrEconomInadimpJudicial,omitempty"`      // Valor total a receber das economias inadimplentes ? Ação Judicial.
 }
 
 type RequestResponseBodyTipoBoletos struct {
-	Descricao   string                                     `json:"Descricao,omitempty"`   // Tipos de boletos.
-	Bancos      []*RequestResponseBodyTipoBoletosBancos    `json:"Bancos,omitempty"`      //
+	Descricao   *string                                    `json:"Descricao,omitempty"`   // Tipos de boletos.
+	Bancos      *[]RequestResponseBodyTipoBoletosBancos    `json:"Bancos,omitempty"`      //
 	ResumoGeral *RequestResponseBodyTipoBoletosResumoGeral `json:"ResumoGeral,omitempty"` //
 }
 
 type RequestResponseBodyTipoBoletosBancos struct {
-	CodBanco      int                                            `json:"CodBanco,omitempty"`      // Código do banco.
-	NomeBanco     string                                         `json:"NomeBanco,omitempty"`     // Nome do banco.
-	ContaCorrente string                                         `json:"ContaCorrente,omitempty"` // Conta Corrente.
-	Boletos       []*RequestResponseBodyTipoBoletosBancosBoletos `json:"Boletos,omitempty"`       //
+	CodBanco      *int                                           `json:"CodBanco,omitempty"`      // Código do banco.
+	NomeBanco     *string                                        `json:"NomeBanco,omitempty"`     // Nome do banco.
+	ContaCorrente *string                                        `json:"ContaCorrente,omitempty"` // Conta Corrente.
+	Boletos       *[]RequestResponseBodyTipoBoletosBancosBoletos `json:"Boletos,omitempty"`       //
 	Totais        *RequestResponseBodyTipoBoletosBancosTotais    `json:"Totais,omitempty"`        //
 }
 
 type RequestResponseBodyTipoBoletosBancosBoletos struct {
-	Data      string  `json:"Data,omitempty"`      // Data.
-	QtdTotal  int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
-	VlrTotal  float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
-	QtdNormal int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
-	VlrNormal float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
-	QtdRetido int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
-	VlrRetido float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
+	Data      *string  `json:"Data,omitempty"`      // Data.
+	QtdTotal  *int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
+	VlrTotal  *float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
+	QtdNormal *int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
+	VlrNormal *float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
+	QtdRetido *int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
+	VlrRetido *float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
 }
 
 type RequestResponseBodyTipoBoletosBancosTotais struct {
-	QtdTotal  int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
-	VlrTotal  float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
-	QtdNormal int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
-	VlrNormal float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
-	QtdRetido int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
-	VlrRetido float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
+	QtdTotal  *int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
+	VlrTotal  *float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
+	QtdNormal *int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
+	VlrNormal *float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
+	QtdRetido *int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
+	VlrRetido *float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
 }
 
 type RequestResponseBodyTipoBoletosResumoGeral struct {
-	Boletos []*RequestResponseBodyTipoBoletosResumoGeralBoletos //
+	Boletos *[]RequestResponseBodyTipoBoletosResumoGeralBoletos //
 	Totais  *RequestResponseBodyTipoBoletosResumoGeralTotais    //
 }
 
 type RequestResponseBodyTipoBoletosResumoGeralBoletos struct {
-	Data      string  `json:"Data,omitempty"`      // Data.
-	QtdTotal  int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
-	VlrTotal  float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
-	QtdNormal int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
-	VlrNormal float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
-	QtdRetido int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
-	VlrRetido float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
+	Data      *string  `json:"Data,omitempty"`      // Data.
+	QtdTotal  *int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
+	VlrTotal  *float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
+	QtdNormal *int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
+	VlrNormal *float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
+	QtdRetido *int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
+	VlrRetido *float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
 }
 
 type RequestResponseBodyTipoBoletosResumoGeralTotais struct {
-	QtdTotal  int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
-	VlrTotal  float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
-	QtdNormal int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
-	VlrNormal float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
-	QtdRetido int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
-	VlrRetido float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
+	QtdTotal  *int     `json:"QtdTotal,omitempty"`  // Quantidade de boletos emitidos no dia.
+	VlrTotal  *float64 `json:"VlrTotal,omitempty"`  // Valor total de boletos emitidos no dia.
+	QtdNormal *int     `json:"QtdNormal,omitempty"` // Quantidade de boletos normais/extras no dia.
+	VlrNormal *float64 `json:"VlrNormal,omitempty"` // Valor dos boletos normais/extras no dia.
+	QtdRetido *int     `json:"QtdRetido,omitempty"` // Quantidades de boletos rettidos no dia.
+	VlrRetido *float64 `json:"VlrRetido,omitempty"` // Valor dos boletos retidos no dia.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

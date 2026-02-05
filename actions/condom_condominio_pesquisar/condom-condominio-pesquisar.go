@@ -149,13 +149,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Condominios []*RequestResponseBodyCondominio `json:"Condominios,omitempty"` //
+	Condominios *[]RequestResponseBodyCondominio `json:"Condominios,omitempty"` //
 }
 
 type RequestResponseBodyCondominio struct {
-	CodCondominio  int    `json:"CodCondominio,omitempty"`  // Código do condomínio.
-	NomeCondominio string `json:"NomeCondominio,omitempty"` // Nome do condomínio.
-	Endereco       string `json:"Endereco,omitempty"`       // Endereço do condomínio.
+	CodCondominio  *int    `json:"CodCondominio,omitempty"`  // Código do condomínio.
+	NomeCondominio *string `json:"NomeCondominio,omitempty"` // Nome do condomínio.
+	Endereco       *string `json:"Endereco,omitempty"`       // Endereço do condomínio.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

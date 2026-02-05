@@ -146,74 +146,74 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodCondominio     int                               `json:"CodCondominio,omitempty"`     // Código do condomínio.
-	Competencia       string                            `json:"Competencia,omitempty"`       // Competência do extrato a gerar.
-	Contas            []*RequestResponseBodyConta       `json:"Contas,omitempty"`            // Informações de cada bloco/conta.
-	ResumoSaldos      []*RequestResponseBodyResumoSaldo `json:"ResumoSaldos,omitempty"`      //
-	SaldoGeral        float64                           `json:"SaldoGeral,omitempty"`        // Saldo geral do condomínio.
-	DataProcessamento string                            `json:"DataProcessamento,omitempty"` // Data e hora do processamento das informações.
+	CodCondominio     *int                              `json:"CodCondominio,omitempty"`     // Código do condomínio.
+	Competencia       *string                           `json:"Competencia,omitempty"`       // Competência do extrato a gerar.
+	Contas            *[]RequestResponseBodyConta       `json:"Contas,omitempty"`            // Informações de cada bloco/conta.
+	ResumoSaldos      *[]RequestResponseBodyResumoSaldo `json:"ResumoSaldos,omitempty"`      //
+	SaldoGeral        *float64                          `json:"SaldoGeral,omitempty"`        // Saldo geral do condomínio.
+	DataProcessamento *string                           `json:"DataProcessamento,omitempty"` // Data e hora do processamento das informações.
 }
 
 type RequestResponseBodyConta struct {
-	CodBloco           string                                      `json:"CodBloco,omitempty"`  // Código de bloco/conta.
-	NomeBloco          string                                      `json:"NomeBloco,omitempty"` // Nome de bloco/conta.
-	LancamentosCC      []*RequestResponseBodyContaLancamentoCC     // Lançamentos em conta corrente.
-	LancamentosFuturos []*RequestResponseBodyContaLancamentoFuturo // Lançamentos com vencimentos futuros.
-	Resumos            []*RequestResponseBodyContaResumo           //
+	CodBloco           *string                                     `json:"CodBloco,omitempty"`  // Código de bloco/conta.
+	NomeBloco          *string                                     `json:"NomeBloco,omitempty"` // Nome de bloco/conta.
+	LancamentosCC      *[]RequestResponseBodyContaLancamentoCC     // Lançamentos em conta corrente.
+	LancamentosFuturos *[]RequestResponseBodyContaLancamentoFuturo // Lançamentos com vencimentos futuros.
+	Resumos            *[]RequestResponseBodyContaResumo           //
 	ResumoConta        *RequestResponseBodyContaResumoConta        // Resumo sintético dos lançamentos deste bloco/conta.
-	ControleBoletos    []*RequestResponseBodyContaControleBoletos  //
+	ControleBoletos    *[]RequestResponseBodyContaControleBoletos  //
 }
 
 type RequestResponseBodyContaLancamentoCC struct {
-	Data         string  `json:"Data,omitempty"`         // Data do lançamento.
-	Historico    string  `json:"Historico,omitempty"`    // Histórico do lançamento.
-	ValorDebito  float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
-	ValorCredito float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
-	Saldo        float64 `json:"Saldo,omitempty"`        // Saldo resultante do lançamento.
-	NumeroLancto int     `json:"NumeroLancto,omitempty"` // Número do lançamento.
-	CodTaxa      int     `json:"CodTaxa,omitempty"`      // Código da taxa deste lançamento.
+	Data         *string  `json:"Data,omitempty"`         // Data do lançamento.
+	Historico    *string  `json:"Historico,omitempty"`    // Histórico do lançamento.
+	ValorDebito  *float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
+	ValorCredito *float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
+	Saldo        *float64 `json:"Saldo,omitempty"`        // Saldo resultante do lançamento.
+	NumeroLancto *int     `json:"NumeroLancto,omitempty"` // Número do lançamento.
+	CodTaxa      *int     `json:"CodTaxa,omitempty"`      // Código da taxa deste lançamento.
 }
 
 type RequestResponseBodyContaLancamentoFuturo struct {
-	Data         string  `json:"Data,omitempty"`         // Data do lançamento.
-	Historico    string  `json:"Historico,omitempty"`    // Histórico do lançamento.
-	ValorDebito  float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
-	ValorCredito float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
-	Saldo        float64 `json:"Saldo,omitempty"`        // Saldo resultante do lançamento.
-	NumeroLancto int     `json:"NumeroLancto,omitempty"` // Número do lançamento.
-	CodTaxa      int     `json:"CodTaxa,omitempty"`      // Código da taxa deste lançamento.
+	Data         *string  `json:"Data,omitempty"`         // Data do lançamento.
+	Historico    *string  `json:"Historico,omitempty"`    // Histórico do lançamento.
+	ValorDebito  *float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
+	ValorCredito *float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
+	Saldo        *float64 `json:"Saldo,omitempty"`        // Saldo resultante do lançamento.
+	NumeroLancto *int     `json:"NumeroLancto,omitempty"` // Número do lançamento.
+	CodTaxa      *int     `json:"CodTaxa,omitempty"`      // Código da taxa deste lançamento.
 }
 
 type RequestResponseBodyContaResumo struct {
-	Titulo            string                                            `json:"Titulo,omitempty"`            // Título do resumo de lançamentos.
-	LancamentosResumo []*RequestResponseBodyContaResumoLancamentoResumo `json:"LancamentosResumo,omitempty"` // Lançamentos de resumo.
-	SubTotal          float64                                           `json:"SubTotal,omitempty"`          //Subtotal dos lançamentos.
+	Titulo            *string                                           `json:"Titulo,omitempty"`            // Título do resumo de lançamentos.
+	LancamentosResumo *[]RequestResponseBodyContaResumoLancamentoResumo `json:"LancamentosResumo,omitempty"` // Lançamentos de resumo.
+	SubTotal          *float64                                          `json:"SubTotal,omitempty"`          //Subtotal dos lançamentos.
 }
 
 type RequestResponseBodyContaResumoLancamentoResumo struct {
-	Historico    string  `json:"Historico,omitempty"`    // Histórico do lançamento.
-	ValorDebito  float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
-	ValorCredito float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
+	Historico    *string  `json:"Historico,omitempty"`    // Histórico do lançamento.
+	ValorDebito  *float64 `json:"ValorDebito,omitempty"`  // Valor de débito do lançamento.
+	ValorCredito *float64 `json:"ValorCredito,omitempty"` // Valor de crébito do lançamento.
 }
 
 type RequestResponseBodyContaResumoConta struct {
-	SaldoAnterior float64 `json:"SaldoAnterior,omitempty"` // Saldo de bloco/conta anterior aos lançamentos.
-	Despesa       float64 `json:"Despesa,omitempty"`       // Valor total das despesas.
-	Receita       float64 `json:"Receita,omitempty"`       // Valor total das receitas.
-	SaldoFinal    float64 `json:"SaldoFinal,omitempty"`    // Saldo final de bloco/conta após os lançamentos.
+	SaldoAnterior *float64 `json:"SaldoAnterior,omitempty"` // Saldo de bloco/conta anterior aos lançamentos.
+	Despesa       *float64 `json:"Despesa,omitempty"`       // Valor total das despesas.
+	Receita       *float64 `json:"Receita,omitempty"`       // Valor total das receitas.
+	SaldoFinal    *float64 `json:"SaldoFinal,omitempty"`    // Saldo final de bloco/conta após os lançamentos.
 }
 
 type RequestResponseBodyContaControleBoletos struct {
-	QtdeBoletos  int     `json:"QtdeBoletos,omitempty"`  // Quantidade de boletos.
-	ValorBoletos float64 `json:"ValorBoletos,omitempty"` // Valor dos boletos.
-	Percentual   float64 `json:"Percentual,omitempty"`   // Percentual dos boletos em relação ao total.
-	Controle     string  `json:"Controle,omitempty"`     // Identificação do controle.
+	QtdeBoletos  *int     `json:"QtdeBoletos,omitempty"`  // Quantidade de boletos.
+	ValorBoletos *float64 `json:"ValorBoletos,omitempty"` // Valor dos boletos.
+	Percentual   *float64 `json:"Percentual,omitempty"`   // Percentual dos boletos em relação ao total.
+	Controle     *string  `json:"Controle,omitempty"`     // Identificação do controle.
 }
 
 type RequestResponseBodyResumoSaldo struct {
-	CodBloco   string  `json:"CodBloco,omitempty"`   // Código de bloco/conta.
-	NomeBloco  string  `json:"NomeBloco,omitempty"`  // Nome de bloco/conta.
-	SaldoBloco float64 `json:"SaldoBloco,omitempty"` // Saldo resultante dos lançamentos.
+	CodBloco   *string  `json:"CodBloco,omitempty"`   // Código de bloco/conta.
+	NomeBloco  *string  `json:"NomeBloco,omitempty"`  // Nome de bloco/conta.
+	SaldoBloco *float64 `json:"SaldoBloco,omitempty"` // Saldo resultante dos lançamentos.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

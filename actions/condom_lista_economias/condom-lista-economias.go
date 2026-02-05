@@ -146,67 +146,67 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodCondominio    int                         `json:"CodCondominio,omitempty"`    // Código do condomínio.
-	NomeCondominio   string                      `json:"NomeCondominio,omitempty"`   // Nome do condomínio.
-	CodBlocoBase     string                      `json:"CodBlocoBase,omitempty"`     // Bloco base/principal do condomínio.
-	CodFilial        int                         `json:"CodFilial,omitempty"`        // Código da filial.
-	DiaVencimentoDoc int                         `json:"DiaVencimentoDoc,omitempty"` // Dia de vencimento do boleto de condomínio.
-	Assessor         string                      `json:"Assessor,omitempty"`         // Código de usuário do assessor do condomínio.
-	AssessorEmail    string                      `json:"AssessorEmail,omitempty"`    // Email do assessor do condomínio.
-	AssessorAgencia  string                      `json:"AssessorAgencia,omitempty"`  // Agência do assessor do condomínio.
-	TotaldeEconomias int                         `json:"TotaldeEconomias,omitempty"` // Total de economias do condomínio.
-	TotaldeBlocos    int                         `json:"TotaldeBlocos,omitempty"`    // Total de blocos do condomínio.
-	Blocos           []*RequestResponseBodyBloco `json:"Blocos,omitempty"`           //
+	CodCondominio    *int                        `json:"CodCondominio,omitempty"`    // Código do condomínio.
+	NomeCondominio   *string                     `json:"NomeCondominio,omitempty"`   // Nome do condomínio.
+	CodBlocoBase     *string                     `json:"CodBlocoBase,omitempty"`     // Bloco base/principal do condomínio.
+	CodFilial        *int                        `json:"CodFilial,omitempty"`        // Código da filial.
+	DiaVencimentoDoc *int                        `json:"DiaVencimentoDoc,omitempty"` // Dia de vencimento do boleto de condomínio.
+	Assessor         *string                     `json:"Assessor,omitempty"`         // Código de usuário do assessor do condomínio.
+	AssessorEmail    *string                     `json:"AssessorEmail,omitempty"`    // Email do assessor do condomínio.
+	AssessorAgencia  *string                     `json:"AssessorAgencia,omitempty"`  // Agência do assessor do condomínio.
+	TotaldeEconomias *int                        `json:"TotaldeEconomias,omitempty"` // Total de economias do condomínio.
+	TotaldeBlocos    *int                        `json:"TotaldeBlocos,omitempty"`    // Total de blocos do condomínio.
+	Blocos           *[]RequestResponseBodyBloco `json:"Blocos,omitempty"`           //
 }
 
 type RequestResponseBodyBloco struct {
-	CodBloco      string                              `json:"CodBloco"`            // Código do bloco do condomínio.
-	NomeBloco     string                              `json:"NomeBloco"`           // Nome de bloco/conta.
-	QtdeEconomias int                                 `json:"QtdeEconomias"`       // Total de economias do bloco.
-	Endereco      string                              `json:"Endereco"`            // Endereço do condomínio.
-	Bairro        string                              `json:"Bairro"`              // Bairro do endereço.
-	CEP           int                                 `json:"CEP"`                 // Número do CEP.
-	NomeSindico   string                              `json:"NomeSindico"`         // Nome do síndico.
-	EmailSindico  string                              `json:"EmailSindico"`        // E-mail do síndico.
-	CPFSindico    string                              `json:"CPFSindico"`          // CPF do síndico.
-	ValorGas      float64                             `json:"ValorGas"`            // Valor de consumo de gas.
-	ValorAgua     float64                             `json:"ValorAgua"`           // Valor de consumo de água.
-	Economias     []*RequestResponseBodyBlocoEconomia `json:"Economias,omitempty"` //
-	Conselho      []*RequestResponseBodyBlocoConselho `json:"Conselho,omitempty"`  //
+	CodBloco      *string                             `json:"CodBloco"`            // Código do bloco do condomínio.
+	NomeBloco     *string                             `json:"NomeBloco"`           // Nome de bloco/conta.
+	QtdeEconomias *int                                `json:"QtdeEconomias"`       // Total de economias do bloco.
+	Endereco      *string                             `json:"Endereco"`            // Endereço do condomínio.
+	Bairro        *string                             `json:"Bairro"`              // Bairro do endereço.
+	CEP           *int                                `json:"CEP"`                 // Número do CEP.
+	NomeSindico   *string                             `json:"NomeSindico"`         // Nome do síndico.
+	EmailSindico  *string                             `json:"EmailSindico"`        // E-mail do síndico.
+	CPFSindico    *string                             `json:"CPFSindico"`          // CPF do síndico.
+	ValorGas      *float64                            `json:"ValorGas"`            // Valor de consumo de gas.
+	ValorAgua     *float64                            `json:"ValorAgua"`           // Valor de consumo de água.
+	Economias     *[]RequestResponseBodyBlocoEconomia `json:"Economias,omitempty"` //
+	Conselho      *[]RequestResponseBodyBlocoConselho `json:"Conselho,omitempty"`  //
 }
 
 type RequestResponseBodyBlocoEconomia struct {
-	IdEconomia         int                                         `json:"IdEconomia,omitempty"`         // Chave principal da economia/unidade.
-	CodEconomia        string                                      `json:"CodEconomia,omitempty"`        // Código da economia/unidade no bloco.
-	CodPessoaCondomino int                                         `json:"CodPessoaCondomino,omitempty"` // Código de pessoa do condômino desta economia/unidade.
-	Nome               string                                      `json:"Nome,omitempty"`               // Nome do condômino.
-	Celular            string                                      `json:"Celular,omitempty"`            // Número de celular do condomino.
-	Fracao             float64                                     `json:"Fracao,omitempty"`             // Fracao da economia/unidade.
-	Email              string                                      `json:"Email,omitempty"`              // E-mail do condômino.
-	Locatario          string                                      `json:"Locatario,omitempty"`          // Nome do locatário.
-	Contato            string                                      `json:"Contato,omitempty"`            // Informações de contato.
-	CpfCnpj            string                                      `json:"CpfCnpj,omitempty"`            // CPF do condômino.
-	Enderecos          []*RequestResponseBodyBlocoEconomiaEndereco `json:"Enderecos,omitempty"`          //
+	IdEconomia         *int                                        `json:"IdEconomia,omitempty"`         // Chave principal da economia/unidade.
+	CodEconomia        *string                                     `json:"CodEconomia,omitempty"`        // Código da economia/unidade no bloco.
+	CodPessoaCondomino *int                                        `json:"CodPessoaCondomino,omitempty"` // Código de pessoa do condômino desta economia/unidade.
+	Nome               *string                                     `json:"Nome,omitempty"`               // Nome do condômino.
+	Celular            *string                                     `json:"Celular,omitempty"`            // Número de celular do condomino.
+	Fracao             *float64                                    `json:"Fracao,omitempty"`             // Fracao da economia/unidade.
+	Email              *string                                     `json:"Email,omitempty"`              // E-mail do condômino.
+	Locatario          *string                                     `json:"Locatario,omitempty"`          // Nome do locatário.
+	Contato            *string                                     `json:"Contato,omitempty"`            // Informações de contato.
+	CpfCnpj            *string                                     `json:"CpfCnpj,omitempty"`            // CPF do condômino.
+	Enderecos          *[]RequestResponseBodyBlocoEconomiaEndereco `json:"Enderecos,omitempty"`          //
 }
 
 type RequestResponseBodyBlocoEconomiaEndereco struct {
-	TipoEndereco string `json:"TipoEndereco,omitempty"` // Tipo do enderereco do condômino.
-	Enderereco   string `json:"Enderereco,omitempty"`   // Enderereco do condômino.
-	Cidade       string `json:"Cidade,omitempty"`       // Cidade do endereço.
-	Bairro       string `json:"Bairro,omitempty"`       // Bairro do endereço.
-	CEP          int    `json:"CEP,omitempty"`          // Número do CEP.
-	UF           string `json:"UF,omitempty"`           // Sigla da Unidade Federativa do endereço.
-	Telefone1    string `json:"Telefone1,omitempty"`    // Número de telefone principal.
-	Telefone2    string `json:"Telefone2,omitempty"`    // Número de telefone alternativo.
+	TipoEndereco *string `json:"TipoEndereco,omitempty"` // Tipo do enderereco do condômino.
+	Enderereco   *string `json:"Enderereco,omitempty"`   // Enderereco do condômino.
+	Cidade       *string `json:"Cidade,omitempty"`       // Cidade do endereço.
+	Bairro       *string `json:"Bairro,omitempty"`       // Bairro do endereço.
+	CEP          *int    `json:"CEP,omitempty"`          // Número do CEP.
+	UF           *string `json:"UF,omitempty"`           // Sigla da Unidade Federativa do endereço.
+	Telefone1    *string `json:"Telefone1,omitempty"`    // Número de telefone principal.
+	Telefone2    *string `json:"Telefone2,omitempty"`    // Número de telefone alternativo.
 }
 
 type RequestResponseBodyBlocoConselho struct {
-	CodPessoa           int    `json:"CodPessoa,omitempty"`           // Código da pessoa.
-	Cargo               string `json:"Cargo,omitempty"`               // Cargo no conselho de condomínio.
-	InicioMandato       string `json:"InicioMandato,omitempty"`       // Data do início do mandato.
-	FinalMandato        string `json:"FinalMandato,omitempty"`        // Data do final de mandato.
-	SindicoProfissional string `json:"SindicoProfissional,omitempty"` // Indicação de síndico profissional.
-	CodFornecedor       int    `json:"CodFornecedor,omitempty"`       // Código de fornecedor (se for o caso).
+	CodPessoa           *int    `json:"CodPessoa,omitempty"`           // Código da pessoa.
+	Cargo               *string `json:"Cargo,omitempty"`               // Cargo no conselho de condomínio.
+	InicioMandato       *string `json:"InicioMandato,omitempty"`       // Data do início do mandato.
+	FinalMandato        *string `json:"FinalMandato,omitempty"`        // Data do final de mandato.
+	SindicoProfissional *string `json:"SindicoProfissional,omitempty"` // Indicação de síndico profissional.
+	CodFornecedor       *int    `json:"CodFornecedor,omitempty"`       // Código de fornecedor (se for o caso).
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

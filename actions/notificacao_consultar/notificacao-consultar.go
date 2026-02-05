@@ -144,19 +144,19 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Notificacoes []*RequestResponseBodyNotificacao `json:"Notificacoes,omitempty"` //
+	Notificacoes *[]RequestResponseBodyNotificacao `json:"Notificacoes,omitempty"` //
 }
 
 type RequestResponseBodyNotificacao struct {
-	NomeNotificacao  string `json:"Nome_Notificacao,omitempty"`  // Nome da notificação.
-	DescrNotificacao string `json:"Descr_Notificacao,omitempty"` // Descrição da notificação.
-	Ativo            string `json:"Ativo,omitempty"`             // Status da notificação.
-	Destinatario     string `json:"Destinatario,omitempty"`      // Destinatário configurado.
-	Tipo             string `json:"Tipo,omitempty"`              // Modo de execução.
-	Canal            string `json:"Canal,omitempty"`             // Canal configurado para envio.
-	Frequencia       string `json:"Frequencia,omitempty"`        // Frequencia de envio (atraso).
-	HabilitarDefault string `json:"HabilitarDefault,omitempty"`  // Configuração padrão para novos cadastros.
-	Id               int    `json:"Id,omitempty"`                // Número da notificação. Se o campo não tiver conteúdo na requisição então será retornada a lista de todas as notificações existentes.
+	NomeNotificacao  *string `json:"Nome_Notificacao,omitempty"`  // Nome da notificação.
+	DescrNotificacao *string `json:"Descr_Notificacao,omitempty"` // Descrição da notificação.
+	Ativo            *string `json:"Ativo,omitempty"`             // Status da notificação.
+	Destinatario     *string `json:"Destinatario,omitempty"`      // Destinatário configurado.
+	Tipo             *string `json:"Tipo,omitempty"`              // Modo de execução.
+	Canal            *string `json:"Canal,omitempty"`             // Canal configurado para envio.
+	Frequencia       *string `json:"Frequencia,omitempty"`        // Frequencia de envio (atraso).
+	HabilitarDefault *string `json:"HabilitarDefault,omitempty"`  // Configuração padrão para novos cadastros.
+	Id               *int    `json:"Id,omitempty"`                // Número da notificação. Se o campo não tiver conteúdo na requisição então será retornada a lista de todas as notificações existentes.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

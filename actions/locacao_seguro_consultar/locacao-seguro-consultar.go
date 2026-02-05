@@ -145,32 +145,32 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Lista []*RequestResponseBodyLista `json:"Lista,omitempty"` //
+	Lista *[]RequestResponseBodyLista `json:"Lista,omitempty"` //
 }
 
 type RequestResponseBodyLista struct {
-	CompetenciaInicial string  `json:"CompetenciaInicial,omitempty"` // Competência inicial da cobrança das parcelas.
-	CobrancaGerada     string  `json:"CobrancaGerada,omitempty"`     // Indica se a lançamento foi gerado no boleto de cobrança para o locatário/proprietário.
-	IdSeguroImovel     int     `json:"IdSeguroImovel,omitempty"`     // ID interno do Imobiliar (é retornado na operação de consulta).
-	TipoSeguro         string  `json:"TipoSeguro,omitempty"`         // Tipo do seguro contratado (Fiança, Incêndio, etc.).
-	VigenciaInicial    string  `json:"VigenciaInicial,omitempty"`    // Data inicial da vigência do seguro contratado.
-	VigenciaFinal      string  `json:"VigenciaFinal,omitempty"`      // Data final da vigência do seguro contratado.
-	Apolice            string  `json:"Apolice,omitempty"`            // Número da apólice.
-	Proposta           string  `json:"Proposta,omitempty"`           // Número da proposta.
-	CodRisco           string  `json:"CodRisco,omitempty"`           //
-	ValorPremioTotal   float64 `json:"ValorPremioTotal,omitempty"`   // Valor total do prêmio a ser pago à seguradora.
-	ValorSegurado      float64 `json:"ValorSegurado,omitempty"`      // Valor segurado contratado.
-	NumeroParcelas     int     `json:"NumeroParcelas,omitempty"`     // Número de parcelas.
-	CodSeguradora      int     `json:"CodSeguradora,omitempty"`      // Código interno da seguradora no Imibiliar.
-	CodCorretor        int     `json:"CodCorretor,omitempty"`        // Código interno da empresa corretora do seguro no Imobiliar.
-	ContasPagarQuitado string  `json:"ContasPagarQuitado,omitempty"` // Número de parcelas.
-	NossoNumero        string  `json:"NossoNumero,omitempty"`        // Número de identificação bancário.
-	CompetenciaParcela string  `json:"CompetenciaParcela,omitempty"` // Competência da parcela.
-	NumeroParcela      int     `json:"NumeroParcela,omitempty"`      // Número da parcela.
-	ValorParcela       float64 `json:"ValorParcela,omitempty"`       // Valor da parcela.
-	Cobrado            string  `json:"Cobrado,omitempty"`            // Se foi cobrado no boleto.
-	NumeroLancto       int     `json:"NumeroLancto,omitempty"`       // Id do lançamento no Contas à Pagar.
-	DataVencimento     string  `json:"DataVencimento,omitempty"`     // Data de vencimento do lançamento.
+	CompetenciaInicial *string  `json:"CompetenciaInicial,omitempty"` // Competência inicial da cobrança das parcelas.
+	CobrancaGerada     *string  `json:"CobrancaGerada,omitempty"`     // Indica se a lançamento foi gerado no boleto de cobrança para o locatário/proprietário.
+	IdSeguroImovel     *int     `json:"IdSeguroImovel,omitempty"`     // ID interno do Imobiliar (é retornado na operação de consulta).
+	TipoSeguro         *string  `json:"TipoSeguro,omitempty"`         // Tipo do seguro contratado (Fiança, Incêndio, etc.).
+	VigenciaInicial    *string  `json:"VigenciaInicial,omitempty"`    // Data inicial da vigência do seguro contratado.
+	VigenciaFinal      *string  `json:"VigenciaFinal,omitempty"`      // Data final da vigência do seguro contratado.
+	Apolice            *string  `json:"Apolice,omitempty"`            // Número da apólice.
+	Proposta           *string  `json:"Proposta,omitempty"`           // Número da proposta.
+	CodRisco           *string  `json:"CodRisco,omitempty"`           //
+	ValorPremioTotal   *float64 `json:"ValorPremioTotal,omitempty"`   // Valor total do prêmio a ser pago à seguradora.
+	ValorSegurado      *float64 `json:"ValorSegurado,omitempty"`      // Valor segurado contratado.
+	NumeroParcelas     *int     `json:"NumeroParcelas,omitempty"`     // Número de parcelas.
+	CodSeguradora      *int     `json:"CodSeguradora,omitempty"`      // Código interno da seguradora no Imibiliar.
+	CodCorretor        *int     `json:"CodCorretor,omitempty"`        // Código interno da empresa corretora do seguro no Imobiliar.
+	ContasPagarQuitado *string  `json:"ContasPagarQuitado,omitempty"` // Número de parcelas.
+	NossoNumero        *string  `json:"NossoNumero,omitempty"`        // Número de identificação bancário.
+	CompetenciaParcela *string  `json:"CompetenciaParcela,omitempty"` // Competência da parcela.
+	NumeroParcela      *int     `json:"NumeroParcela,omitempty"`      // Número da parcela.
+	ValorParcela       *float64 `json:"ValorParcela,omitempty"`       // Valor da parcela.
+	Cobrado            *string  `json:"Cobrado,omitempty"`            // Se foi cobrado no boleto.
+	NumeroLancto       *int     `json:"NumeroLancto,omitempty"`       // Id do lançamento no Contas à Pagar.
+	DataVencimento     *string  `json:"DataVencimento,omitempty"`     // Data de vencimento do lançamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

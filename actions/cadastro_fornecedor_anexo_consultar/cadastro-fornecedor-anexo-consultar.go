@@ -144,16 +144,16 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodFornecedor int                         `json:"CodFornecedor,omitempty"` // Código do fornecedor.
-	Anexos        []*RequestResponseBodyAnexo `json:"Anexos,omitempty"`        //
+	CodFornecedor *int                        `json:"CodFornecedor,omitempty"` // Código do fornecedor.
+	Anexos        *[]RequestResponseBodyAnexo `json:"Anexos,omitempty"`        //
 }
 
 type RequestResponseBodyAnexo struct {
-	Descricao string `json:"Descricao,omitempty"` // Descrição do Anexo.
-	Categoria string `json:"Categoria,omitempty"` // Categoria do Anexo.
-	URL       string `json:"URL,omitempty"`       // URL para download do arquivo.
-	Data      string `json:"Data,omitempty"`      // Data de alteração do arquivo.
-	Tamanho   string `json:"Tamanho,omitempty"`   // Tamanho do arquivos em kilobytes.
+	Descricao *string `json:"Descricao,omitempty"` // Descrição do Anexo.
+	Categoria *string `json:"Categoria,omitempty"` // Categoria do Anexo.
+	URL       *string `json:"URL,omitempty"`       // URL para download do arquivo.
+	Data      *string `json:"Data,omitempty"`      // Data de alteração do arquivo.
+	Tamanho   *string `json:"Tamanho,omitempty"`   // Tamanho do arquivos em kilobytes.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

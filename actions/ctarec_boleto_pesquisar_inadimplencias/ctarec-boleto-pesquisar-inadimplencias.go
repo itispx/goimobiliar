@@ -202,65 +202,65 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Pendentes []*RequestResponseBodyPendente `json:"Pendentes,omitempty"` //
-	Acordo    string                         `json:"acordo,omitempty"`    //
+	Pendentes *[]RequestResponseBodyPendente `json:"Pendentes,omitempty"` //
+	Acordo    *string                        `json:"acordo,omitempty"`    //
 }
 
 type RequestResponseBodyPendente struct {
-	Bairro                  string  `json:"Bairro,omitempty"`                  // Bairro do endereço.
-	Cidade                  string  `json:"Cidade,omitempty"`                  // Cidade do endereço.
-	UF                      string  `json:"UF,omitempty"`                      // Sigla da Unidade Federativa do endereço.
-	CEP                     string  `json:"CEP,omitempty"`                     // Número do CEP.
-	TipoPessoa              string  `json:"TipoPessoa,omitempty"`              // Tipo da pessoa.
-	CpfCnpj                 int     `json:"CpfCnpj,omitempty"`                 // Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
-	Email                   string  `json:"Email,omitempty"`                   // E-mail da pessoa.
-	Telefone                string  `json:"Telefone,omitempty"`                // Número do CEP.
-	Nome                    string  `json:"Nome,omitempty"`                    // Nome da pessoa.
-	CodPessoa               int     `json:"CodPessoa,omitempty"`               // Código de pessoa do sacado.
-	DataVencimento          string  `json:"DataVencimento,omitempty"`          // Data de vencimento do lançamento.
-	Competencia             string  `json:"Competencia,omitempty"`             // Competência do documento no formato 'YYYYMM'.
-	DataCartaInadimplencia1 string  `json:"DataCartaInadimplencia1,omitempty"` // Data carta inadimplencia 1.
-	DataCartaInadimplencia2 string  `json:"DataCartaInadimplencia2,omitempty"` // Data carta inadimplencia 2.
-	DataCartaInadimplencia3 string  `json:"DataCartaInadimplencia3,omitempty"` // Data carta inadimplencia 3.
-	DataJuridico            string  `json:"DataJuridico,omitempty"`            // Data ida para juridico.
-	TipoDocumento           string  `json:"TipoDocumento,omitempty"`           //
-	Nossonumero             string  `json:"Nossonumero,omitempty"`             // Número de identificação bancário.
-	DocCapaId               int     `json:"DocCapaId,omitempty"`               // Código interno do boleto (seu código).
-	DataGeracao             string  `json:"DataGeracao,omitempty"`             // Data geração.
-	BaseJuro                string  `json:"BaseJuro,omitempty"`                // Tipo de cobrança de juros.
-	CodFilial               string  `json:"CodFilial,omitempty"`               //
-	PercJuros               float64 `json:"PercJuros,omitempty"`               // Percentual de juros em caso de atraso de pagamento.
-	PercMulta               float64 `json:"PercMulta,omitempty"`               // Percentual de multa.
-	VlrTaxaPorte            float64 `json:"VlrTaxaPorte,omitempty"`            // 	Valor da taxa porte.
-	MsgCalcCorrecao         string  `json:"MsgCalcCorrecao,omitempty"`         //
-	CodCondominio           int     `json:"CodCondominio,omitempty"`           // Código do condomínio.
-	UsuarioId               string  `json:"UsuarioId,omitempty"`               // Usuário que registrou observação.
-	Economia                string  `json:"Economia,omitempty"`                //
-	IdEconomia              int     `json:"IdEconomia,omitempty"`              // Chave principal da economia/unidade.
-	CodBloco                string  `json:"CodBloco,omitempty"`                // Código do bloco da economia.
-	CodBlocoLancto          string  `json:"CodBlocoLancto,omitempty"`          // Código do bloco do lançamento.
-	CodImovel               int     `json:"CodImovel,omitempty"`               // Código do imóvel.
-	ExportaLocacao          string  `json:"ExportaLocacao,omitempty"`          // Indica se exporta para locação.
-	DescrClasseImovel       string  `json:"DescrClasseImovel,omitempty"`       // Descrição da classe de imóvel da economia/unidade.
-	NomeCondominio          string  `json:"NomeCondominio,omitempty"`          // Nome do condomínio.
-	ValorJuros              float64 `json:"ValorJuros,omitempty"`              // Valor dos juros.
-	Correcao                float64 `json:"Correcao,omitempty"`                // Correção monetária sobre valor original.
-	VlrDocumento            float64 `json:"VlrDocumento,omitempty"`            // Valor do documento.
-	Sexo                    string  `json:"Sexo,omitempty"`                    // Sexo/gênero da pessoa.
-	DataVencFianca          string  `json:"DataVencFianca,omitempty"`          // Data de vencimento do seguro fiança.
-	DataVigInicial          string  `json:"DataVigInicial,omitempty"`          // Data inicial da vigência do contrato.
-	DataDistrato            string  `json:"DataDistrato,omitempty"`            // Data de encerramento.
-	CodContratoLoc          int     `json:"CodContratoLoc,omitempty"`          // Código do contrato de locação deste imóvel.
-	Endereco                string  `json:"Endereco,omitempty"`                // Endereço do condomínio.
-	TipoFianca              string  `json:"TipoFianca,omitempty"`              //
-	DiaPagtoProp            int     `json:"DiaPagtoProp,omitempty"`            // Dia do mês para o pagamento ao proprietário quando a forma de cálculo for 'Programado'.
-	CodTaxa                 int     `json:"CodTaxa,omitempty"`                 // Código da taxa que classifica este lançamento.
-	DescricaoTaxa           string  `json:"DescricaoTaxa,omitempty"`           // Descricao da Taxa.
-	VlrLancamento           float64 `json:"VlrLancamento,omitempty"`           // Valor original do Lançamento Analítico.
-	JurosLancamento         float64 `json:"JurosLancamento,omitempty"`         // Valor dos juros do Lançamento Analítico.
-	MultaLancamento         float64 `json:"MultaLancamento,omitempty"`         // Valor da Multa do Lançamento Analítico.
-	CorrecaoLancamento      float64 `json:"CorrecaoLancamento,omitempty"`      // Correção monetária sobre valor original do Lançamento Analítico.
-	AdvogadoBoleto          string  `json:"AdvogadoBoleto,omitempty"`          // Nome do Advogado no Boleto.
+	Bairro                  *string  `json:"Bairro,omitempty"`                  // Bairro do endereço.
+	Cidade                  *string  `json:"Cidade,omitempty"`                  // Cidade do endereço.
+	UF                      *string  `json:"UF,omitempty"`                      // Sigla da Unidade Federativa do endereço.
+	CEP                     *string  `json:"CEP,omitempty"`                     // Número do CEP.
+	TipoPessoa              *string  `json:"TipoPessoa,omitempty"`              // Tipo da pessoa.
+	CpfCnpj                 *int     `json:"CpfCnpj,omitempty"`                 // Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
+	Email                   *string  `json:"Email,omitempty"`                   // E-mail da pessoa.
+	Telefone                *string  `json:"Telefone,omitempty"`                // Número do CEP.
+	Nome                    *string  `json:"Nome,omitempty"`                    // Nome da pessoa.
+	CodPessoa               *int     `json:"CodPessoa,omitempty"`               // Código de pessoa do sacado.
+	DataVencimento          *string  `json:"DataVencimento,omitempty"`          // Data de vencimento do lançamento.
+	Competencia             *string  `json:"Competencia,omitempty"`             // Competência do documento no formato 'YYYYMM'.
+	DataCartaInadimplencia1 *string  `json:"DataCartaInadimplencia1,omitempty"` // Data carta inadimplencia 1.
+	DataCartaInadimplencia2 *string  `json:"DataCartaInadimplencia2,omitempty"` // Data carta inadimplencia 2.
+	DataCartaInadimplencia3 *string  `json:"DataCartaInadimplencia3,omitempty"` // Data carta inadimplencia 3.
+	DataJuridico            *string  `json:"DataJuridico,omitempty"`            // Data ida para juridico.
+	TipoDocumento           *string  `json:"TipoDocumento,omitempty"`           //
+	Nossonumero             *string  `json:"Nossonumero,omitempty"`             // Número de identificação bancário.
+	DocCapaId               *int     `json:"DocCapaId,omitempty"`               // Código interno do boleto (seu código).
+	DataGeracao             *string  `json:"DataGeracao,omitempty"`             // Data geração.
+	BaseJuro                *string  `json:"BaseJuro,omitempty"`                // Tipo de cobrança de juros.
+	CodFilial               *string  `json:"CodFilial,omitempty"`               //
+	PercJuros               *float64 `json:"PercJuros,omitempty"`               // Percentual de juros em caso de atraso de pagamento.
+	PercMulta               *float64 `json:"PercMulta,omitempty"`               // Percentual de multa.
+	VlrTaxaPorte            *float64 `json:"VlrTaxaPorte,omitempty"`            // 	Valor da taxa porte.
+	MsgCalcCorrecao         *string  `json:"MsgCalcCorrecao,omitempty"`         //
+	CodCondominio           *int     `json:"CodCondominio,omitempty"`           // Código do condomínio.
+	UsuarioId               *string  `json:"UsuarioId,omitempty"`               // Usuário que registrou observação.
+	Economia                *string  `json:"Economia,omitempty"`                //
+	IdEconomia              *int     `json:"IdEconomia,omitempty"`              // Chave principal da economia/unidade.
+	CodBloco                *string  `json:"CodBloco,omitempty"`                // Código do bloco da economia.
+	CodBlocoLancto          *string  `json:"CodBlocoLancto,omitempty"`          // Código do bloco do lançamento.
+	CodImovel               *int     `json:"CodImovel,omitempty"`               // Código do imóvel.
+	ExportaLocacao          *string  `json:"ExportaLocacao,omitempty"`          // Indica se exporta para locação.
+	DescrClasseImovel       *string  `json:"DescrClasseImovel,omitempty"`       // Descrição da classe de imóvel da economia/unidade.
+	NomeCondominio          *string  `json:"NomeCondominio,omitempty"`          // Nome do condomínio.
+	ValorJuros              *float64 `json:"ValorJuros,omitempty"`              // Valor dos juros.
+	Correcao                *float64 `json:"Correcao,omitempty"`                // Correção monetária sobre valor original.
+	VlrDocumento            *float64 `json:"VlrDocumento,omitempty"`            // Valor do documento.
+	Sexo                    *string  `json:"Sexo,omitempty"`                    // Sexo/gênero da pessoa.
+	DataVencFianca          *string  `json:"DataVencFianca,omitempty"`          // Data de vencimento do seguro fiança.
+	DataVigInicial          *string  `json:"DataVigInicial,omitempty"`          // Data inicial da vigência do contrato.
+	DataDistrato            *string  `json:"DataDistrato,omitempty"`            // Data de encerramento.
+	CodContratoLoc          *int     `json:"CodContratoLoc,omitempty"`          // Código do contrato de locação deste imóvel.
+	Endereco                *string  `json:"Endereco,omitempty"`                // Endereço do condomínio.
+	TipoFianca              *string  `json:"TipoFianca,omitempty"`              //
+	DiaPagtoProp            *int     `json:"DiaPagtoProp,omitempty"`            // Dia do mês para o pagamento ao proprietário quando a forma de cálculo for 'Programado'.
+	CodTaxa                 *int     `json:"CodTaxa,omitempty"`                 // Código da taxa que classifica este lançamento.
+	DescricaoTaxa           *string  `json:"DescricaoTaxa,omitempty"`           // Descricao da Taxa.
+	VlrLancamento           *float64 `json:"VlrLancamento,omitempty"`           // Valor original do Lançamento Analítico.
+	JurosLancamento         *float64 `json:"JurosLancamento,omitempty"`         // Valor dos juros do Lançamento Analítico.
+	MultaLancamento         *float64 `json:"MultaLancamento,omitempty"`         // Valor da Multa do Lançamento Analítico.
+	CorrecaoLancamento      *float64 `json:"CorrecaoLancamento,omitempty"`      // Correção monetária sobre valor original do Lançamento Analítico.
+	AdvogadoBoleto          *string  `json:"AdvogadoBoleto,omitempty"`          // Nome do Advogado no Boleto.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

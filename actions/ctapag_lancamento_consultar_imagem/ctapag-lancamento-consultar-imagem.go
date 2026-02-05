@@ -145,17 +145,17 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NumeroLancto  int                           `json:"NumeroLancto,omitempty"`  // Número do lançamento.
-	TotalArquivos string                        `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
-	Arquivos      []*RequestResponseBodyArquivo `json:"Arquivos,omitempty"`      //
+	NumeroLancto  *int                          `json:"NumeroLancto,omitempty"`  // Número do lançamento.
+	TotalArquivos *string                       `json:"TotalArquivos,omitempty"` // Total de arquivos encontrados na consulta.
+	Arquivos      *[]RequestResponseBodyArquivo `json:"Arquivos,omitempty"`      //
 }
 
 type RequestResponseBodyArquivo struct {
-	ArquivoNome        string `json:"ArquivoNome,omitempty"`        // Nome do arquivo.
-	ArquivoTamanho     string `json:"ArquivoTamanho,omitempty"`     // Tamanho do arquivo em bytes.
-	ArquivoDataHora    string `json:"ArquivoDataHora,omitempty"`    // Data e hora da última modificação do arquivo no formato: AAAA-MM-DD-hh-mm-ss.
-	URL                string `json:"URL,omitempty"`                // URL para download do arquivo.
-	DescricaoCategoria string `json:"DescricaoCategoria,omitempty"` // Descrição da categoria do arquivo.
+	ArquivoNome        *string `json:"ArquivoNome,omitempty"`        // Nome do arquivo.
+	ArquivoTamanho     *string `json:"ArquivoTamanho,omitempty"`     // Tamanho do arquivo em bytes.
+	ArquivoDataHora    *string `json:"ArquivoDataHora,omitempty"`    // Data e hora da última modificação do arquivo no formato: AAAA-MM-DD-hh-mm-ss.
+	URL                *string `json:"URL,omitempty"`                // URL para download do arquivo.
+	DescricaoCategoria *string `json:"DescricaoCategoria,omitempty"` // Descrição da categoria do arquivo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -154,20 +154,20 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Anexos []*RequestResponseBodyAnexo `json:"Anexos,omitempty"` //
+	Anexos *[]RequestResponseBodyAnexo `json:"Anexos,omitempty"` //
 }
 
 type RequestResponseBodyAnexo struct {
-	CodAnexo      int    `json:"CodAnexo,omitempty"`
-	CodCategoria  string `json:"CodCategoria,omitempty"`
-	Descricao     string `json:"Descricao,omitempty"`
-	CodTipo       int    `json:"CodTipo,omitempty"`
-	TipoOrigem    string `json:"TipoOrigem,omitempty"`
-	CodOrigem     int    `json:"CodOrigem,omitempty"`
-	Extra         string `json:"Extra,omitempty"`
-	IsEnviaSite   string `json:"IsEnviaSite,omitempty"`
-	EnviaSite     string `json:"EnviaSite,omitempty"`
-	DataEnviaSite string `json:"DataEnviaSite,omitempty"`
+	CodAnexo      *int    `json:"CodAnexo,omitempty"`
+	CodCategoria  *string `json:"CodCategoria,omitempty"`
+	Descricao     *string `json:"Descricao,omitempty"`
+	CodTipo       *int    `json:"CodTipo,omitempty"`
+	TipoOrigem    *string `json:"TipoOrigem,omitempty"`
+	CodOrigem     *int    `json:"CodOrigem,omitempty"`
+	Extra         *string `json:"Extra,omitempty"`
+	IsEnviaSite   *string `json:"IsEnviaSite,omitempty"`
+	EnviaSite     *string `json:"EnviaSite,omitempty"`
+	DataEnviaSite *string `json:"DataEnviaSite,omitempty"`
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

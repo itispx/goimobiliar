@@ -147,22 +147,22 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	DadosConexoes []*RequestResponseDadosConexao `json:"DadosConexoes,omitempty"` //
+	DadosConexoes *[]RequestResponseDadosConexao `json:"DadosConexoes,omitempty"` //
 }
 
 type RequestResponseDadosConexao struct {
-	Origem                   string `json:"Origem,omitempty"`                   // Origem dos Dados de Conexão.
-	CodigoOrigem             int    `json:"CodigoOrigem,omitempty"`             // Código do cadastro de origem vinculado aos Dados de Conexão.
-	CodigoOrigemComplementar string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
-	RoboID                   string `json:"RoboID,omitempty"`                   // Identificação do Robô.
-	RoboNome                 string `json:"RoboNome,omitempty"`                 // Nome do Robô.
-	CodigoFornecedor         int    `json:"CodigoFornecedor,omitempty"`         // Código do fornecedor.
-	NomeFornecedor           string `json:"NomeFornecedor,omitempty"`           // Nome/Razão Social do fornecedor.
-	Login                    string `json:"Login,omitempty"`                    // Login de acesso ao WebService.
-	Senha                    string `json:"Senha,omitempty"`                    // Senha de acesso ao WebService.
-	WebServiceAtivo          string `json:"WebServiceAtivo,omitempty"`          // Indica se possui WebService ativo.
-	WebServiceURL            string `json:"WebServiceURL,omitempty"`            // Endereço do WebService (URL base sem parâmetros).
-	WebServiceComplemento    string `json:"WebServiceComplemento,omitempty"`    // Complementos da URL base do WebService.
+	Origem                   *string `json:"Origem,omitempty"`                   // Origem dos Dados de Conexão.
+	CodigoOrigem             *int    `json:"CodigoOrigem,omitempty"`             // Código do cadastro de origem vinculado aos Dados de Conexão.
+	CodigoOrigemComplementar *string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
+	RoboID                   *string `json:"RoboID,omitempty"`                   // Identificação do Robô.
+	RoboNome                 *string `json:"RoboNome,omitempty"`                 // Nome do Robô.
+	CodigoFornecedor         *int    `json:"CodigoFornecedor,omitempty"`         // Código do fornecedor.
+	NomeFornecedor           *string `json:"NomeFornecedor,omitempty"`           // Nome/Razão Social do fornecedor.
+	Login                    *string `json:"Login,omitempty"`                    // Login de acesso ao WebService.
+	Senha                    *string `json:"Senha,omitempty"`                    // Senha de acesso ao WebService.
+	WebServiceAtivo          *string `json:"WebServiceAtivo,omitempty"`          // Indica se possui WebService ativo.
+	WebServiceURL            *string `json:"WebServiceURL,omitempty"`            // Endereço do WebService (URL base sem parâmetros).
+	WebServiceComplemento    *string `json:"WebServiceComplemento,omitempty"`    // Complementos da URL base do WebService.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

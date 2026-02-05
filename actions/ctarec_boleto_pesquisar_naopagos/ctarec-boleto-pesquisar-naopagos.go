@@ -150,10 +150,10 @@ type RequestResponseBody struct {
 }
 
 type RequestResponseBodyBoleto struct {
-	DocCapaId   int    `json:"DocCapaId,omitempty"`   // Código do boleto no sistema.
-	NossoNumero string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
-	DataVenc    string `json:"DataVenc,omitempty"`    // Data de vencimento do boleto.
-	Origem      string `json:"Origem,omitempty"`      // Origem do Boleto no Sistema (Locação, Condomínio, etc).
+	DocCapaId   *int    `json:"DocCapaId,omitempty"`   // Código do boleto no sistema.
+	NossoNumero *string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
+	DataVenc    *string `json:"DataVenc,omitempty"`    // Data de vencimento do boleto.
+	Origem      *string `json:"Origem,omitempty"`      // Origem do Boleto no Sistema (Locação, Condomínio, etc).
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

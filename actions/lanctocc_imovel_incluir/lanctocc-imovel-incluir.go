@@ -166,14 +166,14 @@ type RequestResponse struct {
 }
 
 type RequestResponseHeader struct {
-	SessionId string `json:"SessionId,omitempty"`
-	Action    string `json:"Action,omitempty"`
-	Status    string `json:"Status,omitempty"`
-	Error     bool   `json:"Error,omitempty"`
+	SessionId *string `json:"SessionId,omitempty"`
+	Action    *string `json:"Action,omitempty"`
+	Status    *string `json:"Status,omitempty"`
+	Error     *bool   `json:"Error,omitempty"`
 }
 
 type RequestResponseBody struct {
-	NumeroLancto int `json:"NumeroLancto,omitempty"` // Número do lançamento.
+	NumeroLancto *int `json:"NumeroLancto,omitempty"` // Número do lançamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

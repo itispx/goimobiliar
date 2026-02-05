@@ -192,8 +192,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodContratoAdm int `json:"CodContratoAdm,omitempty"` // Código do contrato de administração.
-
+	CodContratoAdm *int `json:"CodContratoAdm,omitempty"` // Código do contrato de administração.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -146,10 +146,10 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodTaxa    int     `json:"CodTaxa,omitempty"`    // Código da taxa.
-	Descricao  string  `json:"Descricao,omitempty"`  // Descrição da taxa.
-	Aliquota   float64 `json:"Aliquota,omitempty"`   // Alíquota de ISS referente à cidade/UF informada.
-	CodServico string  `json:"CodServico,omitempty"` // Código do serviço na prefeitura.
+	CodTaxa    *int     `json:"CodTaxa,omitempty"`    // Código da taxa.
+	Descricao  *string  `json:"Descricao,omitempty"`  // Descrição da taxa.
+	Aliquota   *float64 `json:"Aliquota,omitempty"`   // Alíquota de ISS referente à cidade/UF informada.
+	CodServico *string  `json:"CodServico,omitempty"` // Código do serviço na prefeitura.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

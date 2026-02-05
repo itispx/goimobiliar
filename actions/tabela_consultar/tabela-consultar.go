@@ -146,17 +146,17 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Tabela string                     `json:"Tabela,omitempty"` // Nome da tabela.
-	Titulo string                     `json:"Titulo,omitempty"` // Título da tabela.
-	Itens  []*RequestResponseBodyItem `json:"Itens,omitempty"`  //
+	Tabela *string                    `json:"Tabela,omitempty"` // Nome da tabela.
+	Titulo *string                    `json:"Titulo,omitempty"` // Título da tabela.
+	Itens  *[]RequestResponseBodyItem `json:"Itens,omitempty"`  //
 }
 
 type RequestResponseBodyItem struct {
-	Valor         string `json:"Valor,omitempty"`         // Valor do elemento na tabela.
-	Descricao     string `json:"Descricao,omitempty"`     // Descrição do elemento na tabela.
-	Categoria     string `json:"Categoria,omitempty"`     // Categoria do elemento na tabela (só é informado para algumas tabelas).
-	DescrReduzida string `json:"DescrReduzida,omitempty"` //
-	TemDormitorio string `json:"TemDormitorio,omitempty"` //
+	Valor         *string `json:"Valor,omitempty"`         // Valor do elemento na tabela.
+	Descricao     *string `json:"Descricao,omitempty"`     // Descrição do elemento na tabela.
+	Categoria     *string `json:"Categoria,omitempty"`     // Categoria do elemento na tabela (só é informado para algumas tabelas).
+	DescrReduzida *string `json:"DescrReduzida,omitempty"` //
+	TemDormitorio *string `json:"TemDormitorio,omitempty"` //
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

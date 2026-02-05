@@ -149,61 +149,61 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	DocCapaId               int                               `json:"DocCapaId,omitempty"`               // Código do boleto no sistema.
-	DOCRetido               string                            `json:"DOCRetido,omitempty"`               // Indica se é um boleto/DOC retido.
-	CodPessoa               int                               `json:"CodPessoa,omitempty"`               // Código de pessoa do sacado.
-	CobrRegAcordoVerParcAnt string                            `json:"CobrRegAcordoVerParcAnt,omitempty"` //
-	IdAcordo                int                               `json:"IdAcordo,omitempty"`                // Código de identificação do acordo.
-	DataVencAcordo          string                            `json:"DataVencAcordo,omitempty"`          // Data de vencimento do acordo.
-	FilialNome              string                            `json:"FilialNome,omitempty"`              // Nome da filial.
-	FilialEnd               string                            `json:"FilialEnd,omitempty"`               // Endereço da filial.
-	FilialCnpj              int                               `json:"FilialCnpj,omitempty"`              // Cnpj da filial.
-	DataVenc                string                            `json:"DataVenc,omitempty"`                // Data de vencimento do boleto.
-	FilialCidade            string                            `json:"FilialCidade,omitempty"`            // Cidade da filial.
-	IdCodBanco              string                            `json:"IdCodBanco,omitempty"`              // Código do banco com dígito verificador.
-	LinhaDigitavel          string                            `json:"LinhaDigitavel,omitempty"`          // Linha digitável do boleto.
-	VlrDocumento            float64                           `json:"VlrDocumento,omitempty"`            // Valor do documento.
-	NossoNumeroOrig         string                            `json:"NossoNumeroOrig,omitempty"`         // Nosso Numero original.
-	LocalPagamento          string                            `json:"LocalPagamento,omitempty"`          // Local de pagamento.
-	NomeCedente             string                            `json:"NomeCedente,omitempty"`             // Nome do cedente.
-	CodCedente              string                            `json:"CodCedente,omitempty"`              // Código do cedente.
-	DataDocumento           string                            `json:"DataDocumento,omitempty"`           // Data do documento.
-	DataProcessamento       string                            `json:"DataProcessamento,omitempty"`       // Data de processamento.
-	NumeroDOC               string                            `json:"NumeroDOC,omitempty"`               // Número do documento.
-	NossoNumero             string                            `json:"NossoNumero,omitempty"`             // Número de identificação bancário.
-	Carteira                string                            `json:"Carteira,omitempty"`                // Carteira bancária.
-	EspecieDOC              string                            `json:"EspecieDOC,omitempty"`              // Espécie do documento.
-	Aceite                  string                            `json:"Aceite,omitempty"`                  // Aceite do documento.
-	UsoBanco                string                            `json:"UsoBanco,omitempty"`                // Informações de uso do banco.
-	Moeda                   string                            `json:"Moeda,omitempty"`                   // Moeda do documento.
-	VlrAcrescOutr           float64                           `json:"VlrAcrescOutr,omitempty"`           // Valor de outros acréscimos.
-	VlrDesconto             string                            `json:"VlrDesconto,omitempty"`             // Valor de desconto.
-	VlrDescOutr             float64                           `json:"VlrDescOutr,omitempty"`             // Valor de outros descontos.
-	VlrMulta                string                            `json:"VlrMulta,omitempty"`                // Valor da multa mais juros.
-	VlrSegCont              float64                           `json:"VlrSegCont,omitempty"`              // Valor do seguro conteúdo.
-	Sacado1                 string                            `json:"Sacado1,omitempty"`                 // Primeira linha de informações do sacado.
-	Sacado2                 string                            `json:"Sacado2,omitempty"`                 // Segunda linha de informações do sacado.
-	Sacado3                 string                            `json:"Sacado3,omitempty"`                 // Terceira linha de informações do sacado.
-	CodBarras               string                            `json:"CodBarras,omitempty"`               // Código de barras do boleto.
-	Aviso                   string                            `json:"Aviso,omitempty"`                   // Aviso do documento.
-	DataLimitePagamento     string                            `json:"DataLimitePagamento,omitempty"`     // Data limite de pagamento do documento.
-	Instrucoes              []*RequestResponseBodyInstrucao   `json:"Instrucoes,omitempty"`              //
-	Detalhes                []*RequestResponseBodyDetalhe     `json:"Detalhes,omitempty"`                //
-	Informativos            []*RequestResponseBodyInformativo `json:"Informativos,omitempty"`            //
-	Cabecalhos              []*RequestResponseBodyCabecalho   `json:"Cabecalhos,omitempty"`              //
+	DocCapaId               *int                              `json:"DocCapaId,omitempty"`               // Código do boleto no sistema.
+	DOCRetido               *string                           `json:"DOCRetido,omitempty"`               // Indica se é um boleto/DOC retido.
+	CodPessoa               *int                              `json:"CodPessoa,omitempty"`               // Código de pessoa do sacado.
+	CobrRegAcordoVerParcAnt *string                           `json:"CobrRegAcordoVerParcAnt,omitempty"` //
+	IdAcordo                *int                              `json:"IdAcordo,omitempty"`                // Código de identificação do acordo.
+	DataVencAcordo          *string                           `json:"DataVencAcordo,omitempty"`          // Data de vencimento do acordo.
+	FilialNome              *string                           `json:"FilialNome,omitempty"`              // Nome da filial.
+	FilialEnd               *string                           `json:"FilialEnd,omitempty"`               // Endereço da filial.
+	FilialCnpj              *int                              `json:"FilialCnpj,omitempty"`              // Cnpj da filial.
+	DataVenc                *string                           `json:"DataVenc,omitempty"`                // Data de vencimento do boleto.
+	FilialCidade            *string                           `json:"FilialCidade,omitempty"`            // Cidade da filial.
+	IdCodBanco              *string                           `json:"IdCodBanco,omitempty"`              // Código do banco com dígito verificador.
+	LinhaDigitavel          *string                           `json:"LinhaDigitavel,omitempty"`          // Linha digitável do boleto.
+	VlrDocumento            *float64                          `json:"VlrDocumento,omitempty"`            // Valor do documento.
+	NossoNumeroOrig         *string                           `json:"NossoNumeroOrig,omitempty"`         // Nosso Numero original.
+	LocalPagamento          *string                           `json:"LocalPagamento,omitempty"`          // Local de pagamento.
+	NomeCedente             *string                           `json:"NomeCedente,omitempty"`             // Nome do cedente.
+	CodCedente              *string                           `json:"CodCedente,omitempty"`              // Código do cedente.
+	DataDocumento           *string                           `json:"DataDocumento,omitempty"`           // Data do documento.
+	DataProcessamento       *string                           `json:"DataProcessamento,omitempty"`       // Data de processamento.
+	NumeroDOC               *string                           `json:"NumeroDOC,omitempty"`               // Número do documento.
+	NossoNumero             *string                           `json:"NossoNumero,omitempty"`             // Número de identificação bancário.
+	Carteira                *string                           `json:"Carteira,omitempty"`                // Carteira bancária.
+	EspecieDOC              *string                           `json:"EspecieDOC,omitempty"`              // Espécie do documento.
+	Aceite                  *string                           `json:"Aceite,omitempty"`                  // Aceite do documento.
+	UsoBanco                *string                           `json:"UsoBanco,omitempty"`                // Informações de uso do banco.
+	Moeda                   *string                           `json:"Moeda,omitempty"`                   // Moeda do documento.
+	VlrAcrescOutr           *float64                          `json:"VlrAcrescOutr,omitempty"`           // Valor de outros acréscimos.
+	VlrDesconto             *string                           `json:"VlrDesconto,omitempty"`             // Valor de desconto.
+	VlrDescOutr             *float64                          `json:"VlrDescOutr,omitempty"`             // Valor de outros descontos.
+	VlrMulta                *string                           `json:"VlrMulta,omitempty"`                // Valor da multa mais juros.
+	VlrSegCont              *float64                          `json:"VlrSegCont,omitempty"`              // Valor do seguro conteúdo.
+	Sacado1                 *string                           `json:"Sacado1,omitempty"`                 // Primeira linha de informações do sacado.
+	Sacado2                 *string                           `json:"Sacado2,omitempty"`                 // Segunda linha de informações do sacado.
+	Sacado3                 *string                           `json:"Sacado3,omitempty"`                 // Terceira linha de informações do sacado.
+	CodBarras               *string                           `json:"CodBarras,omitempty"`               // Código de barras do boleto.
+	Aviso                   *string                           `json:"Aviso,omitempty"`                   // Aviso do documento.
+	DataLimitePagamento     *string                           `json:"DataLimitePagamento,omitempty"`     // Data limite de pagamento do documento.
+	Instrucoes              *[]RequestResponseBodyInstrucao   `json:"Instrucoes,omitempty"`              //
+	Detalhes                *[]RequestResponseBodyDetalhe     `json:"Detalhes,omitempty"`                //
+	Informativos            *[]RequestResponseBodyInformativo `json:"Informativos,omitempty"`            //
+	Cabecalhos              *[]RequestResponseBodyCabecalho   `json:"Cabecalhos,omitempty"`              //
 }
 
 type RequestResponseBodyInstrucao struct {
-	Instrucao string `json:"Instrucao,omitempty"` // Linha de instrução.
+	Instrucao *string `json:"Instrucao,omitempty"` // Linha de instrução.
 }
 type RequestResponseBodyDetalhe struct {
-	Detalhe string `json:"Detalhe,omitempty"` // Linha de detalhe.
+	Detalhe *string `json:"Detalhe,omitempty"` // Linha de detalhe.
 }
 type RequestResponseBodyInformativo struct {
-	Informativo string `json:"Informativo,omitempty"` // Linha de informação.
+	Informativo *string `json:"Informativo,omitempty"` // Linha de informação.
 }
 type RequestResponseBodyCabecalho struct {
-	Cabecalho string `json:"Cabecalho,omitempty"` // Linha de cabeçalho.
+	Cabecalho *string `json:"Cabecalho,omitempty"` // Linha de cabeçalho.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

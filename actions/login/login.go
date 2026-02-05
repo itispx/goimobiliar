@@ -64,18 +64,18 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NomeImob       string `json:"NomeImob,omitempty"`       // Nome da administradora.
-	ImobId         string `json:"ImobId,omitempty"`         // Identificação da administradora.
-	UsuarioId      string `json:"UsuarioId,omitempty"`      // Identificação do usuário.
-	Nome           string `json:"Nome,omitempty"`           // Nome do usuário.
-	Versao         string `json:"Versao,omitempty"`         // Versão do sistema no servidor.
-	ClientIP       string `json:"Client_IP,omitempty"`      // Endereço IP da estação.
-	CodFilial      int    `json:"CodFilial,omitempty"`      // Código da filial.
-	NomeFilial     string `json:"NomeFilial,omitempty"`     // Nome da filial.
-	Cidade         string `json:"Cidade,omitempty"`         // Cidade da filial.
-	Uf             string `json:"UF,omitempty"`             // UF da filial.
-	MaxSessions    int    `json:"MaxSessions,omitempty"`    // Limite de sessões simultâneas deste usuário.
-	ServerDateTime string `json:"ServerDateTime,omitempty"` // Horário do login no servidor.
+	NomeImob       *string `json:"NomeImob,omitempty"`       // Nome da administradora.
+	ImobId         *string `json:"ImobId,omitempty"`         // Identificação da administradora.
+	UsuarioId      *string `json:"UsuarioId,omitempty"`      // Identificação do usuário.
+	Nome           *string `json:"Nome,omitempty"`           // Nome do usuário.
+	Versao         *string `json:"Versao,omitempty"`         // Versão do sistema no servidor.
+	ClientIP       *string `json:"Client_IP,omitempty"`      // Endereço IP da estação.
+	CodFilial      *int    `json:"CodFilial,omitempty"`      // Código da filial.
+	NomeFilial     *string `json:"NomeFilial,omitempty"`     // Nome da filial.
+	Cidade         *string `json:"Cidade,omitempty"`         // Cidade da filial.
+	Uf             *string `json:"UF,omitempty"`             // UF da filial.
+	MaxSessions    *int    `json:"MaxSessions,omitempty"`    // Limite de sessões simultâneas deste usuário.
+	ServerDateTime *string `json:"ServerDateTime,omitempty"` // Horário do login no servidor.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

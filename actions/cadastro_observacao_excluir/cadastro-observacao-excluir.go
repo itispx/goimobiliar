@@ -144,9 +144,9 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodObs     int    `json:"CodObs,omitempty"`     // Código da observação.
-	TipoOrigem string `json:"TipoOrigem,omitempty"` // Define a origem do cadastro.
-	CodOrigem  string `json:"CodOrigem,omitempty"`  // Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
+	CodObs     *int    `json:"CodObs,omitempty"`     // Código da observação.
+	TipoOrigem *string `json:"TipoOrigem,omitempty"` // Define a origem do cadastro.
+	CodOrigem  *string `json:"CodOrigem,omitempty"`  // Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -169,9 +169,9 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NumeroLancto     int `json:"NumeroLancto,omitempty"`     // Número do lançamento.
-	NumeroLanctoItem int `json:"NumeroLanctoItem,omitempty"` // Número do lançamento.
-	CodContratoLoc   int `json:"CodContratoLoc,omitempty"`   // Código do contrato de locação deste imóvel.
+	NumeroLancto     *int `json:"NumeroLancto,omitempty"`     // Número do lançamento.
+	NumeroLanctoItem *int `json:"NumeroLanctoItem,omitempty"` // Número do lançamento.
+	CodContratoLoc   *int `json:"CodContratoLoc,omitempty"`   // Código do contrato de locação deste imóvel.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

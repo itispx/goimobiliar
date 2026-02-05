@@ -152,10 +152,10 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Origem                   string `json:"Origem,omitempty"`                   // Origem dos Dados de Conexão.
-	CodigoOrigem             int    `json:"CodigoOrigem,omitempty"`             // Código do cadastro de origem vinculado aos Dados de Conexão.
-	CodigoOrigemComplementar string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
-	RoboID                   string `json:"RoboID,omitempty"`                   // Identificação do Robô.
+	Origem                   *string `json:"Origem,omitempty"`                   // Origem dos Dados de Conexão.
+	CodigoOrigem             *int    `json:"CodigoOrigem,omitempty"`             // Código do cadastro de origem vinculado aos Dados de Conexão.
+	CodigoOrigemComplementar *string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
+	RoboID                   *string `json:"RoboID,omitempty"`                   // Identificação do Robô.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

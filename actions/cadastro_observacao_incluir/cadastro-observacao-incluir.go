@@ -151,7 +151,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodObs int `json:"CodObs,omitempty"` // Código da observação.
+	CodObs *int `json:"CodObs,omitempty"` // Código da observação.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

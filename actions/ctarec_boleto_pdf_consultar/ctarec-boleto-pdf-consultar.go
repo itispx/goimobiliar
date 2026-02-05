@@ -145,10 +145,10 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NossoNumero string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
-	Descricao   string `json:"Descricao,omitempty"`   // Descrição do Arquivo.
-	URL         string `json:"URL,omitempty"`         // URL para download do arquivo.
-	Tamanho     string `json:"Tamanho,omitempty"`     // Tamanho do arquivo em kilobytes.
+	NossoNumero *string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
+	Descricao   *string `json:"Descricao,omitempty"`   // Descrição do Arquivo.
+	URL         *string `json:"URL,omitempty"`         // URL para download do arquivo.
+	Tamanho     *string `json:"Tamanho,omitempty"`     // Tamanho do arquivo em kilobytes.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

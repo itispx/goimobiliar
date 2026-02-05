@@ -172,7 +172,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodTarefa int `json:"CodTarefa,omitempty"` // Código da tarefa.
+	CodTarefa *int `json:"CodTarefa,omitempty"` // Código da tarefa.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

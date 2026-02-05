@@ -151,15 +151,15 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Pessoas []*RequestResponseBodyPessoa `json:"Pessoas,omitempty"` //
+	Pessoas *[]RequestResponseBodyPessoa `json:"Pessoas,omitempty"` //
 }
 
 type RequestResponseBodyPessoa struct {
-	CodPessoa int    `json:"CodPessoa,omitempty"` // Código da pessoa.
-	Nome      string `json:"Nome,omitempty"`      // Nome da pessoa.
-	CpfCnpj   int    `json:"CpfCnpj,omitempty"`   // Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
-	Celular   string `json:"Celular,omitempty"`   // Número de celular.
-	Email     string `json:"Email,omitempty"`     // E-mail da pessoa.
+	CodPessoa *int    `json:"CodPessoa,omitempty"` // Código da pessoa.
+	Nome      *string `json:"Nome,omitempty"`      // Nome da pessoa.
+	CpfCnpj   *int    `json:"CpfCnpj,omitempty"`   // Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
+	Celular   *string `json:"Celular,omitempty"`   // Número de celular.
+	Email     *string `json:"Email,omitempty"`     // E-mail da pessoa.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

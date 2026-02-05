@@ -152,7 +152,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Tarefas []*RequestResponseBodyTarefa `json:"Tarefas,omitempty"` //
+	Tarefas *[]RequestResponseBodyTarefa `json:"Tarefas,omitempty"` //
 }
 
 // TODO

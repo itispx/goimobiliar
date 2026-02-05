@@ -144,52 +144,52 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NumeroLancto          int     `json:"NumeroLancto,omitempty"`          // Número do lançamento.
-	Origem                string  `json:"Origem,omitempty"`                // Área de origem do lançamento.
-	CodFilial             string  `json:"CodFilial,omitempty"`             // Código da filial do lançamento.
-	CodCondominio         int     `json:"CodCondominio,omitempty"`         // Código do condomínio do lançamento (se origem for 'C').
-	NomeCondominio        string  `json:"NomeCondominio,omitempty"`        // Nome do condomínio do lançamento (se origem for 'C').
-	CodBloco              string  `json:"CodBloco,omitempty"`              // Código do bloco do lançamento (se origem for 'C').
-	CodImovel             int     `json:"CodImovel,omitempty"`             // Código do imóvel do lançamento (se origem for 'I').
-	EnderecoImovel        string  `json:"EnderecoImovel,omitempty"`        // Endereço do imóvel (se origem for 'I').
-	CodLocatario          int     `json:"CodLocatario,omitempty"`          // Código de pessoa do locatário (se origem for 'I').
-	NomeLocatario         string  `json:"NomeLocatario,omitempty"`         // Nome do locatário (se origem for 'I').
-	CodPessoaProprietario int     `json:"CodPessoaProprietario,omitempty"` // Código de pessoa do proprietário (se origem for 'R').
-	NomeProprietario      string  `json:"NomeProprietario,omitempty"`      // Nome do proprietário (se origem for 'R').
-	CodPlanoContaAdm      int     `json:"CodPlanoContaAdm,omitempty"`      // Código da conta no plano de contas da administradora (se origem for 'A').
-	DescrPlanoContaAdm    int     `json:"DescrPlanoContaAdm,omitempty"`    // Descrição da conta no plano de contas da administradora (se origem for 'A').
-	CodFornecedor         int     `json:"CodFornecedor,omitempty"`         // Código do fornecedor do lançamento.
-	NomeFornecedor        string  `json:"NomeFornecedor,omitempty"`        // Nome do fornecedor do lançamento.
-	NomeFavorecido        string  `json:"NomeFavorecido,omitempty"`        // Nome do favorecido.
-	Competencia           string  `json:"Competencia,omitempty"`           // Competência do lançamento no formato 'YYYYMM'.
-	DataEmissao           string  `json:"DataEmissao,omitempty"`           // Data de emissão do lançamento (se TipoDocumento for 'N').
-	DataVencimento        string  `json:"DataVencimento,omitempty"`        // Data de vencimento do lançamento.
-	DataPagamento         string  `json:"DataPagamento,omitempty"`         // Data de pagamento do lançamento (quando quitado).
-	FormaPagamento        string  `json:"FormaPagamento,omitempty"`        // Forma de pagamento do lançamento.
-	TipoDocumento         string  `json:"TipoDocumento,omitempty"`         // Tipo de documento do lançamento.
-	NFSE                  string  `json:"NFSE,omitempty"`                  // Indica se o documento é nota fiscal eletrônica.
-	CodTaxa               int     `json:"CodTaxa,omitempty"`               // Código da taxa que classifica este lançamento.
-	DescrTaxa             string  `json:"DescrTaxa,omitempty"`             // Descrição da taxa que classifica este lançamento.
-	NumeroParcela         int     `json:"NumeroParcela,omitempty"`         // Número da parcela do lançamento.
-	TotalParcelas         int     `json:"TotalParcelas,omitempty"`         // Quantidade total de parcelas.
-	Complemento           string  `json:"Complemento,omitempty"`           // Complemento descritivo do lançamento.
-	NumeroDocumento       string  `json:"NumeroDocumento,omitempty"`       // Número do documento do fornecedor.
-	ValorBruto            float64 `json:"ValorBruto,omitempty"`            // Valor bruto do documento/parcela.
-	ValorServicos         float64 `json:"ValorServicos,omitempty"`         // Valor dos serviços. Se não informado, a base de cálculo será ValorBruto.
-	ValorBaseCalculoIss   float64 `json:"ValorBaseCalculoIss,omitempty"`   // Base de cálculo do ISS. Se não informado, a base de cálculo será ValorServicos.
-	ValorRetencaoInss     float64 `json:"ValorRetencaoInss,omitempty"`     // Valor do INSS a ser retido.
-	ValorRetencaoIss      float64 `json:"ValorRetencaoIss,omitempty"`      // Valor do ISS a ser retido.
-	ValorRetencaoIrf      float64 `json:"ValorRetencaoIrf,omitempty"`      // Valor do IRF a ser retido.
-	ValorRetencaoFederal  float64 `json:"ValorRetencaoFederal,omitempty"`  // Valor da retenção federal a ser retida.
-	ValorDesconto         float64 `json:"ValorDesconto,omitempty"`         // Valor do desconto.
-	ValorJuros            float64 `json:"ValorJuros,omitempty"`            // Valor dos juros.
-	Comissao              float64 `json:"Comissao,omitempty"`              // Valor de comissão.
-	CodigoBarras          string  `json:"CodigoBarras,omitempty"`          // Código de barras do documento (* obrigatório se origem for 'B')
-	PrevisaoReal          string  `json:"PrevisaoReal,omitempty"`          // Indicação de lançamento previsto ou real.
-	Frequencia            string  `json:"Frequencia,omitempty"`            // Define se lançamento é único ou permanente.
-	UsuarioSuspensao      string  `json:"UsuarioSuspensao,omitempty"`      // Usuário que suspendeu o lançamento.
-	DataSuspensao         string  `json:"DataSuspensao,omitempty"`         // Data da suspensão do lançamento.
-	MotivoSuspensao       string  `json:"MotivoSuspensao,omitempty"`       // Motivo da suspensão do lançamento.
+	NumeroLancto          *int     `json:"NumeroLancto,omitempty"`          // Número do lançamento.
+	Origem                *string  `json:"Origem,omitempty"`                // Área de origem do lançamento.
+	CodFilial             *string  `json:"CodFilial,omitempty"`             // Código da filial do lançamento.
+	CodCondominio         *int     `json:"CodCondominio,omitempty"`         // Código do condomínio do lançamento (se origem for 'C').
+	NomeCondominio        *string  `json:"NomeCondominio,omitempty"`        // Nome do condomínio do lançamento (se origem for 'C').
+	CodBloco              *string  `json:"CodBloco,omitempty"`              // Código do bloco do lançamento (se origem for 'C').
+	CodImovel             *int     `json:"CodImovel,omitempty"`             // Código do imóvel do lançamento (se origem for 'I').
+	EnderecoImovel        *string  `json:"EnderecoImovel,omitempty"`        // Endereço do imóvel (se origem for 'I').
+	CodLocatario          *int     `json:"CodLocatario,omitempty"`          // Código de pessoa do locatário (se origem for 'I').
+	NomeLocatario         *string  `json:"NomeLocatario,omitempty"`         // Nome do locatário (se origem for 'I').
+	CodPessoaProprietario *int     `json:"CodPessoaProprietario,omitempty"` // Código de pessoa do proprietário (se origem for 'R').
+	NomeProprietario      *string  `json:"NomeProprietario,omitempty"`      // Nome do proprietário (se origem for 'R').
+	CodPlanoContaAdm      *int     `json:"CodPlanoContaAdm,omitempty"`      // Código da conta no plano de contas da administradora (se origem for 'A').
+	DescrPlanoContaAdm    *int     `json:"DescrPlanoContaAdm,omitempty"`    // Descrição da conta no plano de contas da administradora (se origem for 'A').
+	CodFornecedor         *int     `json:"CodFornecedor,omitempty"`         // Código do fornecedor do lançamento.
+	NomeFornecedor        *string  `json:"NomeFornecedor,omitempty"`        // Nome do fornecedor do lançamento.
+	NomeFavorecido        *string  `json:"NomeFavorecido,omitempty"`        // Nome do favorecido.
+	Competencia           *string  `json:"Competencia,omitempty"`           // Competência do lançamento no formato 'YYYYMM'.
+	DataEmissao           *string  `json:"DataEmissao,omitempty"`           // Data de emissão do lançamento (se TipoDocumento for 'N').
+	DataVencimento        *string  `json:"DataVencimento,omitempty"`        // Data de vencimento do lançamento.
+	DataPagamento         *string  `json:"DataPagamento,omitempty"`         // Data de pagamento do lançamento (quando quitado).
+	FormaPagamento        *string  `json:"FormaPagamento,omitempty"`        // Forma de pagamento do lançamento.
+	TipoDocumento         *string  `json:"TipoDocumento,omitempty"`         // Tipo de documento do lançamento.
+	NFSE                  *string  `json:"NFSE,omitempty"`                  // Indica se o documento é nota fiscal eletrônica.
+	CodTaxa               *int     `json:"CodTaxa,omitempty"`               // Código da taxa que classifica este lançamento.
+	DescrTaxa             *string  `json:"DescrTaxa,omitempty"`             // Descrição da taxa que classifica este lançamento.
+	NumeroParcela         *int     `json:"NumeroParcela,omitempty"`         // Número da parcela do lançamento.
+	TotalParcelas         *int     `json:"TotalParcelas,omitempty"`         // Quantidade total de parcelas.
+	Complemento           *string  `json:"Complemento,omitempty"`           // Complemento descritivo do lançamento.
+	NumeroDocumento       *string  `json:"NumeroDocumento,omitempty"`       // Número do documento do fornecedor.
+	ValorBruto            *float64 `json:"ValorBruto,omitempty"`            // Valor bruto do documento/parcela.
+	ValorServicos         *float64 `json:"ValorServicos,omitempty"`         // Valor dos serviços. Se não informado, a base de cálculo será ValorBruto.
+	ValorBaseCalculoIss   *float64 `json:"ValorBaseCalculoIss,omitempty"`   // Base de cálculo do ISS. Se não informado, a base de cálculo será ValorServicos.
+	ValorRetencaoInss     *float64 `json:"ValorRetencaoInss,omitempty"`     // Valor do INSS a ser retido.
+	ValorRetencaoIss      *float64 `json:"ValorRetencaoIss,omitempty"`      // Valor do ISS a ser retido.
+	ValorRetencaoIrf      *float64 `json:"ValorRetencaoIrf,omitempty"`      // Valor do IRF a ser retido.
+	ValorRetencaoFederal  *float64 `json:"ValorRetencaoFederal,omitempty"`  // Valor da retenção federal a ser retida.
+	ValorDesconto         *float64 `json:"ValorDesconto,omitempty"`         // Valor do desconto.
+	ValorJuros            *float64 `json:"ValorJuros,omitempty"`            // Valor dos juros.
+	Comissao              *float64 `json:"Comissao,omitempty"`              // Valor de comissão.
+	CodigoBarras          *string  `json:"CodigoBarras,omitempty"`          // Código de barras do documento (* obrigatório se origem for 'B')
+	PrevisaoReal          *string  `json:"PrevisaoReal,omitempty"`          // Indicação de lançamento previsto ou real.
+	Frequencia            *string  `json:"Frequencia,omitempty"`            // Define se lançamento é único ou permanente.
+	UsuarioSuspensao      *string  `json:"UsuarioSuspensao,omitempty"`      // Usuário que suspendeu o lançamento.
+	DataSuspensao         *string  `json:"DataSuspensao,omitempty"`         // Data da suspensão do lançamento.
+	MotivoSuspensao       *string  `json:"MotivoSuspensao,omitempty"`       // Motivo da suspensão do lançamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

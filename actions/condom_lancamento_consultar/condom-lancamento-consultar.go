@@ -144,31 +144,31 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Descricao           string  `json:"Descricao,omitempty"`           // Descrição da taxa.
-	LanctoCondId        int     `json:"LanctoCondId,omitempty"`        // Código do lançamento de condomínio.
-	Origem              string  `json:"Origem,omitempty"`              // Origem do lançamento.
-	CodTaxa             int     `json:"CodTaxa,omitempty"`             // Código da taxa que classifica este lançamento.
-	CodCondominio       int     `json:"CodCondominio,omitempty"`       // Código do condomínio.
-	CodBloco            string  `json:"CodBloco,omitempty"`            // Código do bloco do condomínio.
-	CodBlocoBase        string  `json:"CodBlocoBase,omitempty"`        // Bloco base/principal do condomínio.
-	TipoLancamento      string  `json:"TipoLancamento,omitempty"`      // Tipo de lançamento.
-	DataVencimentoExtra string  `json:"DataVencimentoExtra,omitempty"` // Data de vencimento se tipo do documento for extra (TipoDocumento='E').
-	Competencia         string  `json:"Competencia,omitempty"`         // Competência para a qual o lançamento será lançado.
-	CompetenciaReajuste string  `json:"CompetenciaReajuste,omitempty"` // Competência do reajuste do lançamento.
-	PercentualReajuste  float64 `json:"PercentualReajuste,omitempty"`  // Percentual de reajuste do lançamento.
-	NumeroParcela       int     `json:"NumeroParcela,omitempty"`       // Número da parcela.
-	TotalParcelas       int     `json:"TotalParcelas,omitempty"`       // Número total de parcelas.
-	DocAtrasado         string  `json:"DocAtrasado,omitempty"`         // Indica se o DOC/boleto é atrasado.
-	Complemento         string  `json:"Complemento,omitempty"`         // Complemento descritivo do lançamento.
-	ComplementoAuxiliar string  `json:"ComplementoAuxiliar,omitempty"` // Complemento descritivo auxiliar do lançamento.
-	NossoNumero         string  `json:"NossoNumero,omitempty"`         // Número de identificação bancário.
-	Gerado              string  `json:"Gerado,omitempty"`              // Indica se o boleto já foi gerado.
-	DocExportado        string  `json:"DocExportado,omitempty"`        // Indica se o boleto/DOC já foi exportado.
-	IdEconomia          int     `json:"IdEconomia,omitempty"`          // Chave principal da economia/unidade.
-	TipoDocumento       string  `json:"TipoDocumento,omitempty"`       // Tipo de boleto/DOC.
-	Valor               float64 `json:"Valor,omitempty"`               // Valor do lançamento.
-	DebitoCredito       string  `json:"DebitoCredito,omitempty"`       // Indica se o lançamento é de crédito ou de débito.
-	DebitarLocatario    string  `json:"DebitarLocatario,omitempty"`    // Indica se é para debitar o locatário.
+	Descricao           *string  `json:"Descricao,omitempty"`           // Descrição da taxa.
+	LanctoCondId        *int     `json:"LanctoCondId,omitempty"`        // Código do lançamento de condomínio.
+	Origem              *string  `json:"Origem,omitempty"`              // Origem do lançamento.
+	CodTaxa             *int     `json:"CodTaxa,omitempty"`             // Código da taxa que classifica este lançamento.
+	CodCondominio       *int     `json:"CodCondominio,omitempty"`       // Código do condomínio.
+	CodBloco            *string  `json:"CodBloco,omitempty"`            // Código do bloco do condomínio.
+	CodBlocoBase        *string  `json:"CodBlocoBase,omitempty"`        // Bloco base/principal do condomínio.
+	TipoLancamento      *string  `json:"TipoLancamento,omitempty"`      // Tipo de lançamento.
+	DataVencimentoExtra *string  `json:"DataVencimentoExtra,omitempty"` // Data de vencimento se tipo do documento for extra (TipoDocumento='E').
+	Competencia         *string  `json:"Competencia,omitempty"`         // Competência para a qual o lançamento será lançado.
+	CompetenciaReajuste *string  `json:"CompetenciaReajuste,omitempty"` // Competência do reajuste do lançamento.
+	PercentualReajuste  *float64 `json:"PercentualReajuste,omitempty"`  // Percentual de reajuste do lançamento.
+	NumeroParcela       *int     `json:"NumeroParcela,omitempty"`       // Número da parcela.
+	TotalParcelas       *int     `json:"TotalParcelas,omitempty"`       // Número total de parcelas.
+	DocAtrasado         *string  `json:"DocAtrasado,omitempty"`         // Indica se o DOC/boleto é atrasado.
+	Complemento         *string  `json:"Complemento,omitempty"`         // Complemento descritivo do lançamento.
+	ComplementoAuxiliar *string  `json:"ComplementoAuxiliar,omitempty"` // Complemento descritivo auxiliar do lançamento.
+	NossoNumero         *string  `json:"NossoNumero,omitempty"`         // Número de identificação bancário.
+	Gerado              *string  `json:"Gerado,omitempty"`              // Indica se o boleto já foi gerado.
+	DocExportado        *string  `json:"DocExportado,omitempty"`        // Indica se o boleto/DOC já foi exportado.
+	IdEconomia          *int     `json:"IdEconomia,omitempty"`          // Chave principal da economia/unidade.
+	TipoDocumento       *string  `json:"TipoDocumento,omitempty"`       // Tipo de boleto/DOC.
+	Valor               *float64 `json:"Valor,omitempty"`               // Valor do lançamento.
+	DebitoCredito       *string  `json:"DebitoCredito,omitempty"`       // Indica se o lançamento é de crédito ou de débito.
+	DebitarLocatario    *string  `json:"DebitarLocatario,omitempty"`    // Indica se é para debitar o locatário.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

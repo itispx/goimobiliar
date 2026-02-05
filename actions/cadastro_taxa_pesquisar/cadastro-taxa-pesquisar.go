@@ -151,15 +151,15 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Taxas []*RequestResponseBodyTaxa `json:"Taxas,omitempty"` //
+	Taxas *[]RequestResponseBodyTaxa `json:"Taxas,omitempty"` //
 }
 
 type RequestResponseBodyTaxa struct {
-	CodTaxa   int     `json:"CodTaxa,omitempty"`   // Código da taxa.
-	Descricao string  `json:"Descricao,omitempty"` // Descrição da taxa.
-	Aliquota  float64 `json:"Aliquota,omitempty"`  // Alíquota de ISS referente à cidade/UF informada.
-	Categoria string  `json:"Categoria,omitempty"` // Categoria da taxa.
-	Operacao  string  `json:"Operacao,omitempty"`  // Indica se a taxa é crédito ou débito.
+	CodTaxa   *int     `json:"CodTaxa,omitempty"`   // Código da taxa.
+	Descricao *string  `json:"Descricao,omitempty"` // Descrição da taxa.
+	Aliquota  *float64 `json:"Aliquota,omitempty"`  // Alíquota de ISS referente à cidade/UF informada.
+	Categoria *string  `json:"Categoria,omitempty"` // Categoria da taxa.
+	Operacao  *string  `json:"Operacao,omitempty"`  // Indica se a taxa é crédito ou débito.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

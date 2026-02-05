@@ -145,25 +145,25 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodPessoa int                        `json:"CodPessoa,omitempty"` // Código da pessoa.
-	Tipos     []*RequestResponseBodyTipo `json:"Tipos,omitempty"`     //
+	CodPessoa *int                       `json:"CodPessoa,omitempty"` // Código da pessoa.
+	Tipos     *[]RequestResponseBodyTipo `json:"Tipos,omitempty"`     //
 }
 
 type RequestResponseBodyTipo struct {
-	TipoVinculo string                            `json:"TipoVinculo,omitempty"` // Tipo do vínculo da pessoa.
-	NomeVinculo string                            `json:"NomeVinculo,omitempty"` // Nome do vínculo da pessoa.
-	Vinculos    []*RequestResponseBodyTipoVinculo `json:"Vinculos,omitempty"`    //
+	TipoVinculo *string                           `json:"TipoVinculo,omitempty"` // Tipo do vínculo da pessoa.
+	NomeVinculo *string                           `json:"NomeVinculo,omitempty"` // Nome do vínculo da pessoa.
+	Vinculos    *[]RequestResponseBodyTipoVinculo `json:"Vinculos,omitempty"`    //
 }
 
 type RequestResponseBodyTipoVinculo struct {
-	CodCondominio int    `json:"CodCondominio,omitempty"` // Código do condomínio (quando a busca for Condômino/Síndico).
-	CodBloco      string `json:"CodBloco,omitempty"`      // Código do bloco do condomínio (quando a busca for Condômino/Síndico).
-	CodEconomia   string `json:"CodEconomia,omitempty"`   // Código da economia/unidade no bloco (quando a busca for Condômino).
-	IdEconomia    int    `json:"IdEconomia,omitempty"`    // Identificação da economia no sistema (quando a busca for Condômino).
-	CodImovel     int    `json:"CodImovel,omitempty"`     // Código do imóvel(quando a busca for Proprietário/Locatário/Procurador/Beneficiario/Fiador).
-	CodContrato   int    `json:"CodContrato,omitempty"`   // Código do contrato de locação deste imóvel (quando a busca for Locatário).
-	Descricao     string `json:"Descricao,omitempty"`     // Descrição do vínculo.
-	Situacao      string `json:"Situacao,omitempty"`      // Situacao do vínculo.
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // Código do condomínio (quando a busca for Condômino/Síndico).
+	CodBloco      *string `json:"CodBloco,omitempty"`      // Código do bloco do condomínio (quando a busca for Condômino/Síndico).
+	CodEconomia   *string `json:"CodEconomia,omitempty"`   // Código da economia/unidade no bloco (quando a busca for Condômino).
+	IdEconomia    *int    `json:"IdEconomia,omitempty"`    // Identificação da economia no sistema (quando a busca for Condômino).
+	CodImovel     *int    `json:"CodImovel,omitempty"`     // Código do imóvel(quando a busca for Proprietário/Locatário/Procurador/Beneficiario/Fiador).
+	CodContrato   *int    `json:"CodContrato,omitempty"`   // Código do contrato de locação deste imóvel (quando a busca for Locatário).
+	Descricao     *string `json:"Descricao,omitempty"`     // Descrição do vínculo.
+	Situacao      *string `json:"Situacao,omitempty"`      // Situacao do vínculo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

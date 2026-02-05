@@ -166,7 +166,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	LanctoCondId int `json:"LanctoCondId,omitempty"` // Código do lançamento de condomínio.
+	LanctoCondId *int `json:"LanctoCondId,omitempty"` // Código do lançamento de condomínio.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

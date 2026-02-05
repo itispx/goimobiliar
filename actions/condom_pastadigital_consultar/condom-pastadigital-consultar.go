@@ -145,12 +145,12 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodCondominio int    `json:"CodCondominio,omitempty"` // Código do condomínio.
-	Competencia   string `json:"Competencia,omitempty"`   // Competência referência da Pasta.
-	Descricao     string `json:"Descricao,omitempty"`     // Descrição do Arquivo.
-	URL           string `json:"URL,omitempty"`           // URL para download do arquivo.
-	Tamanho       string `json:"Tamanho,omitempty"`       // Tamanho do arquivo em kilobytes.
-	Usuario       string `json:"Usuario,omitempty"`       // Identificação do usuário.
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // Código do condomínio.
+	Competencia   *string `json:"Competencia,omitempty"`   // Competência referência da Pasta.
+	Descricao     *string `json:"Descricao,omitempty"`     // Descrição do Arquivo.
+	URL           *string `json:"URL,omitempty"`           // URL para download do arquivo.
+	Tamanho       *string `json:"Tamanho,omitempty"`       // Tamanho do arquivo em kilobytes.
+	Usuario       *string `json:"Usuario,omitempty"`       // Identificação do usuário.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

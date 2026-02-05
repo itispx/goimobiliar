@@ -146,11 +146,11 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Secao     string `json:"Secao,omitempty"`     // Seção do parâmetro.
-	Parametro string `json:"Parametro,omitempty"` // Nome do parãmetro.
-	CodFilial int    `json:"CodFilial,omitempty"` // Código da filial a gerar.
-	Valor     string `json:"Valor,omitempty"`     // Valor do parâmetro.
-	Descricao string `json:"Descricao,omitempty"` // Descrição do parâmetro.
+	Secao     *string `json:"Secao,omitempty"`     // Seção do parâmetro.
+	Parametro *string `json:"Parametro,omitempty"` // Nome do parãmetro.
+	CodFilial *int    `json:"CodFilial,omitempty"` // Código da filial a gerar.
+	Valor     *string `json:"Valor,omitempty"`     // Valor do parâmetro.
+	Descricao *string `json:"Descricao,omitempty"` // Descrição do parâmetro.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -149,13 +149,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	IdEconomia  int    `json:"IdEconomia,omitempty"`  // Chave principal da economia/unidade.
-	NossoNumero string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
-	DocCapaId   int    `json:"DocCapaId,omitempty"`   // Código do boleto no sistema.
-	Resultado   string `json:"Resultado,omitempty"`   //	Resultado do cálculo.
-	Status      string `json:"Status,omitempty"`      // Status do cálculo.
-	NumeroErros int    `json:"NumeroErros,omitempty"` // Quantidade de erros do cálculo.
-	UsuarioId   string `json:"UsuarioId,omitempty"`   // Usuário que solicitou o cálculo do boleto.
+	IdEconomia  *int    `json:"IdEconomia,omitempty"`  // Chave principal da economia/unidade.
+	NossoNumero *string `json:"NossoNumero,omitempty"` // Número de identificação bancário.
+	DocCapaId   *int    `json:"DocCapaId,omitempty"`   // Código do boleto no sistema.
+	Resultado   *string `json:"Resultado,omitempty"`   //	Resultado do cálculo.
+	Status      *string `json:"Status,omitempty"`      // Status do cálculo.
+	NumeroErros *int    `json:"NumeroErros,omitempty"` // Quantidade de erros do cálculo.
+	UsuarioId   *string `json:"UsuarioId,omitempty"`   // Usuário que solicitou o cálculo do boleto.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

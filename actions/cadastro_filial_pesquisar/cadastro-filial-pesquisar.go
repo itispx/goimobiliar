@@ -147,12 +147,12 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Filiais []*RequestResponseBodyFilial `json:"Filiais,omitempty"` //
+	Filiais *[]RequestResponseBodyFilial `json:"Filiais,omitempty"` //
 }
 
 type RequestResponseBodyFilial struct {
-	CodFilial  int    `json:"CodFilial,omitempty"`  // Código da filial.
-	FilialNome string `json:"FilialNome,omitempty"` // Nome da filial.
+	CodFilial  *int    `json:"CodFilial,omitempty"`  // Código da filial.
+	FilialNome *string `json:"FilialNome,omitempty"` // Nome da filial.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

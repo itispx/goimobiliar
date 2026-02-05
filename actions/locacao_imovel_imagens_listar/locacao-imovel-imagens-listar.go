@@ -144,12 +144,12 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Imagens []*RequestResponseBodyImagem `json:"Imagens,omitempty"` //
+	Imagens *[]RequestResponseBodyImagem `json:"Imagens,omitempty"` //
 }
 
 type RequestResponseBodyImagem struct {
-	Descricao string `json:"Descricao,omitempty"` // *Descrição da imagem/foto.
-	URL       string `json:"URL,omitempty"`       // *URL para download do arquivo com a imagem/foto.
+	Descricao *string `json:"Descricao,omitempty"` // *Descrição da imagem/foto.
+	URL       *string `json:"URL,omitempty"`       // *URL para download do arquivo com a imagem/foto.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

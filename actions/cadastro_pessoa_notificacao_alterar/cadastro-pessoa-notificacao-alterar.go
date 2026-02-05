@@ -152,8 +152,8 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodPessoa string `json:"CodPessoa,omitempty"` // Código da pessoa.
-	Id        int    `json:"ID,omitempty"`        // Número da notificação.
+	CodPessoa *string `json:"CodPessoa,omitempty"` // Código da pessoa.
+	Id        *int    `json:"ID,omitempty"`        // Número da notificação.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

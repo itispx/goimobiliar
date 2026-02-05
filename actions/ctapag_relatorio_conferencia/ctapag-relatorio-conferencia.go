@@ -164,49 +164,49 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Competencia   string                            `json:"Competencia,omitempty"`   // Competência do relatório de conferência.
-	Lancamentos   []*RequestResponseBodyLancamento  `json:"Lancamentos,omitempty"`   //
+	Competencia   *string                           `json:"Competencia,omitempty"`   // Competência do relatório de conferência.
+	Lancamentos   *[]RequestResponseBodyLancamento  `json:"Lancamentos,omitempty"`   //
 	TotaisLanctos *RequestResponseBodyTotaisLanctos `json:"TotaisLanctos,omitempty"` //
-	Resumos       []*RequestResponseBodyResumo      `json:"Resumos,omitempty"`       //
+	Resumos       *[]RequestResponseBodyResumo      `json:"Resumos,omitempty"`       //
 }
 
 type RequestResponseBodyLancamento struct {
-	NumeroLancto   int     `json:"NumeroLancto,omitempty"`   // Número do lançamento.
-	CodImovel      int     `json:"CodImovel,omitempty"`      // Código do imóvel.
-	Descricao      string  `json:"Descricao,omitempty"`      // Descrição do lançamento/item.
-	DataVencimento string  `json:"DataVencimento,omitempty"` // Data de vencimento do lançamento.
-	DataPagamento  string  `json:"DataPagamento,omitempty"`  // Data de pagamento do lançamento (quando quitado).
-	OrigemCobranca string  `json:"OrigemCobranca,omitempty"` // Origem da cobrança do lançamento.
-	Valor          float64 `json:"Valor,omitempty"`          // Valor do(s) lançamento(s).
-	ValorCobrado   float64 `json:"ValorCobrado,omitempty"`   // Valor cobrado.
-	Diferenca      float64 `json:"Diferenca,omitempty"`      // Diferença na cobrança do(s) lançamento(s).
+	NumeroLancto   *int     `json:"NumeroLancto,omitempty"`   // Número do lançamento.
+	CodImovel      *int     `json:"CodImovel,omitempty"`      // Código do imóvel.
+	Descricao      *string  `json:"Descricao,omitempty"`      // Descrição do lançamento/item.
+	DataVencimento *string  `json:"DataVencimento,omitempty"` // Data de vencimento do lançamento.
+	DataPagamento  *string  `json:"DataPagamento,omitempty"`  // Data de pagamento do lançamento (quando quitado).
+	OrigemCobranca *string  `json:"OrigemCobranca,omitempty"` // Origem da cobrança do lançamento.
+	Valor          *float64 `json:"Valor,omitempty"`          // Valor do(s) lançamento(s).
+	ValorCobrado   *float64 `json:"ValorCobrado,omitempty"`   // Valor cobrado.
+	Diferenca      *float64 `json:"Diferenca,omitempty"`      // Diferença na cobrança do(s) lançamento(s).
 }
 
 type RequestResponseBodyTotaisLanctos struct {
-	Valor        float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
-	ValorCobrado float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
-	Diferenca    float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
+	Valor        *float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
+	ValorCobrado *float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
+	Diferenca    *float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
 }
 
 type RequestResponseBodyResumo struct {
-	Titulo       string                                 `json:"Titulo,omitempty"`       // Título do resumo.
-	Itens        []*RequestResponseBodyResumoItens      `json:"Itens,omitempty"`        //
+	Titulo       *string                                `json:"Titulo,omitempty"`       // Título do resumo.
+	Itens        *[]RequestResponseBodyResumoItens      `json:"Itens,omitempty"`        //
 	TotaisResumo *RequestResponseBodyResumoTotaisResumo `json:"TotaisResumo,omitempty"` //
 }
 
 type RequestResponseBodyResumoItens struct {
-	Descricao    string  `json:"Descricao,omitempty"`    // Descrição do lançamento/item.
-	Quantidade   int     `json:"Quantidade,omitempty"`   // Quantidade de lançamentos/itens.
-	Valor        float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
-	ValorCobrado float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
-	Diferenca    float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
+	Descricao    *string  `json:"Descricao,omitempty"`    // Descrição do lançamento/item.
+	Quantidade   *int     `json:"Quantidade,omitempty"`   // Quantidade de lançamentos/itens.
+	Valor        *float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
+	ValorCobrado *float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
+	Diferenca    *float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
 }
 
 type RequestResponseBodyResumoTotaisResumo struct {
-	Quantidade   int     `json:"Quantidade,omitempty"`   // Quantidade de lançamentos/itens.
-	Valor        float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
-	ValorCobrado float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
-	Diferenca    float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
+	Quantidade   *int     `json:"Quantidade,omitempty"`   // Quantidade de lançamentos/itens.
+	Valor        *float64 `json:"Valor,omitempty"`        // Valor do(s) lançamento(s).
+	ValorCobrado *float64 `json:"ValorCobrado,omitempty"` // Valor cobrado.
+	Diferenca    *float64 `json:"Diferenca,omitempty"`    // Diferença na cobrança do(s) lançamento(s).
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

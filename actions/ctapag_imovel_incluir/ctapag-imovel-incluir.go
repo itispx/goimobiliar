@@ -200,7 +200,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	NumeroLancto int `json:"NumeroLancto,omitempty"` // Número do lançamento.
+	NumeroLancto *int `json:"NumeroLancto,omitempty"` // Número do lançamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

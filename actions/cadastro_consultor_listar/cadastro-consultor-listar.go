@@ -146,14 +146,14 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Consultores []*RequestResponseBodyConsultor `json:"Consultores,omitempty"` //
+	Consultores *[]RequestResponseBodyConsultor `json:"Consultores,omitempty"` //
 }
 
 type RequestResponseBodyConsultor struct {
-	UsuarioId      string `json:"UsuarioId,omitempty"`      // Identificação do usuário.
-	Nome           string `json:"Nome,omitempty"`           // Nome do consultor.
-	AreaAtuacao    string `json:"AreaAtuacao,omitempty"`    // Área de atuação do consultor.
-	CodAreaAtuacao string `json:"CodAreaAtuacao,omitempty"` // Código da área de atuação do consultor.
+	UsuarioId      *string `json:"UsuarioId,omitempty"`      // Identificação do usuário.
+	Nome           *string `json:"Nome,omitempty"`           // Nome do consultor.
+	AreaAtuacao    *string `json:"AreaAtuacao,omitempty"`    // Área de atuação do consultor.
+	CodAreaAtuacao *string `json:"CodAreaAtuacao,omitempty"` // Código da área de atuação do consultor.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

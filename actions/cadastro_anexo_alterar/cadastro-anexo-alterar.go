@@ -153,7 +153,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodAnexo int `json:"CodAnexo,omitempty"` // Código do anexo.
+	CodAnexo *int `json:"CodAnexo,omitempty"` // Código do anexo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

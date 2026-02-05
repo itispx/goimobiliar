@@ -146,20 +146,20 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Lista []*RequestResponseBodyLista `json:"Lista,omitempty"` //
+	Lista *[]RequestResponseBodyLista `json:"Lista,omitempty"` //
 }
 
 type RequestResponseBodyLista struct {
-	CodTaxa              int     `json:"CodTaxa,omitempty"`              // Código da taxa.
-	DescrTaxa            string  `json:"DescrTaxa,omitempty"`            // Descrição da taxa que classifica este lançamento.
-	Valor                float64 `json:"Valor,omitempty"`                // Valor do lançamento.
-	TipoCobranca         string  `json:"TipoCobranca,omitempty"`         // Tipo de cobrança.
-	DescrTipoCobranca    string  `json:"DescrTipoCobranca,omitempty"`    // Descrição do tipo de cobrança.
-	TipoCompetencia      string  `json:"TipoCompetencia,omitempty"`      // Tipo de lançamento.
-	DescrTipoCompetencia string  `json:"DescrTipoCompetencia,omitempty"` // Descrição do tipo de competência.
-	CompetenciaInicial   string  `json:"CompetenciaInicial,omitempty"`   // Competência inicial de vigência.
-	CompetenciaFinal     string  `json:"CompetenciaFinal,omitempty"`     // Competência final de vigência.
-	DestinatarioCobranca string  `json:"DestinatarioCobranca,omitempty"` // Indica quem paga a taxa.
+	CodTaxa              *int     `json:"CodTaxa,omitempty"`              // Código da taxa.
+	DescrTaxa            *string  `json:"DescrTaxa,omitempty"`            // Descrição da taxa que classifica este lançamento.
+	Valor                *float64 `json:"Valor,omitempty"`                // Valor do lançamento.
+	TipoCobranca         *string  `json:"TipoCobranca,omitempty"`         // Tipo de cobrança.
+	DescrTipoCobranca    *string  `json:"DescrTipoCobranca,omitempty"`    // Descrição do tipo de cobrança.
+	TipoCompetencia      *string  `json:"TipoCompetencia,omitempty"`      // Tipo de lançamento.
+	DescrTipoCompetencia *string  `json:"DescrTipoCompetencia,omitempty"` // Descrição do tipo de competência.
+	CompetenciaInicial   *string  `json:"CompetenciaInicial,omitempty"`   // Competência inicial de vigência.
+	CompetenciaFinal     *string  `json:"CompetenciaFinal,omitempty"`     // Competência final de vigência.
+	DestinatarioCobranca *string  `json:"DestinatarioCobranca,omitempty"` // Indica quem paga a taxa.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

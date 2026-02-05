@@ -148,11 +148,11 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodTaxa   string `json:"CodTaxa,omitempty"`   // Código da taxa.
-	Descricao string `json:"Descricao,omitempty"` // Descrição da taxa.
-	Ativo     string `json:"Ativo,omitempty"`     // Seleção por ativo/inativo.
-	TipoTaxa  string `json:"TipoTaxa,omitempty"`  // Tipo de taxa a ser consultada.
-	Categoria string `json:"Categoria,omitempty"` // Categoria da taxa.
+	CodTaxa   *string `json:"CodTaxa,omitempty"`   // Código da taxa.
+	Descricao *string `json:"Descricao,omitempty"` // Descrição da taxa.
+	Ativo     *string `json:"Ativo,omitempty"`     // Seleção por ativo/inativo.
+	TipoTaxa  *string `json:"TipoTaxa,omitempty"`  // Tipo de taxa a ser consultada.
+	Categoria *string `json:"Categoria,omitempty"` // Categoria da taxa.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

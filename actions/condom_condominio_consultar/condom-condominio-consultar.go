@@ -144,54 +144,54 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodCondominio        int                         `json:"CodCondominio,omitempty"`        //	Código do condomínio.
-	NomeCondominio       string                      `json:"NomeCondominio,omitempty"`       // Nome do condomínio.
-	CNPJ                 int                         `json:"CNPJ,omitempty"`                 // CNPJ do condomínio.
-	TotalFracao          float64                     `json:"TotalFracao,omitempty"`          //	Total das frações das economias.
-	TotaldeBlocos        int                         `json:"TotaldeBlocos,omitempty"`        //	Total de blocos do condomínio.
-	DiaVencimentoDoc     int                         `json:"DiaVencimentoDoc,omitempty"`     //	Dia de vencimento do boleto de condomínio.
-	UltimaCompetenciaDoc string                      `json:"UltimaCompetenciaDoc,omitempty"` // Competência do último boleto gerado no formato YYYYMM.
-	CodBlocoBase         string                      `json:"CodBlocoBase,omitempty"`         // Bloco base/principal do condomínio.
-	Ativo                string                      `json:"Ativo,omitempty"`                // Indica se está ativo.
-	DataInicioAdm        string                      `json:"DataInicioAdm,omitempty"`        // Data do início da administracao.
-	EnderecoPrincipal    string                      `json:"EnderecoPrincipal,omitempty"`    // Endereço principal do condomínio.
-	Cidade               string                      `json:"Cidade,omitempty"`               // Cidade do endereço.
-	UF                   string                      `json:"UF,omitempty"`                   // Sigla da Unidade Federativa do endereço.
-	Assessor             string                      `json:"Assessor,omitempty"`             // Identificação do usuário.
-	AssessorNome         string                      `json:"AssessorNome,omitempty"`         // Nome do assessor/gestor.
-	LojaNome             string                      `json:"LojaNome,omitempty"`             // Nome da loja/agência.
-	BloqueioPagamento    string                      `json:"BloqueioPagamento,omitempty"`    // Marcação de bloqueio de pagamento.
-	DataDistrato         string                      `json:"DataDistrato,omitempty"`         // Data de encerramento.
-	Categoria            string                      `json:"Categoria,omitempty"`            // Tipo do condominio.
-	Classificacao        string                      `json:"Classificacao,omitempty"`        // Classificação do condominio (aba 'contrato' da tela de cadastro).
-	Blocos               []*RequestResponseBodyBloco `json:"Blocos,omitempty"`               //
-	CodAdvogadoInad      int                         `json:"CodAdvogadoInad,omitempty"`      // Código do Advogado Inadimplente.
-	NomeAdvogadoInad     string                      `json:"NomeAdvogadoInad,omitempty"`     // Nome do Advogado Inadimplente.
-	HonorarioDias        int                         `json:"HonorarioDias,omitempty"`        // Número de dias a partir do vencimento do boleto para incidência de honorários.
-	HonorarioPercentual  float64                     `json:"HonorarioPercentual,omitempty"`  // Percentual de honorários a ser aplicado sobre o total do boleto.
+	CodCondominio        *int                        `json:"CodCondominio,omitempty"`        //	Código do condomínio.
+	NomeCondominio       *string                     `json:"NomeCondominio,omitempty"`       // Nome do condomínio.
+	CNPJ                 *int                        `json:"CNPJ,omitempty"`                 // CNPJ do condomínio.
+	TotalFracao          *float64                    `json:"TotalFracao,omitempty"`          //	Total das frações das economias.
+	TotaldeBlocos        *int                        `json:"TotaldeBlocos,omitempty"`        //	Total de blocos do condomínio.
+	DiaVencimentoDoc     *int                        `json:"DiaVencimentoDoc,omitempty"`     //	Dia de vencimento do boleto de condomínio.
+	UltimaCompetenciaDoc *string                     `json:"UltimaCompetenciaDoc,omitempty"` // Competência do último boleto gerado no formato YYYYMM.
+	CodBlocoBase         *string                     `json:"CodBlocoBase,omitempty"`         // Bloco base/principal do condomínio.
+	Ativo                *string                     `json:"Ativo,omitempty"`                // Indica se está ativo.
+	DataInicioAdm        *string                     `json:"DataInicioAdm,omitempty"`        // Data do início da administracao.
+	EnderecoPrincipal    *string                     `json:"EnderecoPrincipal,omitempty"`    // Endereço principal do condomínio.
+	Cidade               *string                     `json:"Cidade,omitempty"`               // Cidade do endereço.
+	UF                   *string                     `json:"UF,omitempty"`                   // Sigla da Unidade Federativa do endereço.
+	Assessor             *string                     `json:"Assessor,omitempty"`             // Identificação do usuário.
+	AssessorNome         *string                     `json:"AssessorNome,omitempty"`         // Nome do assessor/gestor.
+	LojaNome             *string                     `json:"LojaNome,omitempty"`             // Nome da loja/agência.
+	BloqueioPagamento    *string                     `json:"BloqueioPagamento,omitempty"`    // Marcação de bloqueio de pagamento.
+	DataDistrato         *string                     `json:"DataDistrato,omitempty"`         // Data de encerramento.
+	Categoria            *string                     `json:"Categoria,omitempty"`            // Tipo do condominio.
+	Classificacao        *string                     `json:"Classificacao,omitempty"`        // Classificação do condominio (aba 'contrato' da tela de cadastro).
+	Blocos               *[]RequestResponseBodyBloco `json:"Blocos,omitempty"`               //
+	CodAdvogadoInad      *int                        `json:"CodAdvogadoInad,omitempty"`      // Código do Advogado Inadimplente.
+	NomeAdvogadoInad     *string                     `json:"NomeAdvogadoInad,omitempty"`     // Nome do Advogado Inadimplente.
+	HonorarioDias        *int                        `json:"HonorarioDias,omitempty"`        // Número de dias a partir do vencimento do boleto para incidência de honorários.
+	HonorarioPercentual  *float64                    `json:"HonorarioPercentual,omitempty"`  // Percentual de honorários a ser aplicado sobre o total do boleto.
 }
 
 type RequestResponseBodyBloco struct {
-	CodBloco      string                              `json:"CodBloco,omitempty"`      // Código do bloco do condomínio.
-	TipoLograd    string                              `json:"TipoLograd,omitempty"`    // Tipo de logradouro do endereço.
-	Descricao     string                              `json:"Descricao,omitempty"`     // Descrição do bloco/conta.
-	Fundo         string                              `json:"Fundo,omitempty"`         // Indica o tipo de fundo/conta.
-	CEP           int                                 `json:"CEP,omitempty"`           // CEP do condomínio.
-	Endereco      string                              `json:"Endereco,omitempty"`      // Endereço do condomínio.
-	Bairro        string                              `json:"Bairro,omitempty"`        // Bairro do endereço.
-	QtdeEconomias int                                 `json:"QtdeEconomias,omitempty"` // Total de economias do bloco.
-	OrdemBloco    int                                 `json:"OrdemBloco,omitempty"`    // Ordem de apresentação do bloco/conta.
-	BlocoAtivo    string                              `json:"BlocoAtivo,omitempty"`    // Informa se o Bloco/Conta está ativo.
-	Conselho      []*RequestResponseBodyBlocoConselho `json:"Conselho,omitempty"`      //
+	CodBloco      *string                             `json:"CodBloco,omitempty"`      // Código do bloco do condomínio.
+	TipoLograd    *string                             `json:"TipoLograd,omitempty"`    // Tipo de logradouro do endereço.
+	Descricao     *string                             `json:"Descricao,omitempty"`     // Descrição do bloco/conta.
+	Fundo         *string                             `json:"Fundo,omitempty"`         // Indica o tipo de fundo/conta.
+	CEP           *int                                `json:"CEP,omitempty"`           // CEP do condomínio.
+	Endereco      *string                             `json:"Endereco,omitempty"`      // Endereço do condomínio.
+	Bairro        *string                             `json:"Bairro,omitempty"`        // Bairro do endereço.
+	QtdeEconomias *int                                `json:"QtdeEconomias,omitempty"` // Total de economias do bloco.
+	OrdemBloco    *int                                `json:"OrdemBloco,omitempty"`    // Ordem de apresentação do bloco/conta.
+	BlocoAtivo    *string                             `json:"BlocoAtivo,omitempty"`    // Informa se o Bloco/Conta está ativo.
+	Conselho      *[]RequestResponseBodyBlocoConselho `json:"Conselho,omitempty"`      //
 }
 
 type RequestResponseBodyBlocoConselho struct {
-	CodPessoa           int    `json:"CodPessoa,omitempty"`           // Código da pessoa.
-	Cargo               string `json:"Cargo,omitempty"`               // Cargo no conselho de condomínio.
-	InicioMandato       string `json:"InicioMandato,omitempty"`       // Data do início do mandato.
-	FinalMandato        string `json:"FinalMandato,omitempty"`        // Data do final de mandato.
-	SindicoProfissional string `json:"SindicoProfissional,omitempty"` // Indicação de síndico profissional.
-	CodFornecedor       int    `json:"CodFornecedor,omitempty"`       // Código de fornecedor (se for o caso).
+	CodPessoa           *int    `json:"CodPessoa,omitempty"`           // Código da pessoa.
+	Cargo               *string `json:"Cargo,omitempty"`               // Cargo no conselho de condomínio.
+	InicioMandato       *string `json:"InicioMandato,omitempty"`       // Data do início do mandato.
+	FinalMandato        *string `json:"FinalMandato,omitempty"`        // Data do final de mandato.
+	SindicoProfissional *string `json:"SindicoProfissional,omitempty"` // Indicação de síndico profissional.
+	CodFornecedor       *int    `json:"CodFornecedor,omitempty"`       // Código de fornecedor (se for o caso).
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

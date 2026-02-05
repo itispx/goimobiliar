@@ -150,7 +150,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Observacoes []*RequestResponseBodyObservacao `json:"Observacoes,omitempty"` //
+	Observacoes *[]RequestResponseBodyObservacao `json:"Observacoes,omitempty"` //
 }
 
 // TODO

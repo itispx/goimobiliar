@@ -194,7 +194,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodPessoa int `json:"CodPessoa,omitempty"` // Código da pessoa.
+	CodPessoa *int `json:"CodPessoa,omitempty"` // Código da pessoa.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -151,32 +151,32 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	DataPagamentoInicial string                        `json:"DataPagamentoInicial,omitempty"` // Data de pagamento inicial do período.
-	DataPagamentoFinal   string                        `json:"DataPagamentoFinal,omitempty"`   // Data de pagamento final do período.
-	Origens              []*RequestResponseBodyOrigem  `json:"Origens,omitempty"`              //
-	Destinos             []*RequestResponseBodyDestino `json:"Destinos,omitempty"`             //
+	DataPagamentoInicial *string                       `json:"DataPagamentoInicial,omitempty"` // Data de pagamento inicial do período.
+	DataPagamentoFinal   *string                       `json:"DataPagamentoFinal,omitempty"`   // Data de pagamento final do período.
+	Origens              *[]RequestResponseBodyOrigem  `json:"Origens,omitempty"`              //
+	Destinos             *[]RequestResponseBodyDestino `json:"Destinos,omitempty"`             //
 	Totais               *RequestResponseBodyTotais    `json:"Totais,omitempty"`               //
 }
 
 type RequestResponseBodyOrigem struct {
-	CodConta     int     `json:"CodConta,omitempty"`     // Código da conta recebida.
-	NomeConta    string  `json:"NomeConta,omitempty"`    // Nome da conta recebida.
-	Historico    string  `json:"Historico,omitempty"`    // Histórico da conta recebida.
-	ValorDebito  float64 `json:"ValorDebito,omitempty"`  // Valor de débito.
-	ValorCredito float64 `json:"ValorCredito,omitempty"` // Valor de crédito.
+	CodConta     *int     `json:"CodConta,omitempty"`     // Código da conta recebida.
+	NomeConta    *string  `json:"NomeConta,omitempty"`    // Nome da conta recebida.
+	Historico    *string  `json:"Historico,omitempty"`    // Histórico da conta recebida.
+	ValorDebito  *float64 `json:"ValorDebito,omitempty"`  // Valor de débito.
+	ValorCredito *float64 `json:"ValorCredito,omitempty"` // Valor de crédito.
 }
 
 type RequestResponseBodyDestino struct {
-	CodConta     int     `json:"CodConta,omitempty"`     // Código da conta recebida.
-	NomeConta    string  `json:"NomeConta,omitempty"`    // Nome da conta recebida.
-	Historico    string  `json:"Historico,omitempty"`    // Histórico da conta recebida.
-	ValorDebito  float64 `json:"ValorDebito,omitempty"`  // Valor de débito.
-	ValorCredito float64 `json:"ValorCredito,omitempty"` // Valor de crédito.
+	CodConta     *int     `json:"CodConta,omitempty"`     // Código da conta recebida.
+	NomeConta    *string  `json:"NomeConta,omitempty"`    // Nome da conta recebida.
+	Historico    *string  `json:"Historico,omitempty"`    // Histórico da conta recebida.
+	ValorDebito  *float64 `json:"ValorDebito,omitempty"`  // Valor de débito.
+	ValorCredito *float64 `json:"ValorCredito,omitempty"` // Valor de crédito.
 }
 
 type RequestResponseBodyTotais struct {
-	TotalCreditos float64 `json:"TotalCreditos,omitempty"` // Total de créditos.
-	TotalDebitos  float64 `json:"TotalDebitos,omitempty"`  // Total de débitos.
+	TotalCreditos *float64 `json:"TotalCreditos,omitempty"` // Total de créditos.
+	TotalDebitos  *float64 `json:"TotalDebitos,omitempty"`  // Total de débitos.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -147,13 +147,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Agencias []*RequestResponseBodyAgencia `json:"Agencias,omitempty"` //
+	Agencias *[]RequestResponseBodyAgencia `json:"Agencias,omitempty"` //
 }
 
 type RequestResponseBodyAgencia struct {
-	IdLoja    int    `json:"IdLoja,omitempty"`    // Identificação da loja/agência.
-	LojaNome  string `json:"LojaNome,omitempty"`  // Nome da loja/agência.
-	CodFilial int    `json:"CodFilial,omitempty"` // Código da filial.
+	IdLoja    *int    `json:"IdLoja,omitempty"`    // Identificação da loja/agência.
+	LojaNome  *string `json:"LojaNome,omitempty"`  // Nome da loja/agência.
+	CodFilial *int    `json:"CodFilial,omitempty"` // Código da filial.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

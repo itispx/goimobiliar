@@ -167,24 +167,24 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Lancamentos []*RequestResponseBodyLancamento `json:"Lancamentos,omitempty"`
+	Lancamentos *[]RequestResponseBodyLancamento `json:"Lancamentos,omitempty"`
 }
 
 type RequestResponseBodyLancamento struct {
-	NumeroLancto     int     `json:"NumeroLancto,omitempty"`     // Número do lançamento.
-	DataVencimento   string  `json:"DataVencimento,omitempty"`   // Data de vencimento do lançamento.
-	CodTaxa          int     `json:"CodTaxa,omitempty"`          // Código da taxa que classifica este lançamento.
-	DescrTaxa        string  `json:"DescrTaxa,omitempty"`        // Descrição da taxa que classifica este lançamento.
-	NomeFavorecido   string  `json:"NomeFavorecido,omitempty"`   // Nome do favorecido.
-	ValorLiquido     float64 `json:"ValorLiquido,omitempty"`     // Valor líquido do lançamento.
-	PrevisaoReal     string  `json:"PrevisaoReal,omitempty"`     // Indica o tipo dos lançamentos a serem pesquisados.
-	Frequencia       string  `json:"Frequencia,omitempty"`       // Define se lançamento é único ou permanente.
-	Pago             string  `json:"Pago,omitempty"`             // Indica se o lançamento está pago.
-	NumeroDocumento  string  `json:"NumeroDocumento,omitempty"`  // Número do documento do fornecedor.
-	UsuarioSuspensao string  `json:"UsuarioSuspensao,omitempty"` // Usuário que suspendeu o lançamento.
-	DataSuspensao    string  `json:"DataSuspensao,omitempty"`    // Data da suspensão do lançamento.
-	MotivoSuspensao  string  `json:"MotivoSuspensao,omitempty"`  // Motivo da suspensão do lançamento.
-	ValorPagamento   float64 `json:"ValorPagamento,omitempty"`   // Valor do pagamento.
+	NumeroLancto     *int     `json:"NumeroLancto,omitempty"`     // Número do lançamento.
+	DataVencimento   *string  `json:"DataVencimento,omitempty"`   // Data de vencimento do lançamento.
+	CodTaxa          *int     `json:"CodTaxa,omitempty"`          // Código da taxa que classifica este lançamento.
+	DescrTaxa        *string  `json:"DescrTaxa,omitempty"`        // Descrição da taxa que classifica este lançamento.
+	NomeFavorecido   *string  `json:"NomeFavorecido,omitempty"`   // Nome do favorecido.
+	ValorLiquido     *float64 `json:"ValorLiquido,omitempty"`     // Valor líquido do lançamento.
+	PrevisaoReal     *string  `json:"PrevisaoReal,omitempty"`     // Indica o tipo dos lançamentos a serem pesquisados.
+	Frequencia       *string  `json:"Frequencia,omitempty"`       // Define se lançamento é único ou permanente.
+	Pago             *string  `json:"Pago,omitempty"`             // Indica se o lançamento está pago.
+	NumeroDocumento  *string  `json:"NumeroDocumento,omitempty"`  // Número do documento do fornecedor.
+	UsuarioSuspensao *string  `json:"UsuarioSuspensao,omitempty"` // Usuário que suspendeu o lançamento.
+	DataSuspensao    *string  `json:"DataSuspensao,omitempty"`    // Data da suspensão do lançamento.
+	MotivoSuspensao  *string  `json:"MotivoSuspensao,omitempty"`  // Motivo da suspensão do lançamento.
+	ValorPagamento   *float64 `json:"ValorPagamento,omitempty"`   // Valor do pagamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

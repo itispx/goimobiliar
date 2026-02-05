@@ -149,14 +149,14 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Contratos []*RequestResponseBodyContrato `json:"Contratos,omitempty"` //
+	Contratos *[]RequestResponseBodyContrato `json:"Contratos,omitempty"` //
 }
 
 type RequestResponseBodyContrato struct {
-	CodImovel int    `json:"CodImovel,omitempty"` // Código do imóvel.
-	Endereco  string `json:"Endereco,omitempty"`  // Endereço do imóvel.
-	NomeLocat string `json:"NomeLocat,omitempty"` // Nome do locatário.
-	Ativo     string `json:"Ativo,omitempty"`     // Indica se o contrato do imóvel está ativo.
+	CodImovel *int    `json:"CodImovel,omitempty"` // Código do imóvel.
+	Endereco  *string `json:"Endereco,omitempty"`  // Endereço do imóvel.
+	NomeLocat *string `json:"NomeLocat,omitempty"` // Nome do locatário.
+	Ativo     *string `json:"Ativo,omitempty"`     // Indica se o contrato do imóvel está ativo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

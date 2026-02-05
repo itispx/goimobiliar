@@ -149,34 +149,34 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	Inadimplentes []*RequestResponseBodyInadimplente `json:"Inadimplentes,omitempty"` //
+	Inadimplentes *[]RequestResponseBodyInadimplente `json:"Inadimplentes,omitempty"` //
 }
 
 type RequestResponseBodyInadimplente struct {
-	DataVencimento       string                                               `json:"DataVencimento,omitempty"`    //	Date	Data de vencimento do documento.
-	CodBloco             string                                               `json:"CodBloco,omitempty"`          //	String(3)	Se informado o código do bloco então busca apenas a inadimplencia desse bloco senão busca toda a inadimplencia do condominio.
-	Economia             string                                               `json:"Economia,omitempty"`          //	String	Identificação da economia.
-	DescrClasseImovel    string                                               `json:"DescrClasseImovel,omitempty"` //	String(50)	Descrição da classe de imóvel da economia/unidade.
-	IdEconomia           int                                                  `json:"IdEconomia,omitempty"`        //	Number(8)	Se informada a chave da economia/unidade então busca apenas a inadimplencia dela senão busca toda a inadimplencia do condominio.
-	CodPessoa            int                                                  `json:"CodPessoa,omitempty"`         //	Number(7)	Código da pessoa.
-	Nome                 string                                               `json:"Nome,omitempty"`              //	String(100)	Nome da pessoa.
-	NossoNumero          string                                               `json:"NossoNumero,omitempty"`       //	String(13)	Número de identificação bancário.
-	TipoDOC              string                                               `json:"TipoDOC,omitempty"`           //	String(1)	Tipo de boleto/DOC.
-	Competencia          string                                               `json:"Competencia,omitempty"`       //	String(7)	Competência do documento sem quitação.
-	VlrDocumento         float64                                              `json:"VlrDocumento,omitempty"`      //	Number(12,2)	Valor do documento.
-	VlrCorrigido         float64                                              `json:"VlrCorrigido,omitempty"`      //	Number(12,2)	Valor corrigido.
-	Multa                float64                                              `json:"Multa,omitempty"`             //	Number(12,2)	Multa sobre valor original.
-	Juros                float64                                              `json:"Juros,omitempty"`             //	Number(12,2)	Juros sobre valor original.
-	Correcao             float64                                              `json:"Correcao,omitempty"`          //	Number(12,2)	Correção monetária sobre valor original.
-	VlrHonorarios        float64                                              `json:"VlrHonorarios,omitempty"`     //	Number(12,2)	Valor dos honorários jurídicos.
-	VlrCustas            float64                                              `json:"VlrCustas,omitempty"`         //	Number(12,2)	Valor das custas jurídicas.
-	VlrTotal             float64                                              `json:"VlrTotal,omitempty"`          //	Number(12,2)	Valor total com honorários e custas.
-	ObsJurNomeAdv        string                                               `json:"ObsJur_NomeAdv,omitempty"`    //	String	Nome do advogado responsável pelas observações jurídicas.
-	ObservacoesJuridicas []*RequestResponseBodyInadimplenteObservacaoJuridica //
+	DataVencimento       *string                                              `json:"DataVencimento,omitempty"`    //	Date	Data de vencimento do documento.
+	CodBloco             *string                                              `json:"CodBloco,omitempty"`          //	String(3)	Se informado o código do bloco então busca apenas a inadimplencia desse bloco senão busca toda a inadimplencia do condominio.
+	Economia             *string                                              `json:"Economia,omitempty"`          //	String	Identificação da economia.
+	DescrClasseImovel    *string                                              `json:"DescrClasseImovel,omitempty"` //	String(50)	Descrição da classe de imóvel da economia/unidade.
+	IdEconomia           *int                                                 `json:"IdEconomia,omitempty"`        //	Number(8)	Se informada a chave da economia/unidade então busca apenas a inadimplencia dela senão busca toda a inadimplencia do condominio.
+	CodPessoa            *int                                                 `json:"CodPessoa,omitempty"`         //	Number(7)	Código da pessoa.
+	Nome                 *string                                              `json:"Nome,omitempty"`              //	String(100)	Nome da pessoa.
+	NossoNumero          *string                                              `json:"NossoNumero,omitempty"`       //	String(13)	Número de identificação bancário.
+	TipoDOC              *string                                              `json:"TipoDOC,omitempty"`           //	String(1)	Tipo de boleto/DOC.
+	Competencia          *string                                              `json:"Competencia,omitempty"`       //	String(7)	Competência do documento sem quitação.
+	VlrDocumento         *float64                                             `json:"VlrDocumento,omitempty"`      //	Number(12,2)	Valor do documento.
+	VlrCorrigido         *float64                                             `json:"VlrCorrigido,omitempty"`      //	Number(12,2)	Valor corrigido.
+	Multa                *float64                                             `json:"Multa,omitempty"`             //	Number(12,2)	Multa sobre valor original.
+	Juros                *float64                                             `json:"Juros,omitempty"`             //	Number(12,2)	Juros sobre valor original.
+	Correcao             *float64                                             `json:"Correcao,omitempty"`          //	Number(12,2)	Correção monetária sobre valor original.
+	VlrHonorarios        *float64                                             `json:"VlrHonorarios,omitempty"`     //	Number(12,2)	Valor dos honorários jurídicos.
+	VlrCustas            *float64                                             `json:"VlrCustas,omitempty"`         //	Number(12,2)	Valor das custas jurídicas.
+	VlrTotal             *float64                                             `json:"VlrTotal,omitempty"`          //	Number(12,2)	Valor total com honorários e custas.
+	ObsJurNomeAdv        *string                                              `json:"ObsJur_NomeAdv,omitempty"`    //	String	Nome do advogado responsável pelas observações jurídicas.
+	ObservacoesJuridicas *[]RequestResponseBodyInadimplenteObservacaoJuridica //
 }
 
 type RequestResponseBodyInadimplenteObservacaoJuridica struct {
-	Observacao string `json:"Observacao,omitempty"` // Observação do jurídico.
+	Observacao *string `json:"Observacao,omitempty"` // Observação do jurídico.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

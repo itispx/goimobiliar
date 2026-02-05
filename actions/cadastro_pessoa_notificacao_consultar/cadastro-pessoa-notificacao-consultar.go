@@ -144,15 +144,15 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodPessoa string                      `json:"CodPessoa,omitempty"` // Código da pessoa.
-	Canais    []*RequestResponseBodyCanal `json:"Canais,omitempty"`    // A notificação pode ser enviada para mais de um canal de comunicação.
+	CodPessoa *string                     `json:"CodPessoa,omitempty"` // Código da pessoa.
+	Canais    *[]RequestResponseBodyCanal `json:"Canais,omitempty"`    // A notificação pode ser enviada para mais de um canal de comunicação.
 }
 
 type RequestResponseBodyCanal struct {
-	EMAIL    string `json:"EMAIL,omitempty"`    // Envio por e-mail.
-	SMS      string `json:"SMS,omitempty"`      // Envio por SMS.
-	WHATSAPP string `json:"WHATSAPP,omitempty"` // Envio por WhatsApp.
-	ID       int    `json:"ID,omitempty"`       // Número da notificação.
+	EMAIL    *string `json:"EMAIL,omitempty"`    // Envio por e-mail.
+	SMS      *string `json:"SMS,omitempty"`      // Envio por SMS.
+	WHATSAPP *string `json:"WHATSAPP,omitempty"` // Envio por WhatsApp.
+	ID       *int    `json:"ID,omitempty"`       // Número da notificação.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {
