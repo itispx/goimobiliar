@@ -1,39 +1,25 @@
 .PHONY: help tag push-tag push-tags release
 
-VERSION ?= 
+help:
+	@echo Alvos disponíveis:
+	@echo   tag        - Criar uma tag git (uso: make tag VERSION=v1.0.0)
+	@echo   push-tag   - Enviar uma tag específica para o remoto (uso: make push-tag VERSION=v1.0.0)
+	@echo   push-tags  - Enviar todas as tags para o remoto
+	@echo   release    - Criar e enviar uma tag (uso: make release VERSION=v1.0.0)
 
-help: ## Display this help message
-	@echo "Available targets:"
-	@echo "  tag        - Create a git tag (use: make tag VERSION=v1.0.0)"
-	@echo "  push-tag   - Push a specific tag to remote (use: make push-tag VERSION=v1.0.0)"
-	@echo "  push-tags  - Push all tags to remote"
-	@echo "  release    - Create and push a tag (use: make release VERSION=v1.0.0)"
+tag:
+	git tag -a $(VERSION) -m "Lançamento $(VERSION)"
+	@echo Tag $(VERSION) criada!
 
-tag: ## Create a git tag (use: make tag VERSION=v1.0.0)
-	@if [ -z "$(VERSION)" ]; then \
-		echo "Error: VERSION is required. Usage: make tag VERSION=v1.0.0"; \
-		exit 1; \
-	fi
-	git tag -a $(VERSION) -m "Release $(VERSION)"
-	@echo "Tag $(VERSION) created!"
-
-push-tag: ## Push a specific tag to remote (use: make push-tag VERSION=v1.0.0)
-	@if [ -z "$(VERSION)" ]; then \
-		echo "Error: VERSION is required. Usage: make push-tag VERSION=v1.0.0"; \
-		exit 1; \
-	fi
+push-tag:
 	git push origin $(VERSION)
-	@echo "Tag $(VERSION) pushed!"
+	@echo Tag $(VERSION) enviada!
 
-push-tags: ## Push all tags to remote
+push-tags:
 	git push --tags
-	@echo "All tags pushed!"
-
-release: ## Create and push a tag (use: make release VERSION=v1.0.0)
-	@if [ -z "$(VERSION)" ]; then \
-		echo "Error: VERSION is required. Usage: make release VERSION=v1.0.0"; \
-		exit 1; \
-	fi
-	git tag -a $(VERSION) -m "Release $(VERSION)"
+	@echo Todas as tags enviadas!
+	
+release:
+	git tag -a $(VERSION) -m "Lançamento $(VERSION)"
 	git push origin $(VERSION)
-	@echo "Release $(VERSION) complete!"
+	@echo Lançamento $(VERSION) completo!
