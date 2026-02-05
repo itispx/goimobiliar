@@ -46,9 +46,9 @@ func NewSession(input *NewInput) (*Session, error) {
 	loginResponse, err := login.Run(&login.RunInput{
 		Endpoint: input.Endpoint,
 		ActionInput: &login.ActionInput{
-			UserId:   input.UserId,
-			UserPass: password,
-			ImobId:   input.ImobId,
+			UserId:   &input.UserId,
+			UserPass: &password,
+			ImobId:   &input.ImobId,
 		},
 	})
 	if err != nil {
@@ -58,18 +58,18 @@ func NewSession(input *NewInput) (*Session, error) {
 	sess := Session{
 		SessionId:      loginResponse.Header.SessionId,
 		Endpoint:       input.Endpoint,
-		NomeImob:       loginResponse.Body.NomeImob,
+		NomeImob:       *loginResponse.Body.NomeImob,
 		ImobId:         input.ImobId,
-		UsuarioId:      loginResponse.Body.UsuarioId,
-		Nome:           loginResponse.Body.Nome,
-		Versao:         loginResponse.Body.Versao,
-		ClientIP:       loginResponse.Body.ClientIP,
-		CodFilial:      loginResponse.Body.CodFilial,
-		NomeFilial:     loginResponse.Body.NomeFilial,
-		Cidade:         loginResponse.Body.Cidade,
-		Uf:             loginResponse.Body.Uf,
-		MaxSessions:    loginResponse.Body.MaxSessions,
-		ServerDateTime: loginResponse.Body.ServerDateTime,
+		UsuarioId:      *loginResponse.Body.UsuarioId,
+		Nome:           *loginResponse.Body.Nome,
+		Versao:         *loginResponse.Body.Versao,
+		ClientIP:       *loginResponse.Body.ClientIP,
+		CodFilial:      *loginResponse.Body.CodFilial,
+		NomeFilial:     *loginResponse.Body.NomeFilial,
+		Cidade:         *loginResponse.Body.Cidade,
+		Uf:             *loginResponse.Body.Uf,
+		MaxSessions:    *loginResponse.Body.MaxSessions,
+		ServerDateTime: *loginResponse.Body.ServerDateTime,
 	}
 
 	return &sess, nil
