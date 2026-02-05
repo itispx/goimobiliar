@@ -15,11 +15,11 @@ import (
 var ACTION = "CADASTRO_TAXA_CONSULTAR"
 
 type ActionInput struct {
-	CodTaxa       int    `json:"CodTaxa,omitempty"`       // *Código da taxa.
-	TipoTaxa      string `json:"TipoTaxa,omitempty"`      // *Tipo de taxa a ser consultada.
-	CodCondominio int    `json:"CodCondominio,omitempty"` // Código do condomínio quando tipo de pesquisa for de condomínio garantido ou taxa fixa.
-	CodBloco      string `json:"CodBloco,omitempty"`      // Código do bloco quando tipo de pesquisa for de condomínio garantido ou taxa fixa.
-	Todas         string `json:"Todas,omitempty"`         // Indica se também deve pesquisar taxas inativas. Valor default é 'T'.
+	CodTaxa       *int    `json:"CodTaxa,omitempty"`       // *Código da taxa.
+	TipoTaxa      *string `json:"TipoTaxa,omitempty"`      // *Tipo de taxa a ser consultada.
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // Código do condomínio quando tipo de pesquisa for de condomínio garantido ou taxa fixa.
+	CodBloco      *string `json:"CodBloco,omitempty"`      // Código do bloco quando tipo de pesquisa for de condomínio garantido ou taxa fixa.
+	Todas         *string `json:"Todas,omitempty"`         // Indica se também deve pesquisar taxas inativas. Valor default é 'T'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

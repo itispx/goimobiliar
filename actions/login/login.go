@@ -12,9 +12,9 @@ import (
 var ACTION = "LOGIN"
 
 type ActionInput struct {
-	ImobId   string `json:"IMOB_ID,omitempty"`   // Identificação da administradora.
-	UserId   string `json:"USER_ID,omitempty"`   // Identificação do usuário.
-	UserPass string `json:"USER_PASS,omitempty"` // Senha do usário. A senha é criptografada pelo pacote.
+	ImobId   *string `json:"IMOB_ID,omitempty"`   // Identificação da administradora.
+	UserId   *string `json:"USER_ID,omitempty"`   // Identificação do usuário.
+	UserPass *string `json:"USER_PASS,omitempty"` // Senha do usário. A senha é criptografada pelo pacote.
 }
 
 type RunInput HandlerInput

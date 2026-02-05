@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_FILIAL_CONSULTAR"
 
 type ActionInput struct {
-	CodFilial int `json:"CodFilial,omitempty"` // *Código da filial.
+	CodFilial *int `json:"CodFilial,omitempty"` // *Código da filial.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

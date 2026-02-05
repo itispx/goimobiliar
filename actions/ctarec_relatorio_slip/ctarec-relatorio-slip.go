@@ -15,13 +15,13 @@ import (
 var ACTION = "CTAREC_RELATORIO_SLIP"
 
 type ActionInput struct {
-	CodFilial            int    `json:"CodFilial,omitempty"`            // Código da filial. Valor default é '000'.
-	DataPagamentoInicial string `json:"DataPagamentoInicial,omitempty"` // *Data de pagamento inicial do período.
-	DataPagamentoFinal   string `json:"DataPagamentoFinal,omitempty"`   // Data de pagamento final do período.
-	Sintetico            string `json:"Sintetico,omitempty"`            // Listagem sintética. Valor default é 'N'.
-	PorLote              string `json:"PorLote,omitempty"`              // Agrupar por lote. Valor default é 'N'.
-	TotalizarPorConta    string `json:"TotalizarPorConta,omitempty"`    // Totalizar por conta. Valor default é 'N'.
-	ResponseFormat       string `json:"ResponseFormat,omitempty"`       // Formato desejado da resposta.
+	CodFilial            *int    `json:"CodFilial,omitempty"`            // Código da filial. Valor default é '000'.
+	DataPagamentoInicial *string `json:"DataPagamentoInicial,omitempty"` // *Data de pagamento inicial do período.
+	DataPagamentoFinal   *string `json:"DataPagamentoFinal,omitempty"`   // Data de pagamento final do período.
+	Sintetico            *string `json:"Sintetico,omitempty"`            // Listagem sintética. Valor default é 'N'.
+	PorLote              *string `json:"PorLote,omitempty"`              // Agrupar por lote. Valor default é 'N'.
+	TotalizarPorConta    *string `json:"TotalizarPorConta,omitempty"`    // Totalizar por conta. Valor default é 'N'.
+	ResponseFormat       *string `json:"ResponseFormat,omitempty"`       // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

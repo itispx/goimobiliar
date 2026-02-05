@@ -15,9 +15,9 @@ import (
 var ACTION = "TABELA_CONSULTAR"
 
 type ActionInput struct {
-	Tabela    string `json:"Tabela,omitempty"`    // Nome da tabela.
-	Valor     string `json:"Valor,omitempty"`     // Valor do elemento na tabela.
-	Descricao string `json:"Descricao,omitempty"` // Descrição do elemento na tabela.
+	Tabela    *string `json:"Tabela,omitempty"`    // Nome da tabela.
+	Valor     *string `json:"Valor,omitempty"`     // Valor do elemento na tabela.
+	Descricao *string `json:"Descricao,omitempty"` // Descrição do elemento na tabela.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

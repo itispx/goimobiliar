@@ -15,43 +15,43 @@ import (
 var ACTION = "CADASTRO_PESSOA_INCLUIR"
 
 type ActionInput struct {
-	Nome              string                 `json:"Nome,omitempty"`              //	String(100)	*Nome da pessoa.
-	NomePai           string                 `json:"NomePai,omitempty"`           //	String(40)	Nome do pai da pessoa física.
-	NomeMae           string                 `json:"NomeMae,omitempty"`           //	String(40)	Nome da mãe da pessoa física.
-	PIS               string                 `json:"PIS,omitempty"`               //	String(11)	PIS da pessoa da pessoa física.
-	Nacionalidade     string                 `json:"Nacionalidade,omitempty"`     //	String(50)	Nacionalidade da pessoa no padrão do e-Social.
-	CodNacionalidade  int                    `json:"CodNacionalidade,omitempty"`  //	Number(3)	Código de nacionalidade da pessoa no e-Social.
-	Naturalidade      string                 `json:"Naturalidade,omitempty"`      //	String(40)	Naturalidade da pessoa no padrão do DIMOB.
-	CodNaturalidade   int                    `json:"CodNaturalidade,omitempty"`   //	Number(5)	Naturalidade da pessoa no DIMOB.
-	Contato           string                 `json:"Contato,omitempty"`           //	String(60)	Informações de pessoa de contato.
-	CodIntegracaoSist string                 `json:"CodIntegracaoSist,omitempty"` //	String(20)	Código de integração/migração de sistema.
-	Sexo              string                 `json:"Sexo,omitempty"`              //	String(1)	Sexo/gênero da pessoa. Valor default é ' '.
-	TipoPessoa        string                 `json:"TipoPessoa,omitempty"`        //	String(1)	Tipo da pessoa. Valor default é ' '.
-	CpfCnpj           int                    `json:"CpfCnpj,omitempty"`           //	Number(14)	Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
-	RG                string                 `json:"RG,omitempty"`                //	String(20)	Número do documento de identificação da pessoa física. Não preencher se for pessoa jurídica.
-	OrgaoExpedidor    string                 `json:"OrgaoExpedidor,omitempty"`    //	String(6)	Órgão que expediu o documento de identificação informado.
-	DataExpedicao     string                 `json:"DataExpedicao,omitempty"`     //	Date	A data de expedição do documento de identificação informado.
-	DataNascimento    string                 `json:"DataNascimento,omitempty"`    //	Date	Data de nascimento da pessoa física ou de criação da pessoa jurídica.
-	CodConjuge        int                    `json:"CodConjuge,omitempty"`        //	Number(7)	Código de pessoa do cônjuge.
-	SenhaInternet     string                 `json:"SenhaInternet,omitempty"`     //	String(15)	Senha de acesso no site/internet.
-	Email             string                 `json:"Email,omitempty"`             //	String(256)	E-mail da pessoa.
-	TipoEnderCobr     string                 `json:"TipoEnderCobr,omitempty"`     //	String(1)	Tipo de endereço de cobrança que deve existir no array 'Enderecos'.
-	TipoEnderCorresp  string                 `json:"TipoEnderCorresp,omitempty"`  //	String(1)	Tipo de endereço de correpondência que deve existir no array 'Enderecos'.
-	Passaporte        string                 `json:"Passaporte,omitempty"`        //	String(30)	Número do passaporte da pessoa física.
-	Celular           string                 `json:"Celular,omitempty"`           //	Phone(19)	Número de celular.
-	TipoConta         string                 `json:"TipoConta,omitempty"`         //	String(1)	Tipo da conta bancária desta pessoa.
-	CodBanco          int                    `json:"CodBanco,omitempty"`          //	Number(3)	Código do banco.
-	CodAgencia        int                    `json:"CodAgencia,omitempty"`        //	Number(4)	Código da agência bancária.
-	ContaCorrente     string                 `json:"ContaCorrente,omitempty"`     //	String(15)	Número da conta corrente desta pessoa.
-	Classificacao     string                 `json:"Classificacao,omitempty"`     //	String(1)	Código de classificacão desta pessoa. Valor default é 'P'.
-	Observacao        string                 `json:"Observacao,omitempty"`        //	String(250)	Texto de observação desta pessoa.
-	CodProfissao      int                    `json:"CodProfissao,omitempty"`      //	Number(6)	Código da profissão desta pessoa.
-	EstadoCivil       string                 `json:"EstadoCivil,omitempty"`       //	String(1)	Estado civil da pessoa. Valor default é 'S'.
-	Ativo             string                 `json:"Ativo,omitempty"`             //	String(1)	Indica se está ativo. Valor default é 'S'.
-	EmailAutomatico   string                 `json:"EmailAutomatico,omitempty"`   //	String(1)	Avisos automáticos por e-mail. Valor default é 'N'.
-	EmailNfse         string                 `json:"EmailNfse,omitempty"`         //	String(256)	Utilizado na emissão na NFSe. Valor default é 'N'.
-	WhatsPrioritario  string                 `json:"WhatsPrioritario,omitempty"`  //	String(1)	Campanhas ativas por WhatsApp. Valor default é 'N'.
-	Enderecos         []*ActionInputEndereco `json:"Enderecos,omitempty"`         //
+	Nome              *string                `json:"Nome,omitempty"`              //	String(100)	*Nome da pessoa.
+	NomePai           *string                `json:"NomePai,omitempty"`           //	String(40)	Nome do pai da pessoa física.
+	NomeMae           *string                `json:"NomeMae,omitempty"`           //	String(40)	Nome da mãe da pessoa física.
+	PIS               *string                `json:"PIS,omitempty"`               //	String(11)	PIS da pessoa da pessoa física.
+	Nacionalidade     *string                `json:"Nacionalidade,omitempty"`     //	String(50)	Nacionalidade da pessoa no padrão do e-Social.
+	CodNacionalidade  *int                   `json:"CodNacionalidade,omitempty"`  //	Number(3)	Código de nacionalidade da pessoa no e-Social.
+	Naturalidade      *string                `json:"Naturalidade,omitempty"`      //	String(40)	Naturalidade da pessoa no padrão do DIMOB.
+	CodNaturalidade   *int                   `json:"CodNaturalidade,omitempty"`   //	Number(5)	Naturalidade da pessoa no DIMOB.
+	Contato           *string                `json:"Contato,omitempty"`           //	String(60)	Informações de pessoa de contato.
+	CodIntegracaoSist *string                `json:"CodIntegracaoSist,omitempty"` //	String(20)	Código de integração/migração de sistema.
+	Sexo              *string                `json:"Sexo,omitempty"`              //	String(1)	Sexo/gênero da pessoa. Valor default é ' '.
+	TipoPessoa        *string                `json:"TipoPessoa,omitempty"`        //	String(1)	Tipo da pessoa. Valor default é ' '.
+	CpfCnpj           *int                   `json:"CpfCnpj,omitempty"`           //	Number(14)	Se for tipo de pessoa física o valor é um CPF. Se for tipo de pessoa jurídica o valor é um CNPJ. Se o tipo de pessoa não for informado então este campo é vazio.
+	RG                *string                `json:"RG,omitempty"`                //	String(20)	Número do documento de identificação da pessoa física. Não preencher se for pessoa jurídica.
+	OrgaoExpedidor    *string                `json:"OrgaoExpedidor,omitempty"`    //	String(6)	Órgão que expediu o documento de identificação informado.
+	DataExpedicao     *string                `json:"DataExpedicao,omitempty"`     //	Date	A data de expedição do documento de identificação informado.
+	DataNascimento    *string                `json:"DataNascimento,omitempty"`    //	Date	Data de nascimento da pessoa física ou de criação da pessoa jurídica.
+	CodConjuge        *int                   `json:"CodConjuge,omitempty"`        //	Number(7)	Código de pessoa do cônjuge.
+	SenhaInternet     *string                `json:"SenhaInternet,omitempty"`     //	String(15)	Senha de acesso no site/internet.
+	Email             *string                `json:"Email,omitempty"`             //	String(256)	E-mail da pessoa.
+	TipoEnderCobr     *string                `json:"TipoEnderCobr,omitempty"`     //	String(1)	Tipo de endereço de cobrança que deve existir no array 'Enderecos'.
+	TipoEnderCorresp  *string                `json:"TipoEnderCorresp,omitempty"`  //	String(1)	Tipo de endereço de correpondência que deve existir no array 'Enderecos'.
+	Passaporte        *string                `json:"Passaporte,omitempty"`        //	String(30)	Número do passaporte da pessoa física.
+	Celular           *string                `json:"Celular,omitempty"`           //	Phone(19)	Número de celular.
+	TipoConta         *string                `json:"TipoConta,omitempty"`         //	String(1)	Tipo da conta bancária desta pessoa.
+	CodBanco          *int                   `json:"CodBanco,omitempty"`          //	Number(3)	Código do banco.
+	CodAgencia        *int                   `json:"CodAgencia,omitempty"`        //	Number(4)	Código da agência bancária.
+	ContaCorrente     *string                `json:"ContaCorrente,omitempty"`     //	String(15)	Número da conta corrente desta pessoa.
+	Classificacao     *string                `json:"Classificacao,omitempty"`     //	String(1)	Código de classificacão desta pessoa. Valor default é 'P'.
+	Observacao        *string                `json:"Observacao,omitempty"`        //	String(250)	Texto de observação desta pessoa.
+	CodProfissao      *int                   `json:"CodProfissao,omitempty"`      //	Number(6)	Código da profissão desta pessoa.
+	EstadoCivil       *string                `json:"EstadoCivil,omitempty"`       //	String(1)	Estado civil da pessoa. Valor default é 'S'.
+	Ativo             *string                `json:"Ativo,omitempty"`             //	String(1)	Indica se está ativo. Valor default é 'S'.
+	EmailAutomatico   *string                `json:"EmailAutomatico,omitempty"`   //	String(1)	Avisos automáticos por e-mail. Valor default é 'N'.
+	EmailNfse         *string                `json:"EmailNfse,omitempty"`         //	String(256)	Utilizado na emissão na NFSe. Valor default é 'N'.
+	WhatsPrioritario  *string                `json:"WhatsPrioritario,omitempty"`  //	String(1)	Campanhas ativas por WhatsApp. Valor default é 'N'.
+	Enderecos         *[]ActionInputEndereco `json:"Enderecos,omitempty"`         //
 }
 
 type ActionInputEndereco struct {

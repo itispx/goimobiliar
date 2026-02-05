@@ -15,14 +15,14 @@ import (
 var ACTION = "CTAPAG_RELATORIO_SLIP"
 
 type ActionInput struct {
-	CodFilial                int    `json:"CodFilial,omitempty"`                // Código da filial. Valor default é '000'.
-	DataPagamentoInicial     string `json:"DataPagamentoInicial,omitempty"`     // *Data de pagamento inicial do período.
-	DataPagamentoFinal       string `json:"DataPagamentoFinal,omitempty"`       // Data de pagamento final do período.
-	ResumoContabil           string `json:"ResumoContabil,omitempty"`           // Listagem resumida. Valor default é 'N'.
-	LancamentosContaCorrente string `json:"LancamentosContaCorrente,omitempty"` // Exibir lançamentos em conta corrente. Valor default é 'N'.
-	TipoLancamento           string `json:"TipoLancamento,omitempty"`           // Tipo de lançamento. Valor default é 'R'.
-	DemonstrativoValores     string `json:"DemonstrativoValores,omitempty"`     // Demonstrativo de valores. Valor default é 'C'.
-	ResponseFormat           string `json:"ResponseFormat,omitempty"`           // Formato desejado da resposta.
+	CodFilial                *int    `json:"CodFilial,omitempty"`                // Código da filial. Valor default é '000'.
+	DataPagamentoInicial     *string `json:"DataPagamentoInicial,omitempty"`     // *Data de pagamento inicial do período.
+	DataPagamentoFinal       *string `json:"DataPagamentoFinal,omitempty"`       // Data de pagamento final do período.
+	ResumoContabil           *string `json:"ResumoContabil,omitempty"`           // Listagem resumida. Valor default é 'N'.
+	LancamentosContaCorrente *string `json:"LancamentosContaCorrente,omitempty"` // Exibir lançamentos em conta corrente. Valor default é 'N'.
+	TipoLancamento           *string `json:"TipoLancamento,omitempty"`           // Tipo de lançamento. Valor default é 'R'.
+	DemonstrativoValores     *string `json:"DemonstrativoValores,omitempty"`     // Demonstrativo de valores. Valor default é 'C'.
+	ResponseFormat           *string `json:"ResponseFormat,omitempty"`           // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,8 +15,8 @@ import (
 var ACTION = "CTAREC_BOLETO_PDF_CONSULTAR"
 
 type ActionInput struct {
-	NossoNumero string // *Número de identificação bancário.
-	Formato     string // Formato desejado do arquivo. Valor default é 'PDF'.
+	NossoNumero *string // *Número de identificação bancário.
+	Formato     *string // Formato desejado do arquivo. Valor default é 'PDF'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

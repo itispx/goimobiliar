@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_FORNECEDOR_ANEXO_CONSULTAR"
 
 type ActionInput struct {
-	CodFornecedor int `json:"CodFornecedor,omitempty"` // *Código do fornecedor.
+	CodFornecedor *int `json:"CodFornecedor,omitempty"` // *Código do fornecedor.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

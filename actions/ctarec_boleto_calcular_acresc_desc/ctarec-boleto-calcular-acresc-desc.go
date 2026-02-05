@@ -15,9 +15,9 @@ import (
 var ACTION = "CTAREC_BOLETO_CALCULAR_ACRESC_DESC"
 
 type ActionInput struct {
-	NossoNumero     string `json:"NossoNumero,omitempty"`     // Número de identificação bancário.
-	DocCapaId       int    `json:"DocCapaId,omitempty"`       // Código do boleto no sistema.
-	DataLimitePagto string `json:"DataLimitePagto,omitempty"` // Data limite de pagamento.
+	NossoNumero     *string `json:"NossoNumero,omitempty"`     // Número de identificação bancário.
+	DocCapaId       *int    `json:"DocCapaId,omitempty"`       // Código do boleto no sistema.
+	DataLimitePagto *string `json:"DataLimitePagto,omitempty"` // Data limite de pagamento.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

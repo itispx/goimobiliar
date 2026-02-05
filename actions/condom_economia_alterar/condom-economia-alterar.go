@@ -15,40 +15,40 @@ import (
 var ACTION = "CONDOM_ECONOMIA_ALTERAR"
 
 type ActionInput struct {
-	IdEconomia                     int     `json:"IdEconomia,omitempty"`                     // *Chave principal da economia/unidade.
-	CodEconomia                    string  `json:"CodEconomia,omitempty"`                    // Código da economia/unidade no bloco.
-	CodClasseImovel                int     `json:"CodClasseImovel,omitempty"`                // Código da classe de imóvel.
-	CodPessoaCondomino             int     `json:"CodPessoaCondomino,omitempty"`             // Código de pessoa do condômino desta economia/unidade.
-	CodPessoaLocat                 int     `json:"CodPessoaLocat,omitempty"`                 // Código de pessoa do locatário desta economia/unidade.
-	CodPessoaDebContaCondomino     int     `json:"CodPessoaDebContaCondomino,omitempty"`     // Código de pessoa do condômino para débito em conta.
-	CodPessoaDebContaLocat         int     `json:"CodPessoaDebContaLocat,omitempty"`         // Código de pessoa do locatário para débito em conta.
-	CodFornecedorAdministradoraLoc int     `json:"CodFornecedorAdministradoraLoc,omitempty"` // Código de fornecedor da administradora da locação.
-	CodImovelNaAdministradoraLoc   int     `json:"CodImovelNaAdministradoraLoc,omitempty"`   // Código do imóvel na locação desta administradora.
-	CodCompensacaoIntegrada        string  `json:"CodCompensacaoIntegrada,omitempty"`        // Código do imóvel para compensação integrada com outra administradora da locação.
-	CodFornecAdvogado              int     `json:"CodFornecAdvogado,omitempty"`              // Código de fornecedor do advogado de cobrança dos boletos.
-	TarifaBoleto                   string  `json:"TarifaBoleto,omitempty"`                   // Indica se o boleto tem tarifa.
-	ValorTarifaBoleto              float64 `json:"ValorTarifaBoleto,omitempty"`              // Valor fixado da tarifa.
-	QtdeDormitorios                int     `json:"QtdeDormitorios,omitempty"`                // Quantidade de dormitórios.
-	Fracao                         float64 `json:"Fracao,omitempty"`                         // Fracao da economia/unidade.
-	EmiteExtrato                   string  `json:"EmiteExtrato,omitempty"`                   // Indica qual tipo de extrato.
-	ExportaLocacao                 string  `json:"ExportaLocacao,omitempty"`                 // Indica se exporta para locação.
-	EmiteEtiqueta                  string  `json:"EmiteEtiqueta,omitempty"`                  // Indica se emite etiqueta.
-	RetemBoleto                    string  `json:"RetemBoleto,omitempty"`                    // Indica se deve reter boleto.
-	ExtratoNoSite                  string  `json:"ExtratoNoSite,omitempty"`                  // Indica se deve mostrar extrato no site.
-	EnviarEmailBoleto              string  `json:"EnviarEmailBoleto,omitempty"`              // Indica se deve enviar boleto por e-mail.
-	GerarReciboAluguel             string  `json:"GerarReciboAluguel,omitempty"`             // Indica se deve gerar recibo de locação.
-	IsentarTaxaPorte               string  `json:"IsentarTaxaPorte,omitempty"`               // Indica se deve isentar taxa porte.
-	AssociarAdvogado               string  `json:"AssociarAdvogado,omitempty"`               // Indica se deve associar um advogado aos boletos.
-	InibirMsgInadimplenciaBoleto   string  `json:"InibirMsgInadimplenciaBoleto,omitempty"`   // Indica se deve inibir mensagem de inadimplência no boleto.
-	InibirCartaInadimplencia       string  `json:"InibirCartaInadimplencia,omitempty"`       // Indica se deve inibir impressão da carta de inadimplência.
-	InibirEmailInadimplencia       string  `json:"InibirEmailInadimplencia,omitempty"`       // Indica se deve inibir envio por email da carta de inadimplência.
-	InibirExportacao               string  `json:"InibirExportacao,omitempty"`               // Indica se deve gerar recibo de locação.
-	BloqueioNegativa               string  `json:"BloqueioNegativa,omitempty"`               // Indica se deve bloquear a negativa de débitos.
-	ObservacaoEconomia             string  `json:"ObservacaoEconomia,omitempty"`             // Observação sobre esta economia/unidade.
-	ObservacaoBoleto               string  `json:"ObservacaoBoleto,omitempty"`               // Texto para constar nas observações do boleto.
-	LocalEnderCobr                 string  `json:"LocalEnderCobr,omitempty"`                 // Local do endereço de cobrança.
-	LocalEnderCorresp              string  `json:"LocalEnderCorresp,omitempty"`              // Local do endereço de correpondência.
-	Ativa                          string  `json:"Ativa,omitempty"`                          // Indica se está ativa.
+	IdEconomia                     *int     `json:"IdEconomia,omitempty"`                     // *Chave principal da economia/unidade.
+	CodEconomia                    *string  `json:"CodEconomia,omitempty"`                    // Código da economia/unidade no bloco.
+	CodClasseImovel                *int     `json:"CodClasseImovel,omitempty"`                // Código da classe de imóvel.
+	CodPessoaCondomino             *int     `json:"CodPessoaCondomino,omitempty"`             // Código de pessoa do condômino desta economia/unidade.
+	CodPessoaLocat                 *int     `json:"CodPessoaLocat,omitempty"`                 // Código de pessoa do locatário desta economia/unidade.
+	CodPessoaDebContaCondomino     *int     `json:"CodPessoaDebContaCondomino,omitempty"`     // Código de pessoa do condômino para débito em conta.
+	CodPessoaDebContaLocat         *int     `json:"CodPessoaDebContaLocat,omitempty"`         // Código de pessoa do locatário para débito em conta.
+	CodFornecedorAdministradoraLoc *int     `json:"CodFornecedorAdministradoraLoc,omitempty"` // Código de fornecedor da administradora da locação.
+	CodImovelNaAdministradoraLoc   *int     `json:"CodImovelNaAdministradoraLoc,omitempty"`   // Código do imóvel na locação desta administradora.
+	CodCompensacaoIntegrada        *string  `json:"CodCompensacaoIntegrada,omitempty"`        // Código do imóvel para compensação integrada com outra administradora da locação.
+	CodFornecAdvogado              *int     `json:"CodFornecAdvogado,omitempty"`              // Código de fornecedor do advogado de cobrança dos boletos.
+	TarifaBoleto                   *string  `json:"TarifaBoleto,omitempty"`                   // Indica se o boleto tem tarifa.
+	ValorTarifaBoleto              *float64 `json:"ValorTarifaBoleto,omitempty"`              // Valor fixado da tarifa.
+	QtdeDormitorios                *int     `json:"QtdeDormitorios,omitempty"`                // Quantidade de dormitórios.
+	Fracao                         *float64 `json:"Fracao,omitempty"`                         // Fracao da economia/unidade.
+	EmiteExtrato                   *string  `json:"EmiteExtrato,omitempty"`                   // Indica qual tipo de extrato.
+	ExportaLocacao                 *string  `json:"ExportaLocacao,omitempty"`                 // Indica se exporta para locação.
+	EmiteEtiqueta                  *string  `json:"EmiteEtiqueta,omitempty"`                  // Indica se emite etiqueta.
+	RetemBoleto                    *string  `json:"RetemBoleto,omitempty"`                    // Indica se deve reter boleto.
+	ExtratoNoSite                  *string  `json:"ExtratoNoSite,omitempty"`                  // Indica se deve mostrar extrato no site.
+	EnviarEmailBoleto              *string  `json:"EnviarEmailBoleto,omitempty"`              // Indica se deve enviar boleto por e-mail.
+	GerarReciboAluguel             *string  `json:"GerarReciboAluguel,omitempty"`             // Indica se deve gerar recibo de locação.
+	IsentarTaxaPorte               *string  `json:"IsentarTaxaPorte,omitempty"`               // Indica se deve isentar taxa porte.
+	AssociarAdvogado               *string  `json:"AssociarAdvogado,omitempty"`               // Indica se deve associar um advogado aos boletos.
+	InibirMsgInadimplenciaBoleto   *string  `json:"InibirMsgInadimplenciaBoleto,omitempty"`   // Indica se deve inibir mensagem de inadimplência no boleto.
+	InibirCartaInadimplencia       *string  `json:"InibirCartaInadimplencia,omitempty"`       // Indica se deve inibir impressão da carta de inadimplência.
+	InibirEmailInadimplencia       *string  `json:"InibirEmailInadimplencia,omitempty"`       // Indica se deve inibir envio por email da carta de inadimplência.
+	InibirExportacao               *string  `json:"InibirExportacao,omitempty"`               // Indica se deve gerar recibo de locação.
+	BloqueioNegativa               *string  `json:"BloqueioNegativa,omitempty"`               // Indica se deve bloquear a negativa de débitos.
+	ObservacaoEconomia             *string  `json:"ObservacaoEconomia,omitempty"`             // Observação sobre esta economia/unidade.
+	ObservacaoBoleto               *string  `json:"ObservacaoBoleto,omitempty"`               // Texto para constar nas observações do boleto.
+	LocalEnderCobr                 *string  `json:"LocalEnderCobr,omitempty"`                 // Local do endereço de cobrança.
+	LocalEnderCorresp              *string  `json:"LocalEnderCorresp,omitempty"`              // Local do endereço de correpondência.
+	Ativa                          *string  `json:"Ativa,omitempty"`                          // Indica se está ativa.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

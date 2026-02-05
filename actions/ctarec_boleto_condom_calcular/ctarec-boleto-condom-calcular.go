@@ -15,12 +15,12 @@ import (
 var ACTION = "CTAREC_BOLETO_CONDOM_CALCULAR"
 
 type ActionInput struct {
-	IdEconomia     int    `json:"IdEconomia,omitempty"`     // *Chave principal da economia/unidade.
-	Competencia    string `json:"Competencia,omitempty"`    // *Competência do documento no formato 'YYYYMM'.
-	TipoDocumento  string `json:"TipoDocumento,omitempty"`  // *Tipo de boleto.
-	DataVenc       string `json:"DataVenc,omitempty"`       // Data de vencimento do boleto.
-	ImpressaoLocal string `json:"ImpressaoLocal,omitempty"` // Indica se a impressão é local. Valor default é 'N'.
-	NaoAjustaTaxa  string `json:"NaoAjustaTaxa,omitempty"`  // Não ajustar taxas (rateio/coletiva) ao total lançado. Valor default é 'N'.
+	IdEconomia     *int    `json:"IdEconomia,omitempty"`     // *Chave principal da economia/unidade.
+	Competencia    *string `json:"Competencia,omitempty"`    // *Competência do documento no formato 'YYYYMM'.
+	TipoDocumento  *string `json:"TipoDocumento,omitempty"`  // *Tipo de boleto.
+	DataVenc       *string `json:"DataVenc,omitempty"`       // Data de vencimento do boleto.
+	ImpressaoLocal *string `json:"ImpressaoLocal,omitempty"` // Indica se a impressão é local. Valor default é 'N'.
+	NaoAjustaTaxa  *string `json:"NaoAjustaTaxa,omitempty"`  // Não ajustar taxas (rateio/coletiva) ao total lançado. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

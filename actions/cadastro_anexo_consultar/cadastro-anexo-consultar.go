@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_ANEXO_CONSULTAR"
 
 type ActionInput struct {
-	CodAnexo int `json:"CodAnexo,omitempty"` // *Código do anexo.
+	CodAnexo *int `json:"CodAnexo,omitempty"` // *Código do anexo.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

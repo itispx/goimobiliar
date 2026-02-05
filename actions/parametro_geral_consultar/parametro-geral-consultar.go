@@ -15,9 +15,9 @@ import (
 var ACTION = "PARAMETRO_GERAL_CONSULTAR"
 
 type ActionInput struct {
-	Secao     string `json:"Secao,omitempty"`     // *Seção do parâmetro.
-	Parametro string `json:"Parametro,omitempty"` // *Nome do parãmetro.
-	CodFilial int    `json:"CodFilial,omitempty"` // Código da filial a gerar. Valor default é '000'.
+	Secao     *string `json:"Secao,omitempty"`     // *Seção do parâmetro.
+	Parametro *string `json:"Parametro,omitempty"` // *Nome do parãmetro.
+	CodFilial *int    `json:"CodFilial,omitempty"` // Código da filial a gerar. Valor default é '000'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

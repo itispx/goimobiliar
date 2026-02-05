@@ -15,7 +15,7 @@ import (
 var ACTION = "CTAREC_BOLETO_CONSULTAR"
 
 type ActionInput struct {
-	NossoNumero string `json:"NossoNumero,omitempty"` // *Número de identificação bancário.
+	NossoNumero *string `json:"NossoNumero,omitempty"` // *Número de identificação bancário.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,7 +15,7 @@ import (
 var ACTION = "CONDOM_CONDOMINIO_CONSULTAR"
 
 type ActionInput struct {
-	CodCondominio int `json:"CodCondominio,omitempty"` // *Código do condomínio.
+	CodCondominio *int `json:"CodCondominio,omitempty"` // *Código do condomínio.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,7 +15,7 @@ import (
 var ACTION = "LOCACAO_CONTRATO_ADM_CONSULTAR"
 
 type ActionInput struct {
-	CodContratoAdm int `json:"CodContratoAdm,omitempty"` // *Código do contrato de administração.
+	CodContratoAdm *int `json:"CodContratoAdm,omitempty"` // *Código do contrato de administração.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

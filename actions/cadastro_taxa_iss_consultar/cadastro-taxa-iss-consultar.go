@@ -15,9 +15,9 @@ import (
 var ACTION = "CADASTRO_TAXA_ISS_CONSULTAR"
 
 type ActionInput struct {
-	CodTaxa int    `json:"CodTaxa,omitempty"` // *Código da taxa.
-	Cidade  string `json:"Cidade,omitempty"`  // *Cidade referência para informação de ISS.
-	UF      string `json:"UF,omitempty"`      // *UF referência para informação de ISS.
+	CodTaxa *int    `json:"CodTaxa,omitempty"` // *Código da taxa.
+	Cidade  *string `json:"Cidade,omitempty"`  // *Cidade referência para informação de ISS.
+	UF      *string `json:"UF,omitempty"`      // *UF referência para informação de ISS.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

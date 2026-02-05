@@ -15,14 +15,14 @@ import (
 var ACTION = "CADASTRO_OBSERVACAO_INCLUIR"
 
 type ActionInput struct {
-	TipoOrigem string `json:"TipoOrigem,omitempty"` // *Define a origem do cadastro.
-	CodOrigem  string `json:"CodOrigem,omitempty"`  // *Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
-	TabObs     string `json:"TabObs,omitempty"`     // *Define a aba do cadastro de observação.
-	CadObs     string `json:"CadObs,omitempty"`     // *Define a aba na tela de origem. OBS: A aba "Observação" está disponível apenas no cadastro de condomínio.
-	Data       string `json:"Data,omitempty"`       // *Data de criação da observação.
-	Texto      string `json:"Texto,omitempty"`      // *Texto da observação.
-	UsuarioId  string `json:"UsuarioId,omitempty"`  // *Usuário que registrou observação.
-	ColExtra   string `json:"ColExtra,omitempty"`   // *Informa se registro tem coluna extra. S=Sim e N=Não.
+	TipoOrigem *string `json:"TipoOrigem,omitempty"` // *Define a origem do cadastro.
+	CodOrigem  *string `json:"CodOrigem,omitempty"`  // *Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
+	TabObs     *string `json:"TabObs,omitempty"`     // *Define a aba do cadastro de observação.
+	CadObs     *string `json:"CadObs,omitempty"`     // *Define a aba na tela de origem. OBS: A aba "Observação" está disponível apenas no cadastro de condomínio.
+	Data       *string `json:"Data,omitempty"`       // *Data de criação da observação.
+	Texto      *string `json:"Texto,omitempty"`      // *Texto da observação.
+	UsuarioId  *string `json:"UsuarioId,omitempty"`  // *Usuário que registrou observação.
+	ColExtra   *string `json:"ColExtra,omitempty"`   // *Informa se registro tem coluna extra. S=Sim e N=Não.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

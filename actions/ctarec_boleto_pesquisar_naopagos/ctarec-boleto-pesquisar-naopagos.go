@@ -15,8 +15,8 @@ import (
 var ACTION = "CTAREC_BOLETO_PESQUISAR_NAOPAGOS"
 
 type ActionInput struct {
-	CodPessoa      int    // *Código de pessoa do sacado.
-	SomenteValidos string // Pesquisar somente boletos que ainda estão no limite para pagamento. Valor default é 'S'.
+	CodPessoa      *int    // *Código de pessoa do sacado.
+	SomenteValidos *string // Pesquisar somente boletos que ainda estão no limite para pagamento. Valor default é 'S'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

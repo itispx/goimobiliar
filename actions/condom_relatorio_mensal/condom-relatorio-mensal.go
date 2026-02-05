@@ -15,11 +15,11 @@ import (
 var ACTION = "CONDOM_RELATORIO_MENSAL"
 
 type ActionInput struct {
-	Competencia    string `json:"Competencia,omitempty"`    // *Competência do relatório mensal a gerar.
-	CodFilial      int    `json:"CodFilial,omitempty"`      // Código da filial a gerar. Valor default é '000'.
-	InfosExtras    string `json:"InfosExtras,omitempty"`    // Indica para gerar informações extras. Valor default é 'N'.
-	BoletosBancos  string `json:"BoletosBancos,omitempty"`  // Indica para gerar informações sintéticas dos boletos por banco. Valor default é 'N'.
-	ResponseFormat string `json:"ResponseFormat,omitempty"` // Formato desejado da resposta.
+	Competencia    *string `json:"Competencia,omitempty"`    // *Competência do relatório mensal a gerar.
+	CodFilial      *int    `json:"CodFilial,omitempty"`      // Código da filial a gerar. Valor default é '000'.
+	InfosExtras    *string `json:"InfosExtras,omitempty"`    // Indica para gerar informações extras. Valor default é 'N'.
+	BoletosBancos  *string `json:"BoletosBancos,omitempty"`  // Indica para gerar informações sintéticas dos boletos por banco. Valor default é 'N'.
+	ResponseFormat *string `json:"ResponseFormat,omitempty"` // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

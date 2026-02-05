@@ -15,9 +15,9 @@ import (
 var ACTION = "CTAPAG_LANCAMENTO_ADICIONAR_IMAGEM"
 
 type ActionInput struct {
-	NumeroLancto int    `json:"NumeroLancto,omitempty"` // *Número do lançamento.
-	CodCategoria string `json:"CodCategoria,omitempty"` // Código da categoria do documento ou imagem.
-	UrlImagem    string `json:"UrlImagem,omitempty"`    // *URL para efetuar download da imagem, por exemplo "http://imagens.com.br/lancto123.pdf".
+	NumeroLancto *int    `json:"NumeroLancto,omitempty"` // *Número do lançamento.
+	CodCategoria *string `json:"CodCategoria,omitempty"` // Código da categoria do documento ou imagem.
+	UrlImagem    *string `json:"UrlImagem,omitempty"`    // *URL para efetuar download da imagem, por exemplo "http://imagens.com.br/lancto123.pdf".
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

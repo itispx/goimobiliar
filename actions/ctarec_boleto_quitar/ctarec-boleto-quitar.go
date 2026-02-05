@@ -162,13 +162,13 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	GarantiuCond      string                           `json:"GarantiuCond,omitempty"`        //
-	NaoMultiplicaCoef string                           `json:"Nao_Multiplica_Coef,omitempty"` //
-	Lancamentos       []*RequestResponseBodyLancamento `json:"Lancamentos,omitempty"`         //
+	GarantiuCond      *string                          `json:"GarantiuCond,omitempty"`        //
+	NaoMultiplicaCoef *string                          `json:"Nao_Multiplica_Coef,omitempty"` //
+	Lancamentos       *[]RequestResponseBodyLancamento `json:"Lancamentos,omitempty"`         //
 }
 
 type RequestResponseBodyLancamento struct {
-	NumeroLancto int `json:"NumeroLancto,omitempty"` // Número do lançamento.
+	NumeroLancto *int `json:"NumeroLancto,omitempty"` // Número do lançamento.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

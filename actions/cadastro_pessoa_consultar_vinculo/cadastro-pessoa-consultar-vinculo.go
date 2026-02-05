@@ -15,8 +15,8 @@ import (
 var ACTION = "CADASTRO_PESSOA_CONSULTAR_VINCULO"
 
 type ActionInput struct {
-	CodPessoa   int    `json:"CodPessoa,omitempty"`   // *Código da pessoa.
-	TipoVinculo string `json:"TipoVinculo,omitempty"` // Tipo do vínculo da pessoa. Valor default é 'TODOS'.
+	CodPessoa   *int    `json:"CodPessoa,omitempty"`   // *Código da pessoa.
+	TipoVinculo *string `json:"TipoVinculo,omitempty"` // Tipo do vínculo da pessoa. Valor default é 'TODOS'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

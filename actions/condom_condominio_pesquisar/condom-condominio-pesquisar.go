@@ -15,12 +15,12 @@ import (
 var ACTION = "CONDOM_CONDOMINIO_PESQUISAR"
 
 type ActionInput struct {
-	Texto          string `json:"Texto,omitempty"`          // Texto para pesquisa, podendo ser vazio para selecionar tudo.
-	OrdenarPor     string `json:"Ordenaror,omitempty"`      // Ordem de exibição. Valor default é 'C'.
-	PesquisarPor   string `json:"PesquisarPor,omitempty"`   // Alvo da pesquisa a efetuar. Valor default é 'N'.
-	IncluiInativos string `json:"IncluiInativos"`           // *Selecionar também os condomínio inativos.
-	QtdeLinhas     int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
-	ProximasLinhas string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
+	Texto          *string `json:"Texto,omitempty"`          // Texto para pesquisa, podendo ser vazio para selecionar tudo.
+	OrdenarPor     *string `json:"Ordenaror,omitempty"`      // Ordem de exibição. Valor default é 'C'.
+	PesquisarPor   *string `json:"PesquisarPor,omitempty"`   // Alvo da pesquisa a efetuar. Valor default é 'N'.
+	IncluiInativos *string `json:"IncluiInativos"`           // *Selecionar também os condomínio inativos.
+	QtdeLinhas     *int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
+	ProximasLinhas *string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

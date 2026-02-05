@@ -15,15 +15,15 @@ import (
 var ACTION = "CADASTRO_DADOSCONEXAO_ALTERAR"
 
 type ActionInput struct {
-	Origem                   string `json:"Origem,omitempty"`                   // *Origem dos Dados de Conexão.
-	CodigoOrigem             int    `json:"CodigoOrigem,omitempty"`             // *Código do cadastro de origem vinculado aos Dados de Conexão.
-	CodigoOrigemComplementar string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
-	RoboID                   string `json:"RoboID,omitempty"`                   // *Identificação do Robô.
-	CodigoFornecedor         int    `json:"CodigoFornecedor,omitempty"`         // Código do fornecedor.
-	Login                    string `json:"Login,omitempty"`                    // Login de acesso ao WebService.
-	Senha                    string `json:"Senha,omitempty"`                    // Senha de acesso ao WebService.
-	WebServiceAtivo          string `json:"WebServiceAtivo,omitempty"`          // Indica se possui WebService ativo.
-	WebServiceComplemento    string `json:"WebServiceComplemento,omitempty"`    // Complementos da URL base do WebService.
+	Origem                   *string `json:"Origem,omitempty"`                   // *Origem dos Dados de Conexão.
+	CodigoOrigem             *int    `json:"CodigoOrigem,omitempty"`             // *Código do cadastro de origem vinculado aos Dados de Conexão.
+	CodigoOrigemComplementar *string `json:"CodigoOrigemComplementar,omitempty"` // Código complementar do cadastro de origem vinculado aos Dados de Conexão.
+	RoboID                   *string `json:"RoboID,omitempty"`                   // *Identificação do Robô.
+	CodigoFornecedor         *int    `json:"CodigoFornecedor,omitempty"`         // Código do fornecedor.
+	Login                    *string `json:"Login,omitempty"`                    // Login de acesso ao WebService.
+	Senha                    *string `json:"Senha,omitempty"`                    // Senha de acesso ao WebService.
+	WebServiceAtivo          *string `json:"WebServiceAtivo,omitempty"`          // Indica se possui WebService ativo.
+	WebServiceComplemento    *string `json:"WebServiceComplemento,omitempty"`    // Complementos da URL base do WebService.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

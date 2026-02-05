@@ -15,9 +15,9 @@ import (
 var ACTION = "CONDOM_LISTA_ECONOMIAS"
 
 type ActionInput struct {
-	CodCondominio        int    `json:"CodCondominio,omitempty"`        // *Código do condomínio.
-	CodBloco             string `json:"CodBloco,omitempty"`             // Código do bloco do condomínio.
-	DataAlteracaoInicial string `json:"DataAlteracaoInicial,omitempty"` // Seleção por data de alteração.
+	CodCondominio        *int    `json:"CodCondominio,omitempty"`        // *Código do condomínio.
+	CodBloco             *string `json:"CodBloco,omitempty"`             // Código do bloco do condomínio.
+	DataAlteracaoInicial *string `json:"DataAlteracaoInicial,omitempty"` // Seleção por data de alteração.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

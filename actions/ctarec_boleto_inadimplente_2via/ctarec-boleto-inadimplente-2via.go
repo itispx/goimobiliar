@@ -15,12 +15,12 @@ import (
 var ACTION = "CTAREC_BOLETO_INADIMPLENTE_2VIA"
 
 type ActionInput struct {
-	NossoNumero          string  `json:"NossoNumero,omitempty"`          // *Número de identificação bancário.
-	DataLimitePagamento  string  `json:"DataLimitePagamento,omitempty"`  // *Data limite de pagamento do documento.
-	NroDiasIniVencto     float64 `json:"NroDiasIniVencto,omitempty"`     //
-	NroDiasFimVencto     float64 `json:"NroDiasFimVencto,omitempty"`     //
-	Email                string  `json:"Email,omitempty"`                // E-mail da pessoa.
-	InibirCobrRegistrada string  `json:"InibirCobrRegistrada,omitempty"` // Valor default é 'N'.
+	NossoNumero          *string  `json:"NossoNumero,omitempty"`          // *Número de identificação bancário.
+	DataLimitePagamento  *string  `json:"DataLimitePagamento,omitempty"`  // *Data limite de pagamento do documento.
+	NroDiasIniVencto     *float64 `json:"NroDiasIniVencto,omitempty"`     //
+	NroDiasFimVencto     *float64 `json:"NroDiasFimVencto,omitempty"`     //
+	Email                *string  `json:"Email,omitempty"`                // E-mail da pessoa.
+	InibirCobrRegistrada *string  `json:"InibirCobrRegistrada,omitempty"` // Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

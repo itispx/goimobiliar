@@ -15,9 +15,9 @@ import (
 var ACTION = "CTAREC_BOLETO_INADIMPLENCIA_ALTERAR"
 
 type ActionInput struct {
-	DocCapaId     int    `json:"DocCapaId,omitempty"`     // *Código do boleto no sistema.
-	TiraPendencia string `json:"TiraPendencia,omitempty"` // *Quando 'S' retira da inadimplência e 'N' volta para inadimplência.
-	DataRetirada  string `json:"DataRetirada,omitempty"`  // Data de retirada da inadimplência.
+	DocCapaId     *int    `json:"DocCapaId,omitempty"`     // *Código do boleto no sistema.
+	TiraPendencia *string `json:"TiraPendencia,omitempty"` // *Quando 'S' retira da inadimplência e 'N' volta para inadimplência.
+	DataRetirada  *string `json:"DataRetirada,omitempty"`  // Data de retirada da inadimplência.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

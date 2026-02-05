@@ -15,30 +15,30 @@ import (
 var ACTION = "CTAPAG_CONDOMINIO_NOTAFISCAL_IMPORTAR"
 
 type ActionInput struct {
-	CodCondominio        int     `json:"CodCondominio,omitempty"`        // *Código do condomínio do lançamento (se origem for 'C').
-	CodBloco             string  `json:"CodBloco,omitempty"`             // Código do bloco do lançamento (se origem for 'C').
-	CodFornecedor        int     `json:"CodFornecedor,omitempty"`        // *Código do fornecedor do lançamento.
-	DataEmissao          string  `json:"DataEmissao,omitempty"`          // *Data de emissão do lançamento (se TipoDocumento for 'N').
-	DataVencimento       string  `json:"DataVencimento,omitempty"`       // *Data de vencimento do lançamento.
-	TipoDocumento        string  `json:"TipoDocumento,omitempty"`        // *Tipo de documento do lançamento.
-	FormaPagamento       string  `json:"FormaPagamento,omitempty"`       // Forma de pagamento do lançamento.
-	CodTaxa              int     `json:"CodTaxa,omitempty"`              // *Código da taxa que classifica este lançamento.
-	NumeroParcela        int     `json:"NumeroParcela,omitempty"`        // Número da parcela do lançamento. Valor default é '1'.
-	TotalParcelas        int     `json:"TotalParcelas,omitempty"`        // Quantidade total de parcelas. Valor default é '1'.
-	Complemento          string  `json:"Complemento,omitempty"`          // Complemento descritivo do lançamento.
-	NumeroDocumento      string  `json:"NumeroDocumento,omitempty"`      // *Número do documento do fornecedor.
-	ValorBruto           float64 `json:"ValorBruto,omitempty"`           // *Valor bruto do documento/parcela.
-	ValorServicos        float64 `json:"ValorServicos,omitempty"`        // Valor dos serviços. Se não informado, a base de cálculo será ValorBruto.
-	ValorBaseCalculoIss  float64 `json:"ValorBaseCalculoIss,omitempty"`  // Base de cálculo do ISS. Se não informado, a base de cálculo será ValorServicos.
-	ValorRetencaoInss    float64 `json:"ValorRetencaoInss,omitempty"`    // Valor do INSS a ser retido.
-	ValorRetencaoIss     float64 `json:"ValorRetencaoIss,omitempty"`     // Valor do ISS a ser retido.
-	ValorRetencaoIrf     float64 `json:"ValorRetencaoIrf,omitempty"`     // Valor do IRF a ser retido.
-	ValorRetencaoFederal float64 `json:"ValorRetencaoFederal,omitempty"` // Valor da retenção federal a ser retida.
-	Comissao             float64 `json:"Comissao,omitempty"`             // Valor de comissão.
-	CodigoBarras         string  `json:"CodigoBarras,omitempty"`         // Código de barras do documento (* obrigatório se origem for 'B')
-	PixQrCode            string  `json:"PixQrCode,omitempty"`            // QR Code.
-	PrevisaoReal         string  `json:"PrevisaoReal,omitempty"`         // *Indicação de lançamento previsto ou real.
-	UrlImagem            string  `json:"UrlImagem,omitempty"`            // URL para efetuar download da imagem, por exemplo "http://imagens.com.br/lancto123.pdf".
+	CodCondominio        *int     `json:"CodCondominio,omitempty"`        // *Código do condomínio do lançamento (se origem for 'C').
+	CodBloco             *string  `json:"CodBloco,omitempty"`             // Código do bloco do lançamento (se origem for 'C').
+	CodFornecedor        *int     `json:"CodFornecedor,omitempty"`        // *Código do fornecedor do lançamento.
+	DataEmissao          *string  `json:"DataEmissao,omitempty"`          // *Data de emissão do lançamento (se TipoDocumento for 'N').
+	DataVencimento       *string  `json:"DataVencimento,omitempty"`       // *Data de vencimento do lançamento.
+	TipoDocumento        *string  `json:"TipoDocumento,omitempty"`        // *Tipo de documento do lançamento.
+	FormaPagamento       *string  `json:"FormaPagamento,omitempty"`       // Forma de pagamento do lançamento.
+	CodTaxa              *int     `json:"CodTaxa,omitempty"`              // *Código da taxa que classifica este lançamento.
+	NumeroParcela        *int     `json:"NumeroParcela,omitempty"`        // Número da parcela do lançamento. Valor default é '1'.
+	TotalParcelas        *int     `json:"TotalParcelas,omitempty"`        // Quantidade total de parcelas. Valor default é '1'.
+	Complemento          *string  `json:"Complemento,omitempty"`          // Complemento descritivo do lançamento.
+	NumeroDocumento      *string  `json:"NumeroDocumento,omitempty"`      // *Número do documento do fornecedor.
+	ValorBruto           *float64 `json:"ValorBruto,omitempty"`           // *Valor bruto do documento/parcela.
+	ValorServicos        *float64 `json:"ValorServicos,omitempty"`        // Valor dos serviços. Se não informado, a base de cálculo será ValorBruto.
+	ValorBaseCalculoIss  *float64 `json:"ValorBaseCalculoIss,omitempty"`  // Base de cálculo do ISS. Se não informado, a base de cálculo será ValorServicos.
+	ValorRetencaoInss    *float64 `json:"ValorRetencaoInss,omitempty"`    // Valor do INSS a ser retido.
+	ValorRetencaoIss     *float64 `json:"ValorRetencaoIss,omitempty"`     // Valor do ISS a ser retido.
+	ValorRetencaoIrf     *float64 `json:"ValorRetencaoIrf,omitempty"`     // Valor do IRF a ser retido.
+	ValorRetencaoFederal *float64 `json:"ValorRetencaoFederal,omitempty"` // Valor da retenção federal a ser retida.
+	Comissao             *float64 `json:"Comissao,omitempty"`             // Valor de comissão.
+	CodigoBarras         *string  `json:"CodigoBarras,omitempty"`         // Código de barras do documento (* obrigatório se origem for 'B')
+	PixQrCode            *string  `json:"PixQrCode,omitempty"`            // QR Code.
+	PrevisaoReal         *string  `json:"PrevisaoReal,omitempty"`         // *Indicação de lançamento previsto ou real.
+	UrlImagem            *string  `json:"UrlImagem,omitempty"`            // URL para efetuar download da imagem, por exemplo "http://imagens.com.br/lancto123.pdf".
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

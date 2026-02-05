@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_PESSOA_NOTIFICACAO_CONSULTAR"
 
 type ActionInput struct {
-	CodPessoa string `json:"CodPessoa,omitempty"` // *Código da pessoa.
+	CodPessoa *string `json:"CodPessoa,omitempty"` // *Código da pessoa.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,12 +15,12 @@ import (
 var ACTION = "CONDOM_LISTA_INADIMPLENCIAS"
 
 type ActionInput struct {
-	CodCondominio                  int    `json:"CodCondominio,omitempty"`                  // *Código do condomínio.
-	CodBloco                       string `json:"CodBloco,omitempty"`                       // Se informado o código do bloco então busca apenas a inadimplencia desse bloco senão busca toda a inadimplencia do condominio.
-	IdEconomia                     int    `json:"IdEconomia,omitempty"`                     // Se informada a chave da economia/unidade então busca apenas a inadimplencia dela senão busca toda a inadimplencia do condominio.
-	IncluirDocsAcordo              string `json:"IncluirDocsAcordo,omitempty"`              // Indica se deve incluir acordos. Valor default é 'N'.
-	IncluirObsInadimplencia        string `json:"IncluirObsInadimplencia,omitempty"`        // Indica se deve incluir observações do jurídico nos boletos inadimplentes. Valor default é 'N'.
-	IncluirGarantidosInadimplencia string `json:"IncluirGarantidosInadimplencia,omitempty"` // Indica se deve incluir boletos garantidos inadimplentes.
+	CodCondominio                  *int    `json:"CodCondominio,omitempty"`                  // *Código do condomínio.
+	CodBloco                       *string `json:"CodBloco,omitempty"`                       // Se informado o código do bloco então busca apenas a inadimplencia desse bloco senão busca toda a inadimplencia do condominio.
+	IdEconomia                     *int    `json:"IdEconomia,omitempty"`                     // Se informada a chave da economia/unidade então busca apenas a inadimplencia dela senão busca toda a inadimplencia do condominio.
+	IncluirDocsAcordo              *string `json:"IncluirDocsAcordo,omitempty"`              // Indica se deve incluir acordos. Valor default é 'N'.
+	IncluirObsInadimplencia        *string `json:"IncluirObsInadimplencia,omitempty"`        // Indica se deve incluir observações do jurídico nos boletos inadimplentes. Valor default é 'N'.
+	IncluirGarantidosInadimplencia *string `json:"IncluirGarantidosInadimplencia,omitempty"` // Indica se deve incluir boletos garantidos inadimplentes.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

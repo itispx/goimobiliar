@@ -15,9 +15,9 @@ import (
 var ACTION = "LOCACAO_LANCTO_AUTOMATICO_PESQUISAR"
 
 type ActionInput struct {
-	CodImovel            int    `json:"CodImovel,omitempty"`            // *Código do imóvel.
-	CodContratoLoc       int    `json:"CodContratoLoc,omitempty"`       // *Código do contrato de locação deste imóvel.
-	DestinatarioCobranca string `json:"DestinatarioCobranca,omitempty"` // Indica quem paga a taxa.
+	CodImovel            *int    `json:"CodImovel,omitempty"`            // *Código do imóvel.
+	CodContratoLoc       *int    `json:"CodContratoLoc,omitempty"`       // *Código do contrato de locação deste imóvel.
+	DestinatarioCobranca *string `json:"DestinatarioCobranca,omitempty"` // Indica quem paga a taxa.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,10 +15,10 @@ import (
 var ACTION = "CADASTRO_OBSERVACAO_ALTERAR"
 
 type ActionInput struct {
-	CodObs    int    `json:"CodObs,omitempty"`    // *Código da observação.
-	Texto     string `json:"Texto,omitempty"`     // Texto da observação.
-	UsuarioId string `json:"UsuarioId,omitempty"` // Usuário que registrou observação.
-	ColExtra  string `json:"ColExtra,omitempty"`  // Informa se registro tem coluna extra. S=Sim e N=Não.
+	CodObs    *int    `json:"CodObs,omitempty"`    // *Código da observação.
+	Texto     *string `json:"Texto,omitempty"`     // Texto da observação.
+	UsuarioId *string `json:"UsuarioId,omitempty"` // Usuário que registrou observação.
+	ColExtra  *string `json:"ColExtra,omitempty"`  // Informa se registro tem coluna extra. S=Sim e N=Não.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

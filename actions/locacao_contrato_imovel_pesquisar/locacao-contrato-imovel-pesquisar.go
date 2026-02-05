@@ -15,12 +15,12 @@ import (
 var ACTION = "LOCACAO_CONTRATO_IMOVEL_PESQUISAR"
 
 type ActionInput struct {
-	Texto          string // Texto para pesquisa, podendo ser vazio para selecionar tudo.
-	OrdenarPor     string // Ordem de exibição. Valor default é 'C'.
-	PesquisarPor   string // Alvo da pesquisa a efetuar. Valor default é 'Codigo_Locatario')TransactField(TR_PARAM_CHAVE1.
-	Ativos         string // Selecionar apenas os contratos ativos. Valor default é 'S'.
-	QtdeLinhas     int    // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
-	ProximasLinhas string // Indica se, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
+	Texto          *string `json:"Texto,omitempty"`          // Texto para pesquisa, podendo ser vazio para selecionar tudo.
+	OrdenarPor     *string `json:"OrdenarPor,omitempty"`     // Ordem de exibição. Valor default é 'C'.
+	PesquisarPor   *string `json:"PesquisarPor,omitempty"`   // Alvo da pesquisa a efetuar. Valor default é 'Codigo_Locatario')TransactField(TR_PARAM_CHAVE1.
+	Ativos         *string `json:"Ativos,omitempty"`         // Selecionar apenas os contratos ativos. Valor default é 'S'.
+	QtdeLinhas     *int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
+	ProximasLinhas *string `json:"ProximasLinhas,omitempty"` // Indica se, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

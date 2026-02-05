@@ -15,9 +15,9 @@ import (
 var ACTION = "LOCACAO_SALDO_PROPRIETARIO"
 
 type ActionInput struct {
-	CodPessoa   int `json:"CodPessoa,omitempty"`   // *Código de pessoa do proprietário.
-	Competencia int `json:"Competencia,omitempty"` // *Competência do saldo.
-	CodFilial   int `json:"CodFilial,omitempty"`   // *Código da filial.
+	CodPessoa   *int `json:"CodPessoa,omitempty"`   // *Código de pessoa do proprietário.
+	Competencia *int `json:"Competencia,omitempty"` // *Competência do saldo.
+	CodFilial   *int `json:"CodFilial,omitempty"`   // *Código da filial.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

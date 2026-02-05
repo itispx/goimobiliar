@@ -15,27 +15,27 @@ import (
 var ACTION = "CTAPAG_RELATORIO_CONFERENCIA"
 
 type ActionInput struct {
-	Rotina                string `json:"Rotina,omitempty"`                // *Seleciona qual rotina de lançamentos relacionar.
-	Competencia           string `json:"Competencia,omitempty"`           // *Competência do relatório de conferência.
-	CodFilial             int    `json:"CodFilial,omitempty"`             // Código da filial. Valor default é '000'.
-	DataVencimentoInicial string `json:"DataVencimentoInicial,omitempty"` // Data de vencimento inicial.
-	DataVencimentoFinal   string `json:"DataVencimentoFinal,omitempty"`   // Data de vencimento final.
-	CodFornecedor         int    `json:"CodFornecedor,omitempty"`         // Código de fornecedor desta filial.
-	CodTaxa               int    `json:"CodTaxa,omitempty"`               // Código da taxa que classifica este lançamento.
-	PagtoBanco            string `json:"PagtoBanco,omitempty"`            // Listar lançamentos com forma de pagamento por banco (cheque). Valor default é 'N'.
-	PagtoCaixa            string `json:"PagtoCaixa,omitempty"`            // Listar lançamentos com forma de pagamento por ciaxa (Cheque). Valor default é 'N'.
-	PagtoDinheiro         string `json:"PagtoDinheiro,omitempty"`         // Listar lançamentos com forma de pagamento por dinheiro. Valor default é 'N'.
-	PagtoOrdem            string `json:"PagtoOrdem,omitempty"`            // Listar lançamentos com forma de pagamento por ordem de pagamento. Valor default é 'N'.
-	PagtoLiqTitulos       string `json:"PagtoLiqTitulos,omitempty"`       // Listar lançamentos com forma de pagamento por liquidação de títulos. Valor default é 'N'.
-	PagtoLiqTitulosAgrup  string `json:"PagtoLiqTitulosAgrup,omitempty"`  // Listar lançamentos com forma de pagamento por liquidação de títulos agrupados. Valor default é 'N'.
-	PagtoPIXTransf        string `json:"PagtoPIXTransf,omitempty"`        // Listar lançamentos com forma de pagamento por transferência de PIX. Valor default é 'N'.
-	PagtoPIXQrCode        string `json:"PagtoPIXQrCode,omitempty"`        // Listar lançamentos com forma de pagamento por QRcode de PIX. Valor default é 'N'.
-	PagtoCredConta        string `json:"PagtoCredConta,omitempty"`        // Listar lançamentos com forma de pagamento por crédito em conta. Valor default é 'N'.
-	PagtoDecAutomatico    string `json:"PagtoDecAutomatico,omitempty"`    // Listar lançamentos com forma de pagamento por débito automático. Valor default é 'N'.
-	NaoPagar              string `json:"NaoPagar,omitempty"`              // Listar somente lançamentos marcados para não pagar. Valor default é 'N'.
-	SoQuitados            string `json:"SoQuitados,omitempty"`            // Listar somente lançamentos quitados. Valor default é 'N'.
-	SoComDiferenca        string `json:"SoComDiferenca,omitempty"`        // Listar somente registros com diferença.
-	ResponseFormat        string `json:"ResponseFormat,omitempty"`        // Formato desejado da resposta.
+	Rotina                *string `json:"Rotina,omitempty"`                // *Seleciona qual rotina de lançamentos relacionar.
+	Competencia           *string `json:"Competencia,omitempty"`           // *Competência do relatório de conferência.
+	CodFilial             *int    `json:"CodFilial,omitempty"`             // Código da filial. Valor default é '000'.
+	DataVencimentoInicial *string `json:"DataVencimentoInicial,omitempty"` // Data de vencimento inicial.
+	DataVencimentoFinal   *string `json:"DataVencimentoFinal,omitempty"`   // Data de vencimento final.
+	CodFornecedor         *int    `json:"CodFornecedor,omitempty"`         // Código de fornecedor desta filial.
+	CodTaxa               *int    `json:"CodTaxa,omitempty"`               // Código da taxa que classifica este lançamento.
+	PagtoBanco            *string `json:"PagtoBanco,omitempty"`            // Listar lançamentos com forma de pagamento por banco (cheque). Valor default é 'N'.
+	PagtoCaixa            *string `json:"PagtoCaixa,omitempty"`            // Listar lançamentos com forma de pagamento por ciaxa (Cheque). Valor default é 'N'.
+	PagtoDinheiro         *string `json:"PagtoDinheiro,omitempty"`         // Listar lançamentos com forma de pagamento por dinheiro. Valor default é 'N'.
+	PagtoOrdem            *string `json:"PagtoOrdem,omitempty"`            // Listar lançamentos com forma de pagamento por ordem de pagamento. Valor default é 'N'.
+	PagtoLiqTitulos       *string `json:"PagtoLiqTitulos,omitempty"`       // Listar lançamentos com forma de pagamento por liquidação de títulos. Valor default é 'N'.
+	PagtoLiqTitulosAgrup  *string `json:"PagtoLiqTitulosAgrup,omitempty"`  // Listar lançamentos com forma de pagamento por liquidação de títulos agrupados. Valor default é 'N'.
+	PagtoPIXTransf        *string `json:"PagtoPIXTransf,omitempty"`        // Listar lançamentos com forma de pagamento por transferência de PIX. Valor default é 'N'.
+	PagtoPIXQrCode        *string `json:"PagtoPIXQrCode,omitempty"`        // Listar lançamentos com forma de pagamento por QRcode de PIX. Valor default é 'N'.
+	PagtoCredConta        *string `json:"PagtoCredConta,omitempty"`        // Listar lançamentos com forma de pagamento por crédito em conta. Valor default é 'N'.
+	PagtoDecAutomatico    *string `json:"PagtoDecAutomatico,omitempty"`    // Listar lançamentos com forma de pagamento por débito automático. Valor default é 'N'.
+	NaoPagar              *string `json:"NaoPagar,omitempty"`              // Listar somente lançamentos marcados para não pagar. Valor default é 'N'.
+	SoQuitados            *string `json:"SoQuitados,omitempty"`            // Listar somente lançamentos quitados. Valor default é 'N'.
+	SoComDiferenca        *string `json:"SoComDiferenca,omitempty"`        // Listar somente registros com diferença.
+	ResponseFormat        *string `json:"ResponseFormat,omitempty"`        // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

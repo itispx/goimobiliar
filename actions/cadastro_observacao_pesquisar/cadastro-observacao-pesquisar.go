@@ -15,13 +15,13 @@ import (
 var ACTION = "CADASTRO_OBSERVACAO_PESQUISAR"
 
 type ActionInput struct {
-	TipoOrigem     string `json:"TipoOrigem,omitempty"`     // *Define a origem do cadastro.
-	CodOrigem      string `json:"CodOrigem,omitempty"`      // *Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
-	TabObs         string `json:"TabObs,omitempty"`         // Define a aba do cadastro de observação.
-	SoExcluidos    string `json:"SoExcluidos,omitempty"`    // Campo para filtrar registros excluídos.
-	OrdenarPor     string `json:"OrdenarPor,omitempty"`     // Ordem de exibição. Valor default é 'C'.
-	QtdeLinhas     int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
-	ProximasLinhas string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
+	TipoOrigem     *string `json:"TipoOrigem,omitempty"`     // *Define a origem do cadastro.
+	CodOrigem      *string `json:"CodOrigem,omitempty"`      // *Código do cadastro de origem vinculado a observação. Quando tipoorigem='L' deve-se utilizar codorigem='CODIMOVEL|CODCONTRATO'.
+	TabObs         *string `json:"TabObs,omitempty"`         // Define a aba do cadastro de observação.
+	SoExcluidos    *string `json:"SoExcluidos,omitempty"`    // Campo para filtrar registros excluídos.
+	OrdenarPor     *string `json:"OrdenarPor,omitempty"`     // Ordem de exibição. Valor default é 'C'.
+	QtdeLinhas     *int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
+	ProximasLinhas *string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

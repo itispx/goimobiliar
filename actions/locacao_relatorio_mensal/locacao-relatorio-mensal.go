@@ -15,15 +15,15 @@ import (
 var ACTION = "LOCACAO_RELATORIO_MENSAL"
 
 type ActionInput struct {
-	Competencia       string `json:"Competencia,omitempty"`       // *Competência do relatório mensal a gerar.
-	CodFilial         int    `json:"CodFilial,omitempty"`         // Código da filial a gerar. Valor default é '000'.
-	DadosBoletos      string `json:"DadosBoletos,omitempty"`      // Indica para gerar dados totalizados dos boletos. Valor default é 'S'.
-	TaxaBoletos       string `json:"TaxaBoletos,omitempty"`       // Indica para gerar relação de taxas dos boletos. Valor default é 'N'.
-	TaxaAdministracao string `json:"TaxaAdministracao,omitempty"` // Indica para gerar relação de taxas de administração. Valor default é 'N'.
-	PagtoProprietario string `json:"PagtoProprietario,omitempty"` // Indica para gerar relação de pagamento de proprietário. Valor default é 'N'.
-	NumerosLocacao    string `json:"NumerosLocacao,omitempty"`    // Indica para gerar relação de números da locação. Valor default é 'N'.
-	BoletosBancos     string `json:"BoletosBancos,omitempty"`     // Indica para gerar informações sintéticas dos boletos por banco. Valor default é 'N'.
-	ResponseFormat    string `json:"ResponseFormat,omitempty"`    // Formato desejado da resposta.
+	Competencia       *string `json:"Competencia,omitempty"`       // *Competência do relatório mensal a gerar.
+	CodFilial         *int    `json:"CodFilial,omitempty"`         // Código da filial a gerar. Valor default é '000'.
+	DadosBoletos      *string `json:"DadosBoletos,omitempty"`      // Indica para gerar dados totalizados dos boletos. Valor default é 'S'.
+	TaxaBoletos       *string `json:"TaxaBoletos,omitempty"`       // Indica para gerar relação de taxas dos boletos. Valor default é 'N'.
+	TaxaAdministracao *string `json:"TaxaAdministracao,omitempty"` // Indica para gerar relação de taxas de administração. Valor default é 'N'.
+	PagtoProprietario *string `json:"PagtoProprietario,omitempty"` // Indica para gerar relação de pagamento de proprietário. Valor default é 'N'.
+	NumerosLocacao    *string `json:"NumerosLocacao,omitempty"`    // Indica para gerar relação de números da locação. Valor default é 'N'.
+	BoletosBancos     *string `json:"BoletosBancos,omitempty"`     // Indica para gerar informações sintéticas dos boletos por banco. Valor default é 'N'.
+	ResponseFormat    *string `json:"ResponseFormat,omitempty"`    // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

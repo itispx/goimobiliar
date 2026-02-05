@@ -15,7 +15,7 @@ import (
 var ACTION = "CTAPAG_LANCAMENTO_CONSULTAR"
 
 type ActionInput struct {
-	NumeroLancto int `json:"NumeroLancto,omitempty"` // *Número do lançamento.
+	NumeroLancto *int `json:"NumeroLancto,omitempty"` // *Número do lançamento.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

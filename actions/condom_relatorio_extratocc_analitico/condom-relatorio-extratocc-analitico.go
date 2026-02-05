@@ -15,9 +15,9 @@ import (
 var ACTION = "CONDOM_RELATORIO_EXTRATOCC_ANALITICO"
 
 type ActionInput struct {
-	CodCondominio  int    `json:"CodCondominio,omitempty"`  // *Código do condomínio.
-	Competencia    string `json:"Competencia,omitempty"`    // *Competência referência da Pasta.
-	ResponseFormat string `json:"Responseformat,omitempty"` // Formato desejado da resposta.
+	CodCondominio  *int    `json:"CodCondominio,omitempty"`  // *Código do condomínio.
+	Competencia    *string `json:"Competencia,omitempty"`    // *Competência referência da Pasta.
+	ResponseFormat *string `json:"Responseformat,omitempty"` // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

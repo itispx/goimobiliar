@@ -15,8 +15,8 @@ import (
 var ACTION = "CADASTRO_FORNECEDOR_CONSULTAR"
 
 type ActionInput struct {
-	CodFornecedor string `json:"CodFornecedor,omitempty"` // Código do fornecedor.
-	CpfCnpj       string `json:"CpfCnpj,omitempty"`       // CPF ou CNPJ do fornecedor.
+	CodFornecedor *string `json:"CodFornecedor,omitempty"` // Código do fornecedor.
+	CpfCnpj       *string `json:"CpfCnpj,omitempty"`       // CPF ou CNPJ do fornecedor.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,15 +15,15 @@ import (
 var ACTION = "CADASTRO_ANEXO_INCLUIR"
 
 type ActionInput struct {
-	Descricao     string `json:"Descricao,omitempty"`     // *Descrição do Anexo.
-	TipoAnexo     int    `json:"TipoAnexo,omitempty"`     // *Código do cadastro de anexo que indica o tipo dos arquivos.
-	TipoOrigem    string `json:"TipoOrigem,omitempty"`    // *Código do cadastro de origem vinculado ao anexo.
-	CodOrigem     int    `json:"CodOrigem,omitempty"`     // *Código do cadastro de origem vinculado ao anexo.
-	SubCodOrigem  string `json:"SubCodOrigem,omitempty"`  // *Subcódigo do cadastro de origem vinculado ao anexo.
-	Extra         string `json:"Extra,omitempty"`         // Campo para dados extras.
-	EnviaSite     string `json:"EnviaSite,omitempty"`     // Habilitado para enviar para o site. Valor default é 'N'.
-	DataEnviaSite string `json:"DataEnviaSite,omitempty"` // Data prevista para enviar para o site.
-	CodCategoria  int    `json:"CodCategoria,omitempty"`  // *Código da categoria do anexo.
+	Descricao     *string `json:"Descricao,omitempty"`     // *Descrição do Anexo.
+	TipoAnexo     *int    `json:"TipoAnexo,omitempty"`     // *Código do cadastro de anexo que indica o tipo dos arquivos.
+	TipoOrigem    *string `json:"TipoOrigem,omitempty"`    // *Código do cadastro de origem vinculado ao anexo.
+	CodOrigem     *int    `json:"CodOrigem,omitempty"`     // *Código do cadastro de origem vinculado ao anexo.
+	SubCodOrigem  *string `json:"SubCodOrigem,omitempty"`  // *Subcódigo do cadastro de origem vinculado ao anexo.
+	Extra         *string `json:"Extra,omitempty"`         // Campo para dados extras.
+	EnviaSite     *string `json:"EnviaSite,omitempty"`     // Habilitado para enviar para o site. Valor default é 'N'.
+	DataEnviaSite *string `json:"DataEnviaSite,omitempty"` // Data prevista para enviar para o site.
+	CodCategoria  *int    `json:"CodCategoria,omitempty"`  // *Código da categoria do anexo.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

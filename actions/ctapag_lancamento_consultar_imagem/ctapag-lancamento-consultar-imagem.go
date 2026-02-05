@@ -15,8 +15,8 @@ import (
 var ACTION = "CTAPAG_LANCAMENTO_CONSULTAR_IMAGEM"
 
 type ActionInput struct {
-	NumeroLancto int    `json:"NumeroLancto,omitempty"` // *Número do lançamento.
-	CodCategoria string `json:"CodCategoria,omitempty"` // Código da categoria do documento / imagem para pesquisa. Se não informado assume filtro "Sem Categoria" que é o padrão. Valor default é 'TD'.
+	NumeroLancto *int    `json:"NumeroLancto,omitempty"` // *Número do lançamento.
+	CodCategoria *string `json:"CodCategoria,omitempty"` // Código da categoria do documento / imagem para pesquisa. Se não informado assume filtro "Sem Categoria" que é o padrão. Valor default é 'TD'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

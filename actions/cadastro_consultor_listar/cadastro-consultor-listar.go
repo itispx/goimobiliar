@@ -15,9 +15,9 @@ import (
 var ACTION = "CADASTRO_CONSULTOR_LISTAR"
 
 type ActionInput struct {
-	Origem        string `json:"Origem,omitempty"`        // *Origem do código a listar.
-	CodImovel     int    `json:"CodImovel,omitempty"`     // Código do imóvel.
-	CodCondominio int    `json:"CodCondominio,omitempty"` // Código do condomínio.
+	Origem        *string `json:"Origem,omitempty"`        // *Origem do código a listar.
+	CodImovel     *int    `json:"CodImovel,omitempty"`     // Código do imóvel.
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // Código do condomínio.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

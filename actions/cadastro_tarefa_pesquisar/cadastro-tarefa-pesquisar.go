@@ -15,15 +15,15 @@ import (
 var ACTION = "CADASTRO_TAREFA_PESQUISAR"
 
 type ActionInput struct {
-	CodOrigem    int    `json:"CodOrigem,omitempty"`    // *Código do cadastro de origem vinculado a tarefa.
-	TipoOrigem   string `json:"TipoOrigem,omitempty"`   // *Código do cadastro de origem vinculado a tarefa.
-	CodSituacao  int    `json:"CodSituacao,omitempty"`  // Código da situação da tarefa.
-	CodCategoria int    `json:"CodCategoria,omitempty"` // Código da categoria da tarefa.
-	Assunto      string `json:"Assunto,omitempty"`      // Assunto da tarefa.
-	CriadaPor    string `json:"CriadaPor,omitempty"`    // ID do usuário que criou a tarefa.
-	AlocadaPara  string `json:"AlocadaPara,omitempty"`  // ID do usuário que está com a tarefa.
-	CriadaEm     string `json:"CriadaEm,omitempty"`     // Intervalo da data de criação da tarefa.
-	AgendadaPara string `json:"AgendadaPara,omitempty"` // Intervalo da data de previsão / conclusão da tarefa.
+	CodOrigem    *int    `json:"CodOrigem,omitempty"`    // *Código do cadastro de origem vinculado a tarefa.
+	TipoOrigem   *string `json:"TipoOrigem,omitempty"`   // *Código do cadastro de origem vinculado a tarefa.
+	CodSituacao  *int    `json:"CodSituacao,omitempty"`  // Código da situação da tarefa.
+	CodCategoria *int    `json:"CodCategoria,omitempty"` // Código da categoria da tarefa.
+	Assunto      *string `json:"Assunto,omitempty"`      // Assunto da tarefa.
+	CriadaPor    *string `json:"CriadaPor,omitempty"`    // ID do usuário que criou a tarefa.
+	AlocadaPara  *string `json:"AlocadaPara,omitempty"`  // ID do usuário que está com a tarefa.
+	CriadaEm     *string `json:"CriadaEm,omitempty"`     // Intervalo da data de criação da tarefa.
+	AgendadaPara *string `json:"AgendadaPara,omitempty"` // Intervalo da data de previsão / conclusão da tarefa.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

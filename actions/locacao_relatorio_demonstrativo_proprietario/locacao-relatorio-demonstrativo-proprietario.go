@@ -15,10 +15,10 @@ import (
 var ACTION = "LOCACAO_RELATORIO_DEMONSTRATIVO_PROPRIETARIO"
 
 type ActionInput struct {
-	CodPessoa      int    `json:"CodPessoa,omitempty"`      // *Código de pessoa do proprietário.
-	Competencia    string `json:"Competencia,omitempty"`    // *Competência do demonstrativo.
-	CodFilial      int    `json:"CodFilial,omitempty"`      // Código da filial. Valor default é '001'.
-	ResponseFormat string `json:"ResponseFormat,omitempty"` // Formato desejado da resposta.
+	CodPessoa      *int    `json:"CodPessoa,omitempty"`      // *Código de pessoa do proprietário.
+	Competencia    *string `json:"Competencia,omitempty"`    // *Competência do demonstrativo.
+	CodFilial      *int    `json:"CodFilial,omitempty"`      // Código da filial. Valor default é '001'.
+	ResponseFormat *string `json:"ResponseFormat,omitempty"` // Formato desejado da resposta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

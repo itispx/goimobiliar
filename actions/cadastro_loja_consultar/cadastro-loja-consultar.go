@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_LOJA_CONSULTAR"
 
 type ActionInput struct {
-	IdLoja string `json:"Texto,omitempty"` // *Identificação da loja/agência.
+	IdLoja *string `json:"Texto,omitempty"` // *Identificação da loja/agência.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,15 +15,15 @@ import (
 var ACTION = "CADASTRO_PESSOA_NOTIFICACAO_ALTERAR"
 
 type ActionInput struct {
-	CodPessoa string              `json:"CodPessoa,omitempty"` // *Código da pessoa.
-	Canais    []*ActionInputCanal `json:"Canais,omitempty"`    // *A notificação pode ser enviada para mais de um canal de comunicação.
+	CodPessoa *string             `json:"CodPessoa,omitempty"` // *Código da pessoa.
+	Canais    *[]ActionInputCanal `json:"Canais,omitempty"`    // *A notificação pode ser enviada para mais de um canal de comunicação.
 }
 
 type ActionInputCanal struct {
-	EMAIL    string `json:"EMAIL,omitempty"`    // Envio por e-mail.
-	SMS      string `json:"SMS,omitempty"`      // Envio por SMS.
-	WHATSAPP string `json:"WHATSAPP,omitempty"` // Envio por WhatsApp.
-	ID       int    `json:"ID,omitempty"`       // Número da notificação.
+	EMAIL    *string `json:"EMAIL,omitempty"`    // Envio por e-mail.
+	SMS      *string `json:"SMS,omitempty"`      // Envio por SMS.
+	WHATSAPP *string `json:"WHATSAPP,omitempty"` // Envio por WhatsApp.
+	ID       *int    `json:"ID,omitempty"`       // Número da notificação.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

@@ -15,21 +15,21 @@ import (
 var ACTION = "LOCACAO_SEGURO_ALTERAR"
 
 type ActionInput struct {
-	CodImovel          int     `json:"CodImovel,omitempty"`          // *Código do imóvel.
-	IdSeguroImovel     int     `json:"IdSeguroImovel,omitempty"`     // *ID interno do Imobiliar (é retornado na operação de consulta).
-	CompetenciaParcela string  `json:"CompetenciaParcela,omitempty"` // *Competência da parcela.
-	VigenciaInicial    string  `json:"VigenciaInicial,omitempty"`    // *Data inicial da vigência do seguro contratado.
-	VigenciaFinal      string  `json:"VigenciaFinal,omitempty"`      // *Data final da vigência do seguro contratado.
-	Apolice            string  `json:"Apolice,omitempty"`            // Número da apólice.
-	CodRisco           string  `json:"CodRisco,omitempty"`           //
-	Proposta           string  `json:"Proposta,omitempty"`           // *Número da proposta.
-	TipoSeguro         string  `json:"TipoSeguro,omitempty"`         // *Tipo do seguro contratado (Fiança, Incêndio, etc.).
-	CodSeguradora      int     `json:"CodSeguradora,omitempty"`      // *Código interno da seguradora no Imibiliar.
-	CodCorretor        int     `json:"CodCorretor,omitempty"`        // Código interno da empresa corretora do seguro no Imobiliar.
-	ValorSegurado      float64 `json:"ValorSegurado,omitempty"`      // *Valor segurado contratado.
-	ValorPremioTotal   float64 `json:"ValorPremioTotal,omitempty"`   // *Valor total do prêmio a ser pago à seguradora.
-	ValorParcela       float64 `json:"ValorParcela,omitempty"`       // *Valor da parcela.
-	NumeroParcelas     int     `json:"NumeroParcelas,omitempty"`     // Número de parcelas.
+	CodImovel          *int     `json:"CodImovel,omitempty"`          // *Código do imóvel.
+	IdSeguroImovel     *int     `json:"IdSeguroImovel,omitempty"`     // *ID interno do Imobiliar (é retornado na operação de consulta).
+	CompetenciaParcela *string  `json:"CompetenciaParcela,omitempty"` // *Competência da parcela.
+	VigenciaInicial    *string  `json:"VigenciaInicial,omitempty"`    // *Data inicial da vigência do seguro contratado.
+	VigenciaFinal      *string  `json:"VigenciaFinal,omitempty"`      // *Data final da vigência do seguro contratado.
+	Apolice            *string  `json:"Apolice,omitempty"`            // Número da apólice.
+	CodRisco           *string  `json:"CodRisco,omitempty"`           //
+	Proposta           *string  `json:"Proposta,omitempty"`           // *Número da proposta.
+	TipoSeguro         *string  `json:"TipoSeguro,omitempty"`         // *Tipo do seguro contratado (Fiança, Incêndio, etc.).
+	CodSeguradora      *int     `json:"CodSeguradora,omitempty"`      // *Código interno da seguradora no Imibiliar.
+	CodCorretor        *int     `json:"CodCorretor,omitempty"`        // Código interno da empresa corretora do seguro no Imobiliar.
+	ValorSegurado      *float64 `json:"ValorSegurado,omitempty"`      // *Valor segurado contratado.
+	ValorPremioTotal   *float64 `json:"ValorPremioTotal,omitempty"`   // *Valor total do prêmio a ser pago à seguradora.
+	ValorParcela       *float64 `json:"ValorParcela,omitempty"`       // *Valor da parcela.
+	NumeroParcelas     *int     `json:"NumeroParcelas,omitempty"`     // Número de parcelas.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

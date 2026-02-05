@@ -15,34 +15,34 @@ import (
 var ACTION = "CTAREC_BOLETO_ACORDO_INCLUIR"
 
 type ActionInput struct {
-	DocCapaIds           string                `json:"DocCapaIds,omitempty"`           // *Lista de códigos de boletos (DocCapaId) que devem entrar no acordo separados por virgula (,).
-	DataVencPrimeiraParc string                `json:"DataVencPrimeiraParc,omitempty"` // *Data de vencimento da primeira parcela.
-	DataVencSegundaParc  string                `json:"DataVencSegundaParc,omitempty"`  // Data de vencimento da segunda parcela.
-	QtdParcelas          float64               `json:"QtdParcelas,omitempty"`          // *Quantidade de parcelas do acordo.
-	FormaLancto          string                `json:"FormaLancto,omitempty"`          // *Forma de lançamento no sistema.
-	FormaCobranca        string                `json:"FormaCobranca,omitempty"`        // *Forma de cobrança.
-	TipoCorrecao         string                `json:"TipoCorrecao,omitempty"`         // *
-	TipoAcordo           string                `json:"TipoAcordo,omitempty"`           // *Código de identificação do acordo.
-	Complemento          string                `json:"Complemento,omitempty"`          // *Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
-	VlrCustas            float64               `json:"VlrCustas,omitempty"`            //
-	VlrHonorarios        float64               `json:"VlrHonorarios,omitempty"`        //
-	PercHonorarios       float64               `json:"PercHonorarios,omitempty"`       // Percentual de honorários (a ser dividido entre as parcelas do acordo).
-	VlrMulta             float64               `json:"VlrMulta,omitempty"`             //
-	VlrMultaProp         float64               `json:"VlrMultaProp,omitempty"`         //
-	VlrJuros             float64               `json:"VlrJuros,omitempty"`             // Valor total de juros (a ser dividido entre as parcelas do acordo). Se não for informado, o sistema irá apurar conforme tempo de atraso dos boletos originais.
-	VlrCorrecao          float64               `json:"VlrCorrecao,omitempty"`          // Valor total de correção (a ser dividido entre as parcelas do acordo). Se não for informado, o sistema irá apurar conforme tempo de atraso dos boletos originais.
-	PercJuros            float64               `json:"PercJuros,omitempty"`            // Percentual de juros se atraso de boleto. Se não for informado, o sistema assumirá a cobrança tradicional de juros do condomínio.
-	PercMulta            float64               `json:"PercMulta,omitempty"`            // Percentual de multa se atraso de boleto. Se não for informado, o sistema assumirá a cobrança tradicional de multa do condomínio.
-	HonorariosCC         string                `json:"HonorariosCC,omitempty"`         // Indica se deverá ou não lançar honorários em conta corrente na quitação da parcela do acordo. Valor default é 'N'),TransactField(Honorarios_CC.
-	ExportarDoc          string                `json:"ExportarDoc,omitempty"`          // *Indica se deverá ou não efetuar exportação dos boletos do acordo.
-	Email                string                `json:"Email,omitempty"`                // *Email para envio do boleto da primeira parcela do acordo.
-	EnviarEmail          string                `json:"EnviarEmail,omitempty"`          // Indica se deve enviar e-mail ao cliente.
-	Parcelas             []*ActionInputParcela `json:"Parcelas,omitempty"`             //
+	DocCapaIds           *string               `json:"DocCapaIds,omitempty"`           // *Lista de códigos de boletos (DocCapaId) que devem entrar no acordo separados por virgula (,).
+	DataVencPrimeiraParc *string               `json:"DataVencPrimeiraParc,omitempty"` // *Data de vencimento da primeira parcela.
+	DataVencSegundaParc  *string               `json:"DataVencSegundaParc,omitempty"`  // Data de vencimento da segunda parcela.
+	QtdParcelas          *float64              `json:"QtdParcelas,omitempty"`          // *Quantidade de parcelas do acordo.
+	FormaLancto          *string               `json:"FormaLancto,omitempty"`          // *Forma de lançamento no sistema.
+	FormaCobranca        *string               `json:"FormaCobranca,omitempty"`        // *Forma de cobrança.
+	TipoCorrecao         *string               `json:"TipoCorrecao,omitempty"`         // *
+	TipoAcordo           *string               `json:"TipoAcordo,omitempty"`           // *Código de identificação do acordo.
+	Complemento          *string               `json:"Complemento,omitempty"`          // *Texto que identifica os boletos originais do acordo. Ex.: "Venctos 10/05/20yy a 10/08/20yy.".
+	VlrCustas            *float64              `json:"VlrCustas,omitempty"`            //
+	VlrHonorarios        *float64              `json:"VlrHonorarios,omitempty"`        //
+	PercHonorarios       *float64              `json:"PercHonorarios,omitempty"`       // Percentual de honorários (a ser dividido entre as parcelas do acordo).
+	VlrMulta             *float64              `json:"VlrMulta,omitempty"`             //
+	VlrMultaProp         *float64              `json:"VlrMultaProp,omitempty"`         //
+	VlrJuros             *float64              `json:"VlrJuros,omitempty"`             // Valor total de juros (a ser dividido entre as parcelas do acordo). Se não for informado, o sistema irá apurar conforme tempo de atraso dos boletos originais.
+	VlrCorrecao          *float64              `json:"VlrCorrecao,omitempty"`          // Valor total de correção (a ser dividido entre as parcelas do acordo). Se não for informado, o sistema irá apurar conforme tempo de atraso dos boletos originais.
+	PercJuros            *float64              `json:"PercJuros,omitempty"`            // Percentual de juros se atraso de boleto. Se não for informado, o sistema assumirá a cobrança tradicional de juros do condomínio.
+	PercMulta            *float64              `json:"PercMulta,omitempty"`            // Percentual de multa se atraso de boleto. Se não for informado, o sistema assumirá a cobrança tradicional de multa do condomínio.
+	HonorariosCC         *string               `json:"HonorariosCC,omitempty"`         // Indica se deverá ou não lançar honorários em conta corrente na quitação da parcela do acordo. Valor default é 'N'),TransactField(Honorarios_CC.
+	ExportarDoc          *string               `json:"ExportarDoc,omitempty"`          // *Indica se deverá ou não efetuar exportação dos boletos do acordo.
+	Email                *string               `json:"Email,omitempty"`                // *Email para envio do boleto da primeira parcela do acordo.
+	EnviarEmail          *string               `json:"EnviarEmail,omitempty"`          // Indica se deve enviar e-mail ao cliente.
+	Parcelas             *[]ActionInputParcela `json:"Parcelas,omitempty"`             //
 }
 
 type ActionInputParcela struct {
-	Valor         float64 `json:"Valor,omitempty"`         // *Valor de cada parcela.
-	VlrHonorarios float64 `json:"VlrHonorarios,omitempty"` //
+	Valor         *float64 `json:"Valor,omitempty"`         // *Valor de cada parcela.
+	VlrHonorarios *float64 `json:"VlrHonorarios,omitempty"` //
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

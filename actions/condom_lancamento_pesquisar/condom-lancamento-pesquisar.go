@@ -15,29 +15,29 @@ import (
 var ACTION = "CONDOM_LANCAMENTO_INCLUIR"
 
 type ActionInput struct {
-	CodCondominio       int                    `json:"CodCondominio,omitempty"`       // *Código do condomínio.
-	CodBloco            string                 `json:"CodBloco,omitempty"`            // Código do bloco do condomínio.
-	CodBlocoBase        string                 `json:"CodBlocoBase,omitempty"`        // Bloco base/principal do condomínio.
-	Competencia         string                 `json:"Competencia,omitempty"`         // *Competência para a qual o lançamento será lançado.
-	Valor               float64                `json:"Valor,omitempty"`               // *Valor do lançamento.
-	Complemento         string                 `json:"Complemento,omitempty"`         // *Complemento descritivo do lançamento.
-	CodTaxa             int                    `json:"CodTaxa,omitempty"`             // *Código da taxa que classifica este lançamento.
-	Origem              string                 `json:"Origem,omitempty"`              // Origem do lançamento. Valor default é 'M'.
-	CompetenciaReajuste string                 `json:"CompetenciaReajuste,omitempty"` // Competência do reajuste do lançamento.
-	PercentualReajuste  float64                `json:"PercentualReajuste,omitempty"`  // Percentual de reajuste do lançamento. Valor default é '0'.
-	DebitoCredito       string                 `json:"DebitoCredito,omitempty"`       // Indica se o lançamento é de crédito ou de débito. Valor default é 'D'.
-	TipoLancamento      string                 `json:"TipoLancamento,omitempty"`      // Tipo de lançamento. Valor default é 'I'.
-	NumeroParcela       int                    `json:"NumeroParcela,omitempty"`       // *Número da parcela.
-	TotalParcelas       int                    `json:"TotalParcelas,omitempty"`       // *Número total de parcelas.
-	TipoDocumento       string                 `json:"TipoDocumento,omitempty"`       // Tipo de boleto/DOC. Valor default é 'N'.
-	DataVencimentoExtra string                 `json:"DataVencimentoExtra,omitempty"` // Data de vencimento se tipo do documento for extra (TipoDocumento='E').
-	DocAtrasado         string                 `json:"DocAtrasado,omitempty"`         // Indica se o DOC/boleto é atrasado. Valor default é 'N'.
-	DebitarLocatario    string                 `json:"DebitarLocatario,omitempty"`    // Indica se é para debitar o locatário. Valor default é 'N'.
-	Economias           []*ActionInputEconomia `json:"Economias,omitempty"`           // Lista de economias a lançar quando o tipo de lançamento for individual (TipoLancamento='I').
+	CodCondominio       *int                   `json:"CodCondominio,omitempty"`       // *Código do condomínio.
+	CodBloco            *string                `json:"CodBloco,omitempty"`            // Código do bloco do condomínio.
+	CodBlocoBase        *string                `json:"CodBlocoBase,omitempty"`        // Bloco base/principal do condomínio.
+	Competencia         *string                `json:"Competencia,omitempty"`         // *Competência para a qual o lançamento será lançado.
+	Valor               *float64               `json:"Valor,omitempty"`               // *Valor do lançamento.
+	Complemento         *string                `json:"Complemento,omitempty"`         // *Complemento descritivo do lançamento.
+	CodTaxa             *int                   `json:"CodTaxa,omitempty"`             // *Código da taxa que classifica este lançamento.
+	Origem              *string                `json:"Origem,omitempty"`              // Origem do lançamento. Valor default é 'M'.
+	CompetenciaReajuste *string                `json:"CompetenciaReajuste,omitempty"` // Competência do reajuste do lançamento.
+	PercentualReajuste  *float64               `json:"PercentualReajuste,omitempty"`  // Percentual de reajuste do lançamento. Valor default é '0'.
+	DebitoCredito       *string                `json:"DebitoCredito,omitempty"`       // Indica se o lançamento é de crédito ou de débito. Valor default é 'D'.
+	TipoLancamento      *string                `json:"TipoLancamento,omitempty"`      // Tipo de lançamento. Valor default é 'I'.
+	NumeroParcela       *int                   `json:"NumeroParcela,omitempty"`       // *Número da parcela.
+	TotalParcelas       *int                   `json:"TotalParcelas,omitempty"`       // *Número total de parcelas.
+	TipoDocumento       *string                `json:"TipoDocumento,omitempty"`       // Tipo de boleto/DOC. Valor default é 'N'.
+	DataVencimentoExtra *string                `json:"DataVencimentoExtra,omitempty"` // Data de vencimento se tipo do documento for extra (TipoDocumento='E').
+	DocAtrasado         *string                `json:"DocAtrasado,omitempty"`         // Indica se o DOC/boleto é atrasado. Valor default é 'N'.
+	DebitarLocatario    *string                `json:"DebitarLocatario,omitempty"`    // Indica se é para debitar o locatário. Valor default é 'N'.
+	Economias           *[]ActionInputEconomia `json:"Economias,omitempty"`           // Lista de economias a lançar quando o tipo de lançamento for individual (TipoLancamento='I').
 }
 
 type ActionInputEconomia struct {
-	IdEconomia int `json:"IdEconomia,omitempty"` // *Chave principal da economia/unidade.
+	IdEconomia *int `json:"IdEconomia,omitempty"` // *Chave principal da economia/unidade.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

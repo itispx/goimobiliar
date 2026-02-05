@@ -15,8 +15,8 @@ import (
 var ACTION = "LOCACAO_CONTRATO_IMOVEL_CONSULTAR"
 
 type ActionInput struct {
-	CodImovel      int `json:"CodImovel,omitempty"`      // *Código do imóvel.
-	CodContratoLoc int `json:"CodContratoLoc,omitempty"` // Código do contrato de locação deste imóvel.
+	CodImovel      *int `json:"CodImovel,omitempty"`      // *Código do imóvel.
+	CodContratoLoc *int `json:"CodContratoLoc,omitempty"` // Código do contrato de locação deste imóvel.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

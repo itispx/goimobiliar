@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_TAREFA_CONSULTAR"
 
 type ActionInput struct {
-	CodTarefa int `json:"CodTarefa,omitempty"` // *Código da tarefa.
+	CodTarefa *int `json:"CodTarefa,omitempty"` // *Código da tarefa.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

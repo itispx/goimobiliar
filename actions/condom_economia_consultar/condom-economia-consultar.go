@@ -15,7 +15,7 @@ import (
 var ACTION = "CONDOM_ECONOMIA_CONSULTAR"
 
 type ActionInput struct {
-	IdEconomia int `json:"IdEconomia,omitempty"` // *Chave principal da economia/unidade.
+	IdEconomia *int `json:"IdEconomia,omitempty"` // *Chave principal da economia/unidade.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

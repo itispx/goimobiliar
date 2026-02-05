@@ -15,8 +15,8 @@ import (
 var ACTION = "CONDOM_PASTADIGITAL_CONSULTAR"
 
 type ActionInput struct {
-	CodCondominio int    `json:"CodCondominio,omitempty"` // *Código do condomínio.
-	Competencia   string `json:"Competencia,omitempty"`   // *Competência referência da Pasta.
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // *Código do condomínio.
+	Competencia   *string `json:"Competencia,omitempty"`   // *Competência referência da Pasta.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

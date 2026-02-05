@@ -15,10 +15,10 @@ import (
 var ACTION = "CADASTRO_LOJA_PESQUISAR"
 
 type ActionInput struct {
-	Texto          string `json:"Texto,omitempty"`          // Texto para pesquisa, podendo ser vazio para selecionar tudo.
-	OrdernarPor    string `json:"OrdenarPor,omitempty"`     // Ordem de exibição. Valor default é 'C'.
-	QtdeLinhas     int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
-	ProximasLinhas string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
+	Texto          *string `json:"Texto,omitempty"`          // Texto para pesquisa, podendo ser vazio para selecionar tudo.
+	OrdernarPor    *string `json:"OrdenarPor,omitempty"`     // Ordem de exibição. Valor default é 'C'.
+	QtdeLinhas     *int    `json:"QtdeLinhas,omitempty"`     // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
+	ProximasLinhas *string `json:"ProximasLinhas,omitempty"` // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]
@@ -152,7 +152,7 @@ type RequestResponseBody struct {
 
 type RequestResponseBodyAgencia struct {
 	IdLoja    int    `json:"IdLoja,omitempty"`    // Identificação da loja/agência.
-	LojaNome  string `"LojaNome,omitempty"`       // Nome da loja/agência.
+	LojaNome  string `json:"LojaNome,omitempty"`  // Nome da loja/agência.
 	CodFilial int    `json:"CodFilial,omitempty"` // Código da filial.
 }
 

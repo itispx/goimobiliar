@@ -15,7 +15,7 @@ import (
 var ACTION = "CTAPAG_CODBARRAS_CONSULTAR"
 
 type ActionInput struct {
-	CodigoBarras string `json:"CodigoBarras,omitempty"` // *Código de barras do documento (* obrigatório se origem for 'B')
+	CodigoBarras *string `json:"CodigoBarras,omitempty"` // *Código de barras do documento (* obrigatório se origem for 'B')
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

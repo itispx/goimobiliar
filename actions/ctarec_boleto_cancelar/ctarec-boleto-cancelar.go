@@ -15,12 +15,12 @@ import (
 var ACTION = "CTAREC_BOLETO_CANCELAR"
 
 type ActionInput struct {
-	Origem        string `json:"Origem,omitempty"`        // *Origem do Boleto no Sistema (Locação, Condomínio, etc).
-	DocCapaId     int    `json:"DocCapaId,omitempty"`     // *Código do boleto no sistema.
-	Competencia   string `json:"Competencia,omitempty"`   // *Competência do documento no formato 'YYYYMM'.
-	CodImovel     int    `json:"CodImovel,omitempty"`     // Código do imóvel (Obrigatório quando for boleto de Locação).
-	CodCondominio int    `json:"CodCondominio,omitempty"` // Código do condomínio (Obrigatório quando for boleto de Condomínio).
-	Motivo        string `json:"Motivo,omitempty"`        // Motivo do cancelamento do boleto.
+	Origem        *string `json:"Origem,omitempty"`        // *Origem do Boleto no Sistema (Locação, Condomínio, etc).
+	DocCapaId     *int    `json:"DocCapaId,omitempty"`     // *Código do boleto no sistema.
+	Competencia   *string `json:"Competencia,omitempty"`   // *Competência do documento no formato 'YYYYMM'.
+	CodImovel     *int    `json:"CodImovel,omitempty"`     // Código do imóvel (Obrigatório quando for boleto de Locação).
+	CodCondominio *int    `json:"CodCondominio,omitempty"` // Código do condomínio (Obrigatório quando for boleto de Condomínio).
+	Motivo        *string `json:"Motivo,omitempty"`        // Motivo do cancelamento do boleto.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

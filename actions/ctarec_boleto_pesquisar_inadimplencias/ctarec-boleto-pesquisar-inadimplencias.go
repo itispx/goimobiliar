@@ -15,65 +15,65 @@ import (
 var ACTION = "CTAREC_BOLETO_PESQUISAR_INADIMPLENCIAS"
 
 type ActionInput struct {
-	IniRel                   string  `json:"IniRel,omitempty"`                   //
-	OrigemCondom             string  `json:"OrigemCondom,omitempty"`             //
-	ExcetoQuitSeg            string  `json:"ExcetoQuitSeg,omitempty"`            //
-	CodIndiceCorr            string  `json:"CodIndiceCorr,omitempty"`            //
-	TipoRel                  int     `json:"TipoRel,omitempty"`                  // Valor default é '0'.
-	Retidos                  string  `json:"Retidos,omitempty"`                  //
-	DataInicial              string  `json:"DataInicial,omitempty"`              // *Formato DD/MM/YYYY.
-	DataFinal                string  `json:"DataFinal,omitempty"`                // *Formato DD/MM/YYYY.
-	CodInicial               string  `json:"CodInicial,omitempty"`               //
-	CodFinal                 int     `json:"CodFinal,omitempty"`                 //
-	IdEconomia               int     `json:"IdEconomia,omitempty"`               // Chave principal da economia/unidade.
-	CodFilial                string  `json:"CodFilial,omitempty"`                //
-	TipoFianca               string  `json:"TipoFianca,omitempty"`               //
-	DataBase                 string  `json:"DataBase,omitempty"`                 // Formato DD/MM/YYYY.
-	RetInadInicial           string  `json:"RetInadInicial,omitempty"`           // Formato DD/MM/YYYY.
-	Classificacao            string  `json:"Classificacao,omitempty"`            //
-	ExportaSindico           string  `json:"ExportaSindico,omitempty"`           //
-	RelPorImov               string  `json:"RelPorImov,omitempty"`               //
-	SemQuitaAposVencFinal    string  `json:"SemQuitaAposVencFinal,omitempty"`    //
-	ApenasRetInad            string  `json:"ApenasRetInad,omitempty"`            //
-	LancamentoAnalitico      string  `json:"LancamentoAnalitico,omitempty"`      //
-	SemTaxasSemMulta         string  `json:"SemTaxasSemMulta,omitempty"`         //
-	DebConta                 string  `json:"DebConta,omitempty"`                 //
-	DocsAcordo               string  `json:"DocsAcordo,omitempty"`               //
-	ExcetoDocsAcordo         string  `json:"ExcetoDocsAcordo,omitempty"`         //
-	IncluirDocsAcordo        string  `json:"IncluirDocsAcordo,omitempty"`        //
-	OrdemEnd                 string  `json:"OrdemEnd,omitempty"`                 //
-	InformaFone              string  `json:"InformaFone,omitempty"`              //
-	CondObsJur               string  `json:"CondObsJur,omitempty"`               //
-	ObsJurAcoes              string  `json:"ObsJurAcoes,omitempty"`              //
-	ObsJurProc               string  `json:"ObsJurProc,omitempty"`               //
-	ExcetoGarantidos         string  `json:"ExcetoGarantidos,omitempty"`         //
-	ApenasGarantidos         string  `json:"ApenasGarantidos,omitempty"`         //
-	ApenasProgramados        string  `json:"ApenasProgramados,omitempty"`        //
-	ApenasCondominioAtivo    string  `json:"ApenasCondominioAtivo,omitempty"`    //
-	ApenasCondominioInativo  string  `json:"ApenasCondominioInativo,omitempty"`  //
-	PercentualHonorarios     float64 `json:"PercentualHonorarios,omitempty"`     // *
-	TemCustas                string  `json:"TemCustas,omitempty"`                //
-	CodBloco                 string  `json:"CodBloco,omitempty"`                 // Código do bloco da economia.
-	CodAdvogado              int     `json:"CodAdvogado,omitempty"`              // Código do Advogado.
-	Ocupados                 string  `json:"Ocupados,omitempty"`                 //
-	Boletos                  string  `json:"Boletos,omitempty"`                  //
-	VlrHonorarios            float64 `json:"VlrHonorarios,omitempty"`            //
-	CodAssessor              int     `json:"CodAssessor,omitempty"`              //
-	ExibirParcelamentoAcordo string  `json:"ExibirParcelamentoAcordo,omitempty"` //
-	ApenasComAdv             string  `json:"ApenasComAdv,omitempty"`             //
-	AnaliticoEstorno         string  `json:"AnaliticoEstorno,omitempty"`         //
-	ApenasEconAtivas         string  `json:"ApenasEconAtivas,omitempty"`         //
-	Competencia              string  `json:"Competencia,omitempty"`              // Competência do documento no formato 'YYYYMM'.
-	ExibirPercentualInad     string  `json:"ExibirPercentualInad,omitempty"`     //
-	Desocupados              string  `json:"Desocupados,omitempty"`              //
-	CodLocatario             int     `json:"CodLocatario,omitempty"`             //
-	CodFornecedorAdm         int     `json:"CodFornecedorAdm,omitempty"`         //
-	TotTxAdm                 string  `json:"TotTxAdm,omitempty"`                 //
-	Inativos                 string  `json:"Inativos,omitempty"`                 //
-	ExibirAgrupados          string  `json:"ExibirAgrupados,omitempty"`          //
-	ApenasSemAdv             string  `json:"ApenasSemAdv,omitempty"`             //
-	QtdeLinhas               int     `json:"QtdeLinhas,omitempty"`               // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
-	ProximasLinhas           string  `json:"ProximasLinhas,omitempty"`           // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
+	IniRel                   *string  `json:"IniRel,omitempty"`                   //
+	OrigemCondom             *string  `json:"OrigemCondom,omitempty"`             //
+	ExcetoQuitSeg            *string  `json:"ExcetoQuitSeg,omitempty"`            //
+	CodIndiceCorr            *string  `json:"CodIndiceCorr,omitempty"`            //
+	TipoRel                  *int     `json:"TipoRel,omitempty"`                  // Valor default é '0'.
+	Retidos                  *string  `json:"Retidos,omitempty"`                  //
+	DataInicial              *string  `json:"DataInicial,omitempty"`              // *Formato DD/MM/YYYY.
+	DataFinal                *string  `json:"DataFinal,omitempty"`                // *Formato DD/MM/YYYY.
+	CodInicial               *string  `json:"CodInicial,omitempty"`               //
+	CodFinal                 *int     `json:"CodFinal,omitempty"`                 //
+	IdEconomia               *int     `json:"IdEconomia,omitempty"`               // Chave principal da economia/unidade.
+	CodFilial                *string  `json:"CodFilial,omitempty"`                //
+	TipoFianca               *string  `json:"TipoFianca,omitempty"`               //
+	DataBase                 *string  `json:"DataBase,omitempty"`                 // Formato DD/MM/YYYY.
+	RetInadInicial           *string  `json:"RetInadInicial,omitempty"`           // Formato DD/MM/YYYY.
+	Classificacao            *string  `json:"Classificacao,omitempty"`            //
+	ExportaSindico           *string  `json:"ExportaSindico,omitempty"`           //
+	RelPorImov               *string  `json:"RelPorImov,omitempty"`               //
+	SemQuitaAposVencFinal    *string  `json:"SemQuitaAposVencFinal,omitempty"`    //
+	ApenasRetInad            *string  `json:"ApenasRetInad,omitempty"`            //
+	LancamentoAnalitico      *string  `json:"LancamentoAnalitico,omitempty"`      //
+	SemTaxasSemMulta         *string  `json:"SemTaxasSemMulta,omitempty"`         //
+	DebConta                 *string  `json:"DebConta,omitempty"`                 //
+	DocsAcordo               *string  `json:"DocsAcordo,omitempty"`               //
+	ExcetoDocsAcordo         *string  `json:"ExcetoDocsAcordo,omitempty"`         //
+	IncluirDocsAcordo        *string  `json:"IncluirDocsAcordo,omitempty"`        //
+	OrdemEnd                 *string  `json:"OrdemEnd,omitempty"`                 //
+	InformaFone              *string  `json:"InformaFone,omitempty"`              //
+	CondObsJur               *string  `json:"CondObsJur,omitempty"`               //
+	ObsJurAcoes              *string  `json:"ObsJurAcoes,omitempty"`              //
+	ObsJurProc               *string  `json:"ObsJurProc,omitempty"`               //
+	ExcetoGarantidos         *string  `json:"ExcetoGarantidos,omitempty"`         //
+	ApenasGarantidos         *string  `json:"ApenasGarantidos,omitempty"`         //
+	ApenasProgramados        *string  `json:"ApenasProgramados,omitempty"`        //
+	ApenasCondominioAtivo    *string  `json:"ApenasCondominioAtivo,omitempty"`    //
+	ApenasCondominioInativo  *string  `json:"ApenasCondominioInativo,omitempty"`  //
+	PercentualHonorarios     *float64 `json:"PercentualHonorarios,omitempty"`     // *
+	TemCustas                *string  `json:"TemCustas,omitempty"`                //
+	CodBloco                 *string  `json:"CodBloco,omitempty"`                 // Código do bloco da economia.
+	CodAdvogado              *int     `json:"CodAdvogado,omitempty"`              // Código do Advogado.
+	Ocupados                 *string  `json:"Ocupados,omitempty"`                 //
+	Boletos                  *string  `json:"Boletos,omitempty"`                  //
+	VlrHonorarios            *float64 `json:"VlrHonorarios,omitempty"`            //
+	CodAssessor              *int     `json:"CodAssessor,omitempty"`              //
+	ExibirParcelamentoAcordo *string  `json:"ExibirParcelamentoAcordo,omitempty"` //
+	ApenasComAdv             *string  `json:"ApenasComAdv,omitempty"`             //
+	AnaliticoEstorno         *string  `json:"AnaliticoEstorno,omitempty"`         //
+	ApenasEconAtivas         *string  `json:"ApenasEconAtivas,omitempty"`         //
+	Competencia              *string  `json:"Competencia,omitempty"`              // Competência do documento no formato 'YYYYMM'.
+	ExibirPercentualInad     *string  `json:"ExibirPercentualInad,omitempty"`     //
+	Desocupados              *string  `json:"Desocupados,omitempty"`              //
+	CodLocatario             *int     `json:"CodLocatario,omitempty"`             //
+	CodFornecedorAdm         *int     `json:"CodFornecedorAdm,omitempty"`         //
+	TotTxAdm                 *string  `json:"TotTxAdm,omitempty"`                 //
+	Inativos                 *string  `json:"Inativos,omitempty"`                 //
+	ExibirAgrupados          *string  `json:"ExibirAgrupados,omitempty"`          //
+	ApenasSemAdv             *string  `json:"ApenasSemAdv,omitempty"`             //
+	QtdeLinhas               *int     `json:"QtdeLinhas,omitempty"`               // Quantidade máxima de linhas de resposta, utilizado para obter resultados por segmentos (paginação). Se não for informado então a resposta conterá todas as linhas selecionadas pela ação. Valor default é '0'.
+	ProximasLinhas           *string  `json:"ProximasLinhas,omitempty"`           // Campo opcional indicando que, ao invés de executar a ação, solicita as linhas do próximo segmento. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

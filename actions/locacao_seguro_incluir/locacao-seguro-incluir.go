@@ -15,30 +15,30 @@ import (
 var ACTION = "LOCACAO_SEGURO_INCLUIR"
 
 type ActionInput struct {
-	CodImovel              int                 `json:"CodImovel,omitempty"`              // *Código do imóvel.
-	VigenciaInicial        string              `json:"VigenciaInicial,omitempty"`        // *Data inicial da vigência do seguro contratado.
-	VigenciaFinal          string              `json:"VigenciaFinal,omitempty"`          // *Data final da vigência do seguro contratado.
-	Apolice                string              `json:"Apolice,omitempty"`                // Número da apólice.
-	CodRisco               string              `json:"CodRisco,omitempty"`               //
-	Proposta               string              `json:"Proposta,omitempty"`               // Número da proposta.
-	TipoSeguro             string              `json:"TipoSeguro,omitempty"`             // *Tipo do seguro contratado (Fiança, Incêndio, etc.).
-	CodSeguradora          int                 `json:"CodSeguradora,omitempty"`          // *Código interno da seguradora no Imibiliar.
-	CodCorretor            int                 `json:"CodCorretor,omitempty"`            // Código interno da empresa corretora do seguro no Imobiliar.
-	ValorSegurado          float64             `json:"ValorSegurado,omitempty"`          // *Valor segurado contratado.
-	ValorPremioTotal       float64             `json:"ValorPremioTotal,omitempty"`       // *Valor total do prêmio a ser pago à seguradora.
-	LancarContasPagar      string              `json:"LancarContasPagar,omitempty"`      // *Este campo indica se deve fazer a incluisão das parcelas no Contas à Pagar.
-	CompetenciaInicial     string              `json:"CompetenciaInicial,omitempty"`     // Competência inicial da cobrança das parcelas.
-	DataVencimentoInicial  string              `json:"DataVencimentoInicial,omitempty"`  // Data de vencimento da primeira parcela.
-	NumeroParcelaResidual  int                 `json:"NumeroParcelaResidual,omitempty"`  // Número da parcela a aplicar o valor residual (informar 1).
-	ValorParcela           float64             `json:"ValorParcela,omitempty"`           // Valor da parcela.
-	NumeroParcelas         int                 `json:"NumeroParcelas,omitempty"`         // Número de parcelas.
-	ValorParcelasRestantes float64             `json:"ValorParcelasRestantes,omitempty"` //
-	Lista                  []*ActionInputLista `json:"Lista,omitempty"`                  // *Lista de parcelas de valores prédefinidos.
+	CodImovel              *int                `json:"CodImovel,omitempty"`              // *Código do imóvel.
+	VigenciaInicial        *string             `json:"VigenciaInicial,omitempty"`        // *Data inicial da vigência do seguro contratado.
+	VigenciaFinal          *string             `json:"VigenciaFinal,omitempty"`          // *Data final da vigência do seguro contratado.
+	Apolice                *string             `json:"Apolice,omitempty"`                // Número da apólice.
+	CodRisco               *string             `json:"CodRisco,omitempty"`               //
+	Proposta               *string             `json:"Proposta,omitempty"`               // Número da proposta.
+	TipoSeguro             *string             `json:"TipoSeguro,omitempty"`             // *Tipo do seguro contratado (Fiança, Incêndio, etc.).
+	CodSeguradora          *int                `json:"CodSeguradora,omitempty"`          // *Código interno da seguradora no Imibiliar.
+	CodCorretor            *int                `json:"CodCorretor,omitempty"`            // Código interno da empresa corretora do seguro no Imobiliar.
+	ValorSegurado          *float64            `json:"ValorSegurado,omitempty"`          // *Valor segurado contratado.
+	ValorPremioTotal       *float64            `json:"ValorPremioTotal,omitempty"`       // *Valor total do prêmio a ser pago à seguradora.
+	LancarContasPagar      *string             `json:"LancarContasPagar,omitempty"`      // *Este campo indica se deve fazer a incluisão das parcelas no Contas à Pagar.
+	CompetenciaInicial     *string             `json:"CompetenciaInicial,omitempty"`     // Competência inicial da cobrança das parcelas.
+	DataVencimentoInicial  *string             `json:"DataVencimentoInicial,omitempty"`  // Data de vencimento da primeira parcela.
+	NumeroParcelaResidual  *int                `json:"NumeroParcelaResidual,omitempty"`  // Número da parcela a aplicar o valor residual (informar 1).
+	ValorParcela           *float64            `json:"ValorParcela,omitempty"`           // Valor da parcela.
+	NumeroParcelas         *int                `json:"NumeroParcelas,omitempty"`         // Número de parcelas.
+	ValorParcelasRestantes *float64            `json:"ValorParcelasRestantes,omitempty"` //
+	Lista                  *[]ActionInputLista `json:"Lista,omitempty"`                  // *Lista de parcelas de valores prédefinidos.
 }
 
 type ActionInputLista struct {
-	NumeroParcela int `json:"NumeroParcela,omitempty"` // *Número da parcela.
-	ValorParcela  int `json:"ValorParcela,omitempty"`  // *Valor da parcela.
+	NumeroParcela *int `json:"NumeroParcela,omitempty"` // *Número da parcela.
+	ValorParcela  *int `json:"ValorParcela,omitempty"`  // *Valor da parcela.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

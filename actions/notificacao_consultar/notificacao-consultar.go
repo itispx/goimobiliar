@@ -15,7 +15,7 @@ import (
 var ACTION = "NOTIFICACAO_CONSULTAR"
 
 type ActionInput struct {
-	Id int `json:"ID,omitempty"` // Número da notificação. Se o campo não tiver conteúdo na requisição então será retornada a lista de todas as notificações existentes.
+	Id *int `json:"ID,omitempty"` // Número da notificação. Se o campo não tiver conteúdo na requisição então será retornada a lista de todas as notificações existentes.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

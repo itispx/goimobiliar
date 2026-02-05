@@ -15,13 +15,13 @@ import (
 var ACTION = "LOCACAO_IMOVEL_IMAGENS_INCLUIR"
 
 type ActionInput struct {
-	CodImovel int                  `json:"CodImovel,omitempty"` // *Código do imóvel.
-	Imagens   []*ActionInputImagem `json:"Imagens,omitempty"`   // *
+	CodImovel *int                 `json:"CodImovel,omitempty"` // *Código do imóvel.
+	Imagens   *[]ActionInputImagem `json:"Imagens,omitempty"`   // *
 }
 
 type ActionInputImagem struct {
-	Descricao string `json:"Descricao,omitempty"` // *Descrição da imagem/foto.
-	URL       string `json:"URL,omitempty"`       // *URL para download do arquivo com a imagem/foto.
+	Descricao *string `json:"Descricao,omitempty"` // *Descrição da imagem/foto.
+	URL       *string `json:"URL,omitempty"`       // *URL para download do arquivo com a imagem/foto.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

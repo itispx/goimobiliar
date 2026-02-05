@@ -15,10 +15,10 @@ import (
 var ACTION = "COMERC_INTERESSADO_PESQUISAR"
 
 type ActionInput struct {
-	Texto        string `json:"Texto,omitempty"`        // Texto para pesquisa, podendo ser vazio para selecionar tudo.
-	PesquisarPor string `json:"PesquisarPor,omitempty"` // Alvo da pesquisa a efetuar. Valor default é 'NOME'.
-	TipoPessoa   string `json:"TipoPessoa,omitempty"`   // Tipo da pessoa.
-	Ativo        string `json:"Ativo,omitempty"`        // Indica se está ativo.
+	Texto        *string `json:"Texto,omitempty"`        // Texto para pesquisa, podendo ser vazio para selecionar tudo.
+	PesquisarPor *string `json:"PesquisarPor,omitempty"` // Alvo da pesquisa a efetuar. Valor default é 'NOME'.
+	TipoPessoa   *string `json:"TipoPessoa,omitempty"`   // Tipo da pessoa.
+	Ativo        *string `json:"Ativo,omitempty"`        // Indica se está ativo.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

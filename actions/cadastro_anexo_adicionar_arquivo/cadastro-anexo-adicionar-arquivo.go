@@ -15,8 +15,8 @@ import (
 var ACTION = "CADASTRO_ANEXO_ADICIONAR_ARQUIVO"
 
 type ActionInput struct {
-	CodAnexo  int    `json:"CodAnexo,omitempty"`  // *Código do anexo.
-	UrlImagem string `json:"UrlImagem,omitempty"` // *URL para efetuar download do arquivo, por exemplo "http://host.com.br/anexo.pdf".
+	CodAnexo  *int    `json:"CodAnexo,omitempty"`  // *Código do anexo.
+	UrlImagem *string `json:"UrlImagem,omitempty"` // *URL para efetuar download do arquivo, por exemplo "http://host.com.br/anexo.pdf".
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]
@@ -145,7 +145,7 @@ type RequestResponseHeader struct {
 }
 
 type RequestResponseBody struct {
-	CodAnexo int `json:"CodAnexo,omitempty"` // Código do anexo.
+	CodAnexo *int `json:"CodAnexo,omitempty"` // Código do anexo.
 }
 
 func handler(input *HandlerInput) (*HandlerOutput, error) {

@@ -15,11 +15,11 @@ import (
 var ACTION = "LOCACAO_LANCTO_COND_CONSULTAR"
 
 type ActionInput struct {
-	CodImovel      int    `json:"CodImovel,omitempty"`      // *Código do imóvel.
-	Competencia    string `json:"Competencia,omitempty"`    // *Competência.
-	CodContratoLoc int    `json:"CodContratoLoc,omitempty"` // *Código do contrato de locação deste imóvel.
-	TipoBoleto     string `json:"TipoBoleto,omitempty"`     // Tipo de boleto para lançar.
-	DataVencimento string `json:"DataVencimento,omitempty"` // Data de vencimento do lançamento.
+	CodImovel      *int    `json:"CodImovel,omitempty"`      // *Código do imóvel.
+	Competencia    *string `json:"Competencia,omitempty"`    // *Competência.
+	CodContratoLoc *int    `json:"CodContratoLoc,omitempty"` // *Código do contrato de locação deste imóvel.
+	TipoBoleto     *string `json:"TipoBoleto,omitempty"`     // Tipo de boleto para lançar.
+	DataVencimento *string `json:"DataVencimento,omitempty"` // Data de vencimento do lançamento.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

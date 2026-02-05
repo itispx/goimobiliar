@@ -15,30 +15,30 @@ import (
 var ACTION = "LANCTOCC_PROPRIETARIO_INCLUIR"
 
 type ActionInput struct {
-	CodPessoaProprietario int     `json:"CodPessoaProprietario,omitempty"` // *Código do proprietário.
-	DcCcImovel            string  `json:"DcCcImovel,omitempty"`            // Débito ou crédito na conta corrente do imóvel. Valor default é ' '.
-	DcReciboProprietario  string  `json:"DcReciboProprietario,omitempty"`  // Débito ou crédito no recibo de proprietário. Valor default é ' '.
-	NoDemonstrativo       string  `json:"NoDemonstrativo,omitempty"`       // Indicação da forma de lançamento no demonstrativo. Valor default é 'S'.
-	CodFilial             string  `json:"CodFilial,omitempty"`             // *Código da filial do lançamento.
-	Competencia           string  `json:"Competencia,omitempty"`           // *Competência do lançamento no formato 'YYYYMM'.
-	DataPagamento         string  `json:"DataPagamento,omitempty"`         // *Data de pagamento do lançamento (quando quitado).
-	TipoDocumento         string  `json:"TipoDocumento,omitempty"`         // *Tipo de documento do lançamento.
-	NumeroDocumento       string  `json:"NumeroDocumento,omitempty"`       // *Número do documento do fornecedor.
-	Complemento           string  `json:"Complemento,omitempty"`           // Complemento descritivo do lançamento.
-	ComplementoAdicional1 string  `json:"ComplementoAdicional1,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional2 string  `json:"ComplementoAdicional2,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional3 string  `json:"ComplementoAdicional3,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional4 string  `json:"ComplementoAdicional4,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional5 string  `json:"ComplementoAdicional5,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional6 string  `json:"ComplementoAdicional6,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional7 string  `json:"ComplementoAdicional7,omitempty"` // Informação de complemento extra.
-	ComplementoAdicional8 string  `json:"ComplementoAdicional8,omitempty"` // Informação de complemento extra.
-	CodContraPartida      int     `json:"CodContraPartida,omitempty"`      // Código da conta de contra partida cadastrada no plano de contas da administradora.
-	LancaNaViradaParcelas string  `json:"LancaNaViradaParcelas,omitempty"` // *Lançamento automático na virada de parcelas.
-	NumeroParcela         int     `json:"NumeroParcela,omitempty"`         // Número da parcela do lançamento. Valor default é '1'.
-	TotalParcelas         int     `json:"TotalParcelas,omitempty"`         // Quantidade total de parcelas. Valor default é '1'.
-	CodTaxa               int     `json:"CodTaxa,omitempty"`               // *Código da taxa que classifica este lançamento.
-	Valor                 float64 `json:"Valor,omitempty"`                 // *Valor total do lançamento.
+	CodPessoaProprietario *int     `json:"CodPessoaProprietario,omitempty"` // *Código do proprietário.
+	DcCcImovel            *string  `json:"DcCcImovel,omitempty"`            // Débito ou crédito na conta corrente do imóvel. Valor default é ' '.
+	DcReciboProprietario  *string  `json:"DcReciboProprietario,omitempty"`  // Débito ou crédito no recibo de proprietário. Valor default é ' '.
+	NoDemonstrativo       *string  `json:"NoDemonstrativo,omitempty"`       // Indicação da forma de lançamento no demonstrativo. Valor default é 'S'.
+	CodFilial             *string  `json:"CodFilial,omitempty"`             // *Código da filial do lançamento.
+	Competencia           *string  `json:"Competencia,omitempty"`           // *Competência do lançamento no formato 'YYYYMM'.
+	DataPagamento         *string  `json:"DataPagamento,omitempty"`         // *Data de pagamento do lançamento (quando quitado).
+	TipoDocumento         *string  `json:"TipoDocumento,omitempty"`         // *Tipo de documento do lançamento.
+	NumeroDocumento       *string  `json:"NumeroDocumento,omitempty"`       // *Número do documento do fornecedor.
+	Complemento           *string  `json:"Complemento,omitempty"`           // Complemento descritivo do lançamento.
+	ComplementoAdicional1 *string  `json:"ComplementoAdicional1,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional2 *string  `json:"ComplementoAdicional2,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional3 *string  `json:"ComplementoAdicional3,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional4 *string  `json:"ComplementoAdicional4,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional5 *string  `json:"ComplementoAdicional5,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional6 *string  `json:"ComplementoAdicional6,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional7 *string  `json:"ComplementoAdicional7,omitempty"` // Informação de complemento extra.
+	ComplementoAdicional8 *string  `json:"ComplementoAdicional8,omitempty"` // Informação de complemento extra.
+	CodContraPartida      *int     `json:"CodContraPartida,omitempty"`      // Código da conta de contra partida cadastrada no plano de contas da administradora.
+	LancaNaViradaParcelas *string  `json:"LancaNaViradaParcelas,omitempty"` // *Lançamento automático na virada de parcelas.
+	NumeroParcela         *int     `json:"NumeroParcela,omitempty"`         // Número da parcela do lançamento. Valor default é '1'.
+	TotalParcelas         *int     `json:"TotalParcelas,omitempty"`         // Quantidade total de parcelas. Valor default é '1'.
+	CodTaxa               *int     `json:"CodTaxa,omitempty"`               // *Código da taxa que classifica este lançamento.
+	Valor                 *float64 `json:"Valor,omitempty"`                 // *Valor total do lançamento.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

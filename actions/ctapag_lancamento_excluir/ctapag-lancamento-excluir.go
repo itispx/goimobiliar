@@ -15,8 +15,8 @@ import (
 var ACTION = "CTAPAG_LANCAMENTO_EXCLUIR"
 
 type ActionInput struct {
-	NumeroLancto    int    `json:"NumeroLancto,omitempty"`    // *Número do lançamento.
-	ExcluirPrevisao string `json:"ExcluirPrevisao,omitempty"` // Excluir lançamento de previsão caso exista. Valor default é 'N'.
+	NumeroLancto    *int    `json:"NumeroLancto,omitempty"`    // *Número do lançamento.
+	ExcluirPrevisao *string `json:"ExcluirPrevisao,omitempty"` // Excluir lançamento de previsão caso exista. Valor default é 'N'.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

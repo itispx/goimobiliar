@@ -15,9 +15,9 @@ import (
 var ACTION = "CONDOM_CONSULTOR_INCLUIR"
 
 type ActionInput struct {
-	CodCondominio  int    `json:"CodCondominio,omitempty"`  // *Código do condomínio.
-	Consultor      string `json:"Consultor,omitempty"`      // *Código de usuário do consultor do condomínio.
-	CodAreaAtuacao string `json:"CodAreaAtuacao,omitempty"` // *Código da área de atuação do consultor.
+	CodCondominio  *int    `json:"CodCondominio,omitempty"`  // *Código do condomínio.
+	Consultor      *string `json:"Consultor,omitempty"`      // *Código de usuário do consultor do condomínio.
+	CodAreaAtuacao *string `json:"CodAreaAtuacao,omitempty"` // *Código da área de atuação do consultor.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]

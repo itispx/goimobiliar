@@ -15,27 +15,27 @@ import (
 var ACTION = "CADASTRO_TAREFA_ALTERAR"
 
 type ActionInput struct {
-	CodTarefa     int    `json:"CodTarefa,omitempty"`     // *Código da tarefa.
-	CodCategoria  int    `json:"CodCategoria,omitempty"`  // Código da categoria da tarefa.
-	CodTicket     int    `json:"CodTicket,omitempty"`     // Código do chamado da integração.
-	AlocadaPara   string `json:"AlocadaPara,omitempty"`   // *ID do usuário que está com a tarefa.
-	CodAssunto    int    `json:"CodAssunto,omitempty"`    // Código do assunto cadastrado no sistema.
-	Assunto       string `json:"Assunto,omitempty"`       // Assunto da tarefa.
-	Texto         string `json:"Texto,omitempty"`         // Texto da tarefa.
-	CodContato    int    `json:"CodContato,omitempty"`    // Código do contato cadastrado no sistema.
-	TipoContato   string `json:"TipoContato,omitempty"`   // Tipo do contato.
-	TextoContato  string `json:"TextoContato,omitempty"`  // Texto do contato.
-	DataPrevisao  string `json:"DataPrevisao,omitempty"`  // Data prevista para a finalização da tarefa.
-	DataConclusao string `json:"DataConclusao,omitempty"` // Data da conclusão da tarefa.
-	CodSituacao   int    `json:"CodSituacao,omitempty"`   // Código da situação da tarefa.
-	CodPrioridade int    `json:"CodPrioridade,omitempty"` // Código da prioridade da tarefa (deve existir no cadastro).
-	Percentual    int    `json:"Percentual,omitempty"`    // Percentual do andamento da tarefa.
-	Executor      string `json:"Executor,omitempty"`      // Texto livre para identificar o responsável pela tarefa.
-	Custo         string `json:"Custo,omitempty"`         // Texto livre para indicar o custo da tarefa.
-	CodFornecedor int    `json:"CodFornecedor,omitempty"` // Código do fornecedor.
-	TemLembrete   string `json:"TemLembrete,omitempty"`   // Indica se a tarefa deve ser lembrada.
-	DataLembrete  string `json:"DataLembrete,omitempty"`  // Data e hora para lembrar a tarefa.
-	TextoLembrete string `json:"TextoLembrete,omitempty"` // Texto livre para lembrar da tarefa
+	CodTarefa     *int    `json:"CodTarefa,omitempty"`     // *Código da tarefa.
+	CodCategoria  *int    `json:"CodCategoria,omitempty"`  // Código da categoria da tarefa.
+	CodTicket     *int    `json:"CodTicket,omitempty"`     // Código do chamado da integração.
+	AlocadaPara   *string `json:"AlocadaPara,omitempty"`   // *ID do usuário que está com a tarefa.
+	CodAssunto    *int    `json:"CodAssunto,omitempty"`    // Código do assunto cadastrado no sistema.
+	Assunto       *string `json:"Assunto,omitempty"`       // Assunto da tarefa.
+	Texto         *string `json:"Texto,omitempty"`         // Texto da tarefa.
+	CodContato    *int    `json:"CodContato,omitempty"`    // Código do contato cadastrado no sistema.
+	TipoContato   *string `json:"TipoContato,omitempty"`   // Tipo do contato.
+	TextoContato  *string `json:"TextoContato,omitempty"`  // Texto do contato.
+	DataPrevisao  *string `json:"DataPrevisao,omitempty"`  // Data prevista para a finalização da tarefa.
+	DataConclusao *string `json:"DataConclusao,omitempty"` // Data da conclusão da tarefa.
+	CodSituacao   *int    `json:"CodSituacao,omitempty"`   // Código da situação da tarefa.
+	CodPrioridade *int    `json:"CodPrioridade,omitempty"` // Código da prioridade da tarefa (deve existir no cadastro).
+	Percentual    *int    `json:"Percentual,omitempty"`    // Percentual do andamento da tarefa.
+	Executor      *string `json:"Executor,omitempty"`      // Texto livre para identificar o responsável pela tarefa.
+	Custo         *string `json:"Custo,omitempty"`         // Texto livre para indicar o custo da tarefa.
+	CodFornecedor *int    `json:"CodFornecedor,omitempty"` // Código do fornecedor.
+	TemLembrete   *string `json:"TemLembrete,omitempty"`   // Indica se a tarefa deve ser lembrada.
+	DataLembrete  *string `json:"DataLembrete,omitempty"`  // Data e hora para lembrar a tarefa.
+	TextoLembrete *string `json:"TextoLembrete,omitempty"` // Texto livre para lembrar da tarefa
 }
 
 type ActionInputAnexo struct {

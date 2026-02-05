@@ -15,7 +15,7 @@ import (
 var ACTION = "CADASTRO_OBSERVACAO_CONSULTAR"
 
 type ActionInput struct {
-	CodObs int `json:"CodObs,omitempty"` // *Código da observação.
+	CodObs *int `json:"CodObs,omitempty"` // *Código da observação.
 }
 
 type RunMultiInput consts.RunMultiInput[*ActionInput]
